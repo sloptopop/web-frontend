@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Implementor: a lightning bolt snapping blocks into a grid">
+  <title>Implementor</title>
+  <rect x="4" y="30" width="16" height="16" fill="#e8002b" stroke="#111111" stroke-width="3"/>
+  <rect x="24" y="30" width="16" height="16" fill="#ffd400" stroke="#111111" stroke-width="3"/>
+  <rect x="44" y="30" width="16" height="16" fill="#1747c9" stroke="#111111" stroke-width="3"/>
+  <rect x="4" y="48" width="56" height="10" fill="#111111"/>
+  <path d="M36 2 L18 26 H30 L24 44 L46 16 H34 L40 2 Z" fill="#ffd400" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Architect: a blueprint with a drafting square">
+  <title>Architect</title>
+  <rect x="4" y="6" width="56" height="44" rx="4" fill="#1747c9" stroke="#111111" stroke-width="3"/>
+  <path d="M4 17 H60 M4 28 H60 M4 39 H60 M18 6 V50 M32 6 V50 M46 6 V50" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="11" y="13" width="18" height="12" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <rect x="35" y="13" width="18" height="12" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <path d="M29 19 H35 M20 25 V35 H44 V25" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M30 34 L58 34 L30 60 Z" fill="#ffd400" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M36 40 L48 40 L36 51 Z" fill="#1747c9" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
+</svg>

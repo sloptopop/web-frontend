@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Guider: a shield with a check mark">
+  <title>Guider</title>
+  <path d="M32 3 L56 12 V30 C56 45 46 55 32 61 C18 55 8 45 8 30 V12 Z" fill="#14b86a" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M32 9 L50 16 V30 C50 41 43 49 32 54 Z" fill="#ffffff" fill-opacity="0.25"/>
+  <path d="M19 32 L28 41 L46 22" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 32 L28 41 L46 22" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
