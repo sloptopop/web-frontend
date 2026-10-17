@@ -1,0 +1,3 @@
+# sloptopop.dev is not open yet.
+User-agent: *
+Disallow: /

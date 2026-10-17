@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Framework coverage · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li><a href="/compliance">Compliance</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="coverage" aria-labelledby="coverage-title">
+  <div class="section-head">
+    <p class="eyebrow">Coverage</p>
+    <h1 id="coverage-title">What sloptopop checks</h1>
+    <p>Every sloptopop rule is a check the Detector runs on a repository. The tables below show which controls each check evidences in six security frameworks. A mapping means that a finding, or its fix, gives evidence relevant to that item; it does not mean that passing the rule satisfies the item. Only framework identifiers are referenced; every note is our own.</p>
+  </div>
+
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+    <table class="matrix">
+      <caption>Mappings per rule and framework</caption>
+      <thead>
+        <tr>
+          <th scope="col">Rule</th>
+          <th scope="col"><a href="#scf">SCF</a></th>
+          <th scope="col"><a href="#asvs">OWASP ASVS</a></th>
+          <th scope="col"><a href="#nis2">NIS2</a></th>
+          <th scope="col"><a href="#ssdf">NIST SSDF</a></th>
+          <th scope="col"><a href="#iso27001">ISO/IEC 27001</a></th>
+          <th scope="col"><a href="#attack">MITRE ATT&#38;CK</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Problem reported by an open-source analyzer <code>analyzer.finding</code></th><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Analyzer reports not ignored by git <code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Analyzer report that cannot be used as evidence <code>analyzer.unreadable-report</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">No CI workflow running the quality gate <code>ci.missing</code></th><td>3</td><td>0</td><td>3</td><td>3</td><td>2</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">CI checks configured so they cannot fail the build <code>ci.nonblocking-checks</code></th><td>2</td><td>0</td><td>4</td><td>2</td><td>2</td><td>1</td>
+        </tr>
+        <tr>
+          <th scope="row">Hard-coded private IP or localhost URL in source <code>config.hardcoded-host</code></th><td>2</td><td>1</td><td>2</td><td>0</td><td>2</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Lines that no test executes <code>coverage.uncovered</code></th><td>2</td><td>0</td><td>3</td><td>2</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Errors caught and silently discarded <code>errors.swallowed</code></th><td>2</td><td>2</td><td>2</td><td>1</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">No pre-push hook running the quality gate <code>hook.missing</code></th><td>2</td><td>0</td><td>2</td><td>2</td><td>2</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Repository has no licence file <code>licence.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">Dependency lockfile is missing <code>lockfile.missing</code></th><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>1</td>
+        </tr>
+        <tr>
+          <th scope="row">Secret material committed to the repository <code>secrets.committed</code></th><td>3</td><td>1</td><td>4</td><td>1</td><td>2</td><td>3</td>
+        </tr>
+        <tr>
+          <th scope="row">Secret found in a commit of the repository&#39;s history <code>secrets.in-history</code></th><td>3</td><td>1</td><td>4</td><td>1</td><td>2</td><td>3</td>
+        </tr>
+        <tr>
+          <th scope="row">No enforced test-coverage threshold <code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>3</td><td>2</td><td>1</td><td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">TLS certificate verification turned off <code>tls.verification-disabled</code></th><td>2</td><td>2</td><td>3</td><td>2</td><td>2</td><td>2</td>
+        </tr>
+        <tr>
+          <th scope="row">Build toolchain version is not pinned <code>toolchain.unpinned</code></th><td>2</td><td>0</td><td>2</td><td>2</td><td>2</td><td>1</td>
+        </tr>
+        <tr>
+          <th scope="row">Static type checking switched off <code>types.disabled</code></th><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <section class="framework" id="scf" aria-labelledby="scf-title">
+    <h2 id="scf-title">SCF <span class="framework__version">2026.3</span></h2>
+    <p class="framework__name"><a href="https://securecontrolsframework.com/" rel="noopener noreferrer">Secure Controls Framework</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">SCF IDs and our notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Problem reported by an open-source analyzer<br><code>analyzer.finding</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>TDA-17.1</code> The finding is the output of static code analysis run on the repository.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Analyzer reports not ignored by git<br><code>analyzer.reports-unignored</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>IAC-14.3</code> Reports can hold secret snippets, which would be committed in plain text with them.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Analyzer report that cannot be used as evidence<br><code>analyzer.unreadable-report</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CPL-30</code> A report that is too large, not UTF-8 or malformed cannot serve as trustworthy evidence, so it is refused rather than half-read.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CHG-07</code> CI tests and validates every change before it is merged or released.</li>
+                <li><code>TDA-05.3</code> A CI pipeline is the shared, automated part of the development toolchain.</li>
+                <li><code>TDA-17</code> CI is where security and quality testing runs consistently throughout development.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CHG-07</code> A check that cannot fail does not actually validate the change.</li>
+                <li><code>TDA-17</code> Testing exists on paper but its results do not gate anything.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CFG-02</code> Environment endpoints belong in managed configuration, not in compiled source.</li>
+                <li><code>TDA-15.1</code> Development or internal addresses in shipped code blur the line between environments.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CHG-07</code> Changed code that no test runs has not been validated before release.</li>
+                <li><code>TDA-14</code> Uncovered lines are product code that testing never reviewed.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>SEA-15</code> Discarding an error lets execution continue as if it succeeded, i.e. it fails open.</li>
+                <li><code>TDA-12.1</code> An empty handler is the absence of error handling.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CHG-07</code> The hook tests and validates a change locally before it leaves the developer&#39;s machine.</li>
+                <li><code>TDA-17</code> A pre-push gate puts automated checks at the earliest point of the development cycle.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Repository has no licence file<br><code>licence.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>AST-13</code> Without a licence, the terms under which the software may be used or redistributed are undefined.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>AST-14</code> A lockfile records exactly which third-party components, from which source, end up in the build.</li>
+                <li><code>TDA-21.4</code> Resolved dependency versions are the raw input for an accurate software bill of materials.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CRY-10</code> Committed private keys are keys outside any managed key lifecycle.</li>
+                <li><code>IAC-14.2</code> Credentials in version control are exposed to everyone with repository access, now and in history.</li>
+                <li><code>IAC-14.3</code> This is exactly a static credential embedded in plain text in code or configuration.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>IAC-14.1</code> A secret that reached history must be treated as compromised and changed, even if the file no longer holds it.</li>
+                <li><code>IAC-14.2</code> Every clone keeps the commit, so the credential stays exposed to everyone with repository access.</li>
+                <li><code>IAC-14.3</code> A static credential was embedded in plain text in code or configuration when it was committed.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>TDA-17</code> Without a floor, the amount of code actually exercised by tests can drop unnoticed.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>CRY-05</code> Encryption without peer verification does not protect data in transit from an interceptor.</li>
+                <li><code>CRY-06</code> Without certificate checks, traffic can be modified by whoever terminates the connection.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>TDA-05.3</code> The compiler/interpreter version is part of the supporting toolchain and should be fixed, not floating.</li>
+                <li><code>TDA-20</code> A toolchain pin file puts the build tools under the developer&#39;s configuration control.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Static type checking switched off<br><code>types.disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>TDA-17.1</code> The type checker is a built-in static analysis tool; switching it off removes that analysis.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Control identifiers from the Secure Controls Framework (SCF) 2026.3, (c) SCF Council, licensed under CC BY-ND 4.0. Only control IDs are referenced; no SCF text is reproduced or modified. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="asvs" aria-labelledby="asvs-title">
+    <h2 id="asvs-title">OWASP ASVS <span class="framework__version">5.0</span></h2>
+    <p class="framework__name"><a href="https://github.com/OWASP/ASVS" rel="noopener noreferrer">OWASP Application Security Verification Standard</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">OWASP ASVS IDs and our notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V15.2.3</code> A localhost or internal endpoint in production code is development functionality left in the build.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V16.3.4</code> A swallowed error is never logged, so unexpected failures leave no trace.</li>
+                <li><code>V16.5.3</code> Ignoring an exception can let processing continue in a fail-open state.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V15.1.2</code> Without a lockfile there is no reliable inventory of the third-party libraries actually in use.</li>
+                <li><code>V15.2.4</code> Locked versions and source/integrity data reduce the chance of resolving a dependency from an unexpected place.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V13.3.1</code> Secrets in tracked files show that no secrets-management solution is being used for them.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V13.3.1</code> A secret in a past commit shows it was handled outside any secrets-management solution.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V12.3.2</code> The finding is a TLS client that does not validate the server certificate.</li>
+                <li><code>V12.3.4</code> The fix for self-signed internal services is trusting the specific CA, not disabling checks.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Static type checking switched off<br><code>types.disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>V15.3.5</code> Strict type checking is the main defence against type confusion in dynamically typed languages.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Requirement identifiers from the OWASP Application Security Verification Standard 5.0.0, (c) the OWASP Foundation, licensed under CC BY-SA 4.0. IDs are written V&#60;chapter&#62;.&#60;section&#62;.&#60;requirement&#62;; the version-qualified form is v5.0.0-&#60;chapter&#62;.&#60;section&#62;.&#60;requirement&#62;. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="nis2" aria-labelledby="nis2-title">
+    <h2 id="nis2-title">NIS2 <span class="framework__version">Directive (EU) 2022/2555; Implementing Regulation (EU) 2024/2690</span></h2>
+    <p class="framework__name"><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" rel="noopener noreferrer">NIS2: Directive (EU) 2022/2555 and Commission Implementing Regulation (EU) 2024/2690</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">NIS2 IDs and our notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(d)</code> CI is a security testing process embedded in the development life cycle.</li>
+                <li><code>2024/2690 Annex 6.4.2</code> CI provides the record that a change was tested before it was implemented.</li>
+                <li><code>Art. 21(2)(e)</code> Automated verification of every change is part of secure development and maintenance.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.4.2</code> Changes can be implemented even when their tests fail.</li>
+                <li><code>2024/2690 Annex 6.5.2(d)</code> Critical findings from security steps produce no mandatory action.</li>
+                <li><code>Art. 21(2)(e)</code> Checks that never block weaken security in development.</li>
+                <li><code>Art. 21(2)(f)</code> A non-blocking check is a control whose effectiveness is not enforced.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.3.1</code> Endpoints baked into code escape the documented, managed configuration.</li>
+                <li><code>Art. 21(2)(e)</code> Keeping configuration out of code is part of secure development and maintenance.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(d)</code> Measured coverage shows where the testing step leaves code unchecked.</li>
+                <li><code>Art. 21(2)(e)</code> Untested code weakens security in development.</li>
+                <li><code>Art. 21(2)(f)</code> Line coverage is a measurable indicator of whether testing is effective.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(b)</code> Handling every error is a basic secure-coding principle.</li>
+                <li><code>Art. 21(2)(e)</code> Handling errors properly is part of secure development.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(d)</code> The hook is one stage of the security testing process within the development life cycle.</li>
+                <li><code>Art. 21(2)(e)</code> Automated checks before code is shared are part of security in development.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.1.2(c)</code> A lockfile is machine-readable evidence of the software components a product is built from.</li>
+                <li><code>Art. 21(2)(e)</code> Knowing and controlling the components of developed software is part of secure development and maintenance.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 11.6.2(b)</code> Secret authentication information in code is not handled confidentially.</li>
+                <li><code>2024/2690 Annex 9.2(c)(iv)</code> Keys stored in a repository are not stored according to a key-management method.</li>
+                <li><code>Art. 21(2)(h)</code> Committed private keys break the entity&#39;s cryptographic key handling.</li>
+                <li><code>Art. 21(2)(i)</code> Leaked credentials undermine access control.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 11.6.2(b)</code> Secret authentication information kept in history is not handled confidentially.</li>
+                <li><code>2024/2690 Annex 9.2(c)(iv)</code> A key that was committed was not stored according to a key-management method.</li>
+                <li><code>Art. 21(2)(h)</code> A private key in history breaks the entity&#39;s cryptographic key handling until it is replaced.</li>
+                <li><code>Art. 21(2)(i)</code> A leaked credential that is still valid undermines access control.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(d)</code> A threshold turns the testing process into an enforced, checkable step.</li>
+                <li><code>Art. 21(2)(e)</code> Measurable testing is part of secure development.</li>
+                <li><code>Art. 21(2)(f)</code> A coverage floor is a measurable indicator of whether testing is effective.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.7.2(i)</code> A channel without endpoint verification does not give assured identification of the peer.</li>
+                <li><code>2024/2690 Annex 9.2(b)</code> Turning off verification is a protocol usage practice that should not be approved.</li>
+                <li><code>Art. 21(2)(h)</code> Disabling verification defeats the purpose of the entity&#39;s use of cryptography.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(c)</code> A pinned toolchain is a concrete, checkable requirement on the development environment.</li>
+                <li><code>Art. 21(2)(e)</code> Controlling the build environment is part of security in system development.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Static type checking switched off<br><code>types.disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>2024/2690 Annex 6.2.2(b)</code> Strict typing is a secure-coding principle the toolchain can enforce.</li>
+                <li><code>Art. 21(2)(e)</code> Using available compiler/type safety is part of secure development.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Article and annex point references from Directive (EU) 2022/2555 (Art. 21(2)) and Commission Implementing Regulation (EU) 2024/2690 (Annex; https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj), source EUR-Lex, (c) European Union; reuse authorised under Commission Decision 2011/833/EU. Ids prefixed &#39;2024/2690 Annex&#39; are annex points of the Implementing Regulation. Only the official Official Journal texts are authentic. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="ssdf" aria-labelledby="ssdf-title">
+    <h2 id="ssdf-title">NIST SSDF <span class="framework__version">1.1</span></h2>
+    <p class="framework__name"><a href="https://csrc.nist.gov/pubs/sp/800/218/final" rel="noopener noreferrer">NIST Secure Software Development Framework (SP 800-218)</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">NIST SSDF IDs and our notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Problem reported by an open-source analyzer<br><code>analyzer.finding</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.7.2</code> Analyzer results are automated code analysis findings that have not yet been addressed.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PO.3.2</code> A workflow file is the pipeline-as-code form of the toolchain.</li>
+                <li><code>PO.4.2</code> CI gathers check results automatically and can make the pass/fail decision.</li>
+                <li><code>PW.7.2</code> Automated code analysis runs on every change entering the repository.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PO.4.1</code> Pass/fail criteria for security checks are defined but not enforced.</li>
+                <li><code>PO.4.2</code> The decision based on the criteria is not automated; failures are ignored.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PO.4.1</code> Full line coverage is a defined criterion that this check measures.</li>
+                <li><code>PW.8.2</code> The uncovered lines are outside the scope the tests actually reach.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.5.1</code> Secure coding practice is to detect errors and handle them gracefully, not drop them.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.5.1</code> The development environment enforces the agreed coding checks automatically.</li>
+                <li><code>PW.7.2</code> Automated analysis runs on code before it is pushed to the shared repository.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PS.3.2</code> Exact dependency versions are the provenance data an SBOM is built from.</li>
+                <li><code>PW.4.4</code> Components can only be checked for known vulnerabilities over time if the exact versions are known.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.7.2</code> Secret scanning is automated code analysis that flags an unsafe practice as code is checked in.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.7.2</code> Scanning the history for secrets is automated analysis that flags an unsafe practice already checked in.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PO.4.1</code> A coverage threshold is a defined, tracked criterion for software checks.</li>
+                <li><code>PW.8.2</code> The floor sets the scope that tests are required to reach.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.5.1</code> Keeping certificate validation on is a basic secure coding practice.</li>
+                <li><code>PW.9.1</code> The setting weakens a security function the platform provides by default.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PO.3.2</code> Pinning the toolchain is a prerequisite for reproducible builds and controlled tool upgrades.</li>
+                <li><code>PW.6.1</code> Tool upgrades become deliberate, reviewable changes instead of silent drift.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Static type checking switched off<br><code>types.disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>PW.5.1</code> Using strict type checking is a language-appropriate secure coding practice.</li>
+                <li><code>PW.6.2</code> The compiler/interpreter feature that catches unsafe code is not configured on.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Practice and task identifiers from NIST SP 800-218, Secure Software Development Framework (SSDF) Version 1.1, National Institute of Standards and Technology; a US Government work not subject to copyright in the United States. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="iso27001" aria-labelledby="iso27001-title">
+    <h2 id="iso27001-title">ISO/IEC 27001 <span class="framework__version">2022</span></h2>
+    <p class="framework__name"><a href="https://www.iso.org/standard/27001" rel="noopener noreferrer">ISO/IEC 27001 Annex A</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">ISO/IEC 27001 IDs and our notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.29</code> CI is the automated security testing step in development and acceptance.</li>
+                <li><code>A.8.32</code> CI gives each change a consistent, recorded test before it is accepted.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.29</code> Security tests run but their results are not used for acceptance.</li>
+                <li><code>A.8.32</code> Changes pass change control regardless of test outcome.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.31</code> Hard-coded dev/internal hosts risk mixing development and production environments.</li>
+                <li><code>A.8.9</code> Network endpoints are configuration items that should be managed, not embedded.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.29</code> Lines no test executes were not covered by testing in development.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.28</code> Silent error suppression is a secure-coding defect.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.28</code> A local gate helps enforce secure coding rules on every change.</li>
+                <li><code>A.8.29</code> Testing during development, before code is shared, is evidenced by the hook.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Repository has no licence file<br><code>licence.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.5.32</code> A licence file states the intellectual-property terms that consumers of the code must respect.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.5.21</code> Pinning third-party components is a basic supply-chain control for software.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.5.17</code> Authentication information in source control is not protected.</li>
+                <li><code>A.8.24</code> Committed keys defeat the cryptographic key-management rules.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.5.17</code> Authentication information left in version-control history is not protected.</li>
+                <li><code>A.8.24</code> A committed key escapes the cryptographic key-management rules until it is rotated.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.29</code> A coverage floor sets an acceptance criterion for testing in development.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.5.14</code> Data transferred over an unauthenticated channel is not protected in transfer.</li>
+                <li><code>A.8.24</code> Cryptography is used ineffectively when the peer certificate is not checked.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.25</code> Defined, repeatable build tooling is part of a controlled development life cycle.</li>
+                <li><code>A.8.9</code> The toolchain version is a configuration item that should be recorded and controlled.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Static type checking switched off<br><code>types.disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>A.8.28</code> Disabled type checking removes an automatic secure-coding safeguard.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Annex A control numbers of ISO/IEC 27001:2022 (numbering shared with ISO/IEC 27002:2022). (c) ISO/IEC. Only control numbers are referenced; titles and requirement text are not reproduced. The notes are sloptopop&#39;s own and are not an interpretation endorsed by ISO.</p>
+  </section>
+  <section class="framework" id="attack" aria-labelledby="attack-title">
+    <h2 id="attack-title">MITRE ATT&#38;CK <span class="framework__version">19.2</span></h2>
+    <p class="framework__name"><a href="https://attack.mitre.org/" rel="noopener noreferrer">MITRE ATT&#38;CK Enterprise</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">MITRE ATT&#38;CK IDs and our notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>M1016</code> <span class="relation">mitigates</span> When the non-blocking step is a dependency or vulnerability scan, making it blocking turns the scan into an enforced control.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>T1195.001</code> <span class="relation">enables</span> Unlocked dependency resolution can silently pull a compromised or substituted package.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>M1047</code> <span class="relation">mitigates</span> Searching tracked files for credentials before an adversary does is the audit this mitigation describes.</li>
+                <li><code>T1552.001</code> <span class="relation">enables</span> Credentials left in source or configuration files are directly harvestable.</li>
+                <li><code>T1593.003</code> <span class="relation">enables</span> If the repository is public, leaked keys can be found by anyone searching code hosts.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>M1047</code> <span class="relation">mitigates</span> Searching the history for credentials before an adversary does is the audit this mitigation describes.</li>
+                <li><code>T1552.001</code> <span class="relation">enables</span> Credentials in old commits are as harvestable as those in current files.</li>
+                <li><code>T1593.003</code> <span class="relation">enables</span> If the repository is or becomes public, keys in its history can be found by anyone searching code hosts.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>M1041</code> <span class="relation">mitigates</span> Restoring verification makes the encrypted channel actually protect the traffic.</li>
+                <li><code>T1557</code> <span class="relation">enables</span> A client that accepts any certificate can be intercepted by an adversary-in-the-middle.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th>
+            <td>
+              <ul class="mappings">
+                <li><code>T1195.001</code> <span class="relation">enables</span> A floating toolchain automatically picks up whatever release is current, including a tampered one.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Used under the MITRE ATT&#38;CK Terms of Use. (c) 2026 The MITRE Corporation. This work is reproduced and distributed with the permission of The MITRE Corporation. MITRE ATT&#38;CK and ATT&#38;CK are registered trademarks of The MITRE Corporation. Technique (T...) and mitigation (M...) IDs only; relation &#39;enables&#39; = the detected weakness makes the technique easier, &#39;mitigates&#39; = fixing the finding supports that mitigation. The notes are sloptopop&#39;s own.</p>
+  </section>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

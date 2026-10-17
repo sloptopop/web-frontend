@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliance coverage · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li><a href="/compliance">Compliance</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="compliance" aria-labelledby="compliance-title">
+  <div class="section-head">
+    <p class="eyebrow">Compliance</p>
+    <h1 id="compliance-title">Compliance coverage per framework</h1>
+    <p>For each framework: how many of its controls sloptopop's checks give evidence for, through which rules, and how far sloptopop gets with each rule in the repositories it was <a href="/results">tested on</a>. Evidence for a control is not compliance with it: a mapping means that a finding, or its fix, is relevant to that control. Only control identifiers are shown; the notes behind each mapping are on the <a href="/coverage">coverage page</a>.</p>
+  </div>
+
+  <section class="evidence" aria-labelledby="evidence-title">
+    <h2 id="evidence-title">Evidence every run produces</h2>
+    <ul class="standard-grid">
+      <li class="standard"><h3>Findings</h3><p>Every finding names its rule, file and line, so an auditor can check it at the commit it was found on.</p></li>
+      <li class="standard"><h3>The plan</h3><p>Each finding becomes a step built only from a closed set of known-safe edits, or a task with a checklist and the recorded reason why no edit was made.</p></li>
+      <li class="standard"><h3>Exact edits</h3><p>Every applied edit is a byte span with the hash of the code it expects, in its own reviewable commit; nothing is written if the code has moved.</p></li>
+      <li class="standard"><h3>Verification</h3><p>After the edits: sloptopop checks again, the type checker or syntax check runs on the touched files, and the secret scan runs before and after.</p></li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-label="Frameworks">
+    <ol>
+      <li><a href="#compliance-scf">SCF</a> <span class="toc__note">20 controls</span></li>
+      <li><a href="#compliance-asvs">OWASP ASVS</a> <span class="toc__note">9 controls</span></li>
+      <li><a href="#compliance-nis2">NIS2</a> <span class="toc__note">15 controls</span></li>
+      <li><a href="#compliance-ssdf">NIST SSDF</a> <span class="toc__note">11 controls</span></li>
+      <li><a href="#compliance-iso27001">ISO/IEC 27001</a> <span class="toc__note">11 controls</span></li>
+      <li><a href="#compliance-attack">MITRE ATT&#38;CK</a> <span class="toc__note">7 controls</span></li>
+    </ol>
+  </nav>
+  <section class="framework" id="compliance-scf" aria-labelledby="compliance-scf-title">
+    <h2 id="compliance-scf-title">SCF <span class="framework__version">2026.3</span></h2>
+    <p class="framework__name"><a href="https://securecontrolsframework.com/" rel="noopener noreferrer">Secure Controls Framework</a> · 20 controls with evidence from 17 rules · <a href="/coverage#scf">mapping details</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">SCF controls</th><th scope="col">Where sloptopop is today</th><th scope="col">Found / planned / fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Problem reported by an open-source analyzer<br><code>analyzer.finding</code></th><td><code>TDA-17.1</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>80 / 0 / 0</td></tr>
+          <tr><th scope="row">Analyzer reports not ignored by git<br><code>analyzer.reports-unignored</code></th><td><code>IAC-14.3</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">Analyzer report that cannot be used as evidence<br><code>analyzer.unreadable-report</code></th><td><code>CPL-30</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th><td><code>CHG-07, TDA-05.3, TDA-17</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th><td><code>CHG-07, TDA-17</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th><td><code>CFG-02, TDA-15.1</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>16 / 0 / 0</td></tr>
+          <tr><th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th><td><code>CHG-07, TDA-14</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th><td><code>SEA-15, TDA-12.1</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>66 / 66 / 0</td></tr>
+          <tr><th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th><td><code>CHG-07, TDA-17</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">Repository has no licence file<br><code>licence.missing</code></th><td><code>AST-13</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th><td><code>AST-14, TDA-21.4</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th><td><code>CRY-10, IAC-14.2, IAC-14.3</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>47 / 47 / 0</td></tr>
+          <tr><th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th><td><code>IAC-14.1, IAC-14.2, IAC-14.3</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th><td><code>TDA-17</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>19 / 0 / 0</td></tr>
+          <tr><th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th><td><code>CRY-05, CRY-06</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th><td><code>TDA-05.3, TDA-20</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>18 / 0 / 0</td></tr>
+          <tr><th scope="row">Static type checking switched off<br><code>types.disabled</code></th><td><code>TDA-17.1</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>4 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Control identifiers from the Secure Controls Framework (SCF) 2026.3, (c) SCF Council, licensed under CC BY-ND 4.0. Only control IDs are referenced; no SCF text is reproduced or modified. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="compliance-asvs" aria-labelledby="compliance-asvs-title">
+    <h2 id="compliance-asvs-title">OWASP ASVS <span class="framework__version">5.0</span></h2>
+    <p class="framework__name"><a href="https://github.com/OWASP/ASVS" rel="noopener noreferrer">OWASP Application Security Verification Standard</a> · 9 controls with evidence from 7 rules · <a href="/coverage#asvs">mapping details</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">OWASP ASVS controls</th><th scope="col">Where sloptopop is today</th><th scope="col">Found / planned / fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th><td><code>V15.2.3</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>16 / 0 / 0</td></tr>
+          <tr><th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th><td><code>V16.3.4, V16.5.3</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>66 / 66 / 0</td></tr>
+          <tr><th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th><td><code>V15.1.2, V15.2.4</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th><td><code>V13.3.1</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>47 / 47 / 0</td></tr>
+          <tr><th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th><td><code>V13.3.1</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th><td><code>V12.3.2, V12.3.4</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Static type checking switched off<br><code>types.disabled</code></th><td><code>V15.3.5</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>4 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Requirement identifiers from the OWASP Application Security Verification Standard 5.0.0, (c) the OWASP Foundation, licensed under CC BY-SA 4.0. IDs are written V&#60;chapter&#62;.&#60;section&#62;.&#60;requirement&#62;; the version-qualified form is v5.0.0-&#60;chapter&#62;.&#60;section&#62;.&#60;requirement&#62;. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="compliance-nis2" aria-labelledby="compliance-nis2-title">
+    <h2 id="compliance-nis2-title">NIS2 <span class="framework__version">Directive (EU) 2022/2555; Implementing Regulation (EU) 2024/2690</span></h2>
+    <p class="framework__name"><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" rel="noopener noreferrer">NIS2: Directive (EU) 2022/2555 and Commission Implementing Regulation (EU) 2024/2690</a> · 15 controls with evidence from 13 rules · <a href="/coverage#nis2">mapping details</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">NIS2 controls</th><th scope="col">Where sloptopop is today</th><th scope="col">Found / planned / fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th><td><code>2024/2690 Annex 6.2.2(d), 2024/2690 Annex 6.4.2, Art. 21(2)(e)</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th><td><code>2024/2690 Annex 6.4.2, 2024/2690 Annex 6.5.2(d), Art. 21(2)(e), Art. 21(2)(f)</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th><td><code>2024/2690 Annex 6.3.1, Art. 21(2)(e)</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>16 / 0 / 0</td></tr>
+          <tr><th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th><td><code>2024/2690 Annex 6.2.2(d), Art. 21(2)(e), Art. 21(2)(f)</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th><td><code>2024/2690 Annex 6.2.2(b), Art. 21(2)(e)</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>66 / 66 / 0</td></tr>
+          <tr><th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th><td><code>2024/2690 Annex 6.2.2(d), Art. 21(2)(e)</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th><td><code>2024/2690 Annex 6.1.2(c), Art. 21(2)(e)</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th><td><code>2024/2690 Annex 11.6.2(b), 2024/2690 Annex 9.2(c)(iv), Art. 21(2)(h), Art. 21(2)(i)</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>47 / 47 / 0</td></tr>
+          <tr><th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th><td><code>2024/2690 Annex 11.6.2(b), 2024/2690 Annex 9.2(c)(iv), Art. 21(2)(h), Art. 21(2)(i)</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th><td><code>2024/2690 Annex 6.2.2(d), Art. 21(2)(e), Art. 21(2)(f)</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>19 / 0 / 0</td></tr>
+          <tr><th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th><td><code>2024/2690 Annex 6.7.2(i), 2024/2690 Annex 9.2(b), Art. 21(2)(h)</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th><td><code>2024/2690 Annex 6.2.2(c), Art. 21(2)(e)</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>18 / 0 / 0</td></tr>
+          <tr><th scope="row">Static type checking switched off<br><code>types.disabled</code></th><td><code>2024/2690 Annex 6.2.2(b), Art. 21(2)(e)</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>4 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Article and annex point references from Directive (EU) 2022/2555 (Art. 21(2)) and Commission Implementing Regulation (EU) 2024/2690 (Annex; https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj), source EUR-Lex, (c) European Union; reuse authorised under Commission Decision 2011/833/EU. Ids prefixed &#39;2024/2690 Annex&#39; are annex points of the Implementing Regulation. Only the official Official Journal texts are authentic. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="compliance-ssdf" aria-labelledby="compliance-ssdf-title">
+    <h2 id="compliance-ssdf-title">NIST SSDF <span class="framework__version">1.1</span></h2>
+    <p class="framework__name"><a href="https://csrc.nist.gov/pubs/sp/800/218/final" rel="noopener noreferrer">NIST Secure Software Development Framework (SP 800-218)</a> · 11 controls with evidence from 13 rules · <a href="/coverage#ssdf">mapping details</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">NIST SSDF controls</th><th scope="col">Where sloptopop is today</th><th scope="col">Found / planned / fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Problem reported by an open-source analyzer<br><code>analyzer.finding</code></th><td><code>PW.7.2</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>80 / 0 / 0</td></tr>
+          <tr><th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th><td><code>PO.3.2, PO.4.2, PW.7.2</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th><td><code>PO.4.1, PO.4.2</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th><td><code>PO.4.1, PW.8.2</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th><td><code>PW.5.1</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>66 / 66 / 0</td></tr>
+          <tr><th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th><td><code>PW.5.1, PW.7.2</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th><td><code>PS.3.2, PW.4.4</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th><td><code>PW.7.2</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>47 / 47 / 0</td></tr>
+          <tr><th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th><td><code>PW.7.2</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th><td><code>PO.4.1, PW.8.2</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>19 / 0 / 0</td></tr>
+          <tr><th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th><td><code>PW.5.1, PW.9.1</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th><td><code>PO.3.2, PW.6.1</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>18 / 0 / 0</td></tr>
+          <tr><th scope="row">Static type checking switched off<br><code>types.disabled</code></th><td><code>PW.5.1, PW.6.2</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>4 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Practice and task identifiers from NIST SP 800-218, Secure Software Development Framework (SSDF) Version 1.1, National Institute of Standards and Technology; a US Government work not subject to copyright in the United States. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="compliance-iso27001" aria-labelledby="compliance-iso27001-title">
+    <h2 id="compliance-iso27001-title">ISO/IEC 27001 <span class="framework__version">2022</span></h2>
+    <p class="framework__name"><a href="https://www.iso.org/standard/27001" rel="noopener noreferrer">ISO/IEC 27001 Annex A</a> · 11 controls with evidence from 14 rules · <a href="/coverage#iso27001">mapping details</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">ISO/IEC 27001 controls</th><th scope="col">Where sloptopop is today</th><th scope="col">Found / planned / fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">No CI workflow running the quality gate<br><code>ci.missing</code></th><td><code>A.8.29, A.8.32</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th><td><code>A.8.29, A.8.32</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Hard-coded private IP or localhost URL in source<br><code>config.hardcoded-host</code></th><td><code>A.8.31, A.8.9</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>16 / 0 / 0</td></tr>
+          <tr><th scope="row">Lines that no test executes<br><code>coverage.uncovered</code></th><td><code>A.8.29</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Errors caught and silently discarded<br><code>errors.swallowed</code></th><td><code>A.8.28</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>66 / 66 / 0</td></tr>
+          <tr><th scope="row">No pre-push hook running the quality gate<br><code>hook.missing</code></th><td><code>A.8.28, A.8.29</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>21 / 0 / 0</td></tr>
+          <tr><th scope="row">Repository has no licence file<br><code>licence.missing</code></th><td><code>A.5.32</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th><td><code>A.5.21</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th><td><code>A.5.17, A.8.24</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>47 / 47 / 0</td></tr>
+          <tr><th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th><td><code>A.5.17, A.8.24</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">No enforced test-coverage threshold<br><code>tests.no-coverage-floor</code></th><td><code>A.8.29</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>19 / 0 / 0</td></tr>
+          <tr><th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th><td><code>A.5.14, A.8.24</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th><td><code>A.8.25, A.8.9</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>18 / 0 / 0</td></tr>
+          <tr><th scope="row">Static type checking switched off<br><code>types.disabled</code></th><td><code>A.8.28</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>4 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Annex A control numbers of ISO/IEC 27001:2022 (numbering shared with ISO/IEC 27002:2022). (c) ISO/IEC. Only control numbers are referenced; titles and requirement text are not reproduced. The notes are sloptopop&#39;s own and are not an interpretation endorsed by ISO.</p>
+  </section>
+  <section class="framework" id="compliance-attack" aria-labelledby="compliance-attack-title">
+    <h2 id="compliance-attack-title">MITRE ATT&#38;CK <span class="framework__version">19.2</span></h2>
+    <p class="framework__name"><a href="https://attack.mitre.org/" rel="noopener noreferrer">MITRE ATT&#38;CK Enterprise</a> · 7 controls with evidence from 6 rules · <a href="/coverage#attack">mapping details</a></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">MITRE ATT&#38;CK controls</th><th scope="col">Where sloptopop is today</th><th scope="col">Found / planned / fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">CI checks configured so they cannot fail the build<br><code>ci.nonblocking-checks</code></th><td><code>M1016</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Dependency lockfile is missing<br><code>lockfile.missing</code></th><td><code>T1195.001</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Secret material committed to the repository<br><code>secrets.committed</code></th><td><code>M1047, T1552.001, T1593.003</code></td><td><span class="stage stage--planned">planned: a task with a checklist</span></td><td>47 / 47 / 0</td></tr>
+          <tr><th scope="row">Secret found in a commit of the repository&#39;s history<br><code>secrets.in-history</code></th><td><code>M1047, T1552.001, T1593.003</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">TLS certificate verification turned off<br><code>tls.verification-disabled</code></th><td><code>M1041, T1557</code></td><td><span class="stage stage--quiet">checked; nothing found yet</span></td><td>0 / 0 / 0</td></tr>
+          <tr><th scope="row">Build toolchain version is not pinned<br><code>toolchain.unpinned</code></th><td><code>T1195.001</code></td><td><span class="stage stage--detected">detected and reported</span></td><td>18 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="framework__attribution">Used under the MITRE ATT&#38;CK Terms of Use. (c) 2026 The MITRE Corporation. This work is reproduced and distributed with the permission of The MITRE Corporation. MITRE ATT&#38;CK and ATT&#38;CK are registered trademarks of The MITRE Corporation. Technique (T...) and mitigation (M...) IDs only; relation &#39;enables&#39; = the detected weakness makes the technique easier, &#39;mitigates&#39; = fixing the finding supports that mitigation. The notes are sloptopop&#39;s own.</p>
+  </section>
+  <section class="framework" id="compliance-unmapped" aria-labelledby="compliance-unmapped-title">
+    <h2 id="compliance-unmapped-title">Rules not mapped to a framework yet</h2>
+    <p>These rules produced findings in the tested repositories but have no framework mapping precise enough to publish yet, so they add nothing to the counts above.</p>
+    <ul class="mappings">
+      <li><code>arch.adr-missing</code> 6 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.db-access-outside-persistence</code> 18 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.duplicate-across-units</code> 1 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.healthcheck-missing</code> 4 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.hub-dependency</code> 13 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.module-internals-access</code> 44 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.package-cycle</code> 19 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.rules-missing</code> 6 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.threat-model-missing</code> 16 found, 0 planned, 0 fixed and verified</li>
+      <li><code>arch.unstable-dependency</code> 23 found, 0 planned, 0 fixed and verified</li>
+      <li><code>db.cascade-reach</code> 2 found, 0 planned, 0 fixed and verified</li>
+      <li><code>db.duplicate-table</code> 5 found, 0 planned, 0 fixed and verified</li>
+      <li><code>db.fk-missing</code> 6 found, 0 planned, 0 fixed and verified</li>
+      <li><code>db.multi-write-no-tx</code> 6 found, 0 planned, 0 fixed and verified</li>
+      <li><code>db.result-unchecked</code> 33 found, 33 planned, 20 fixed and verified</li>
+      <li><code>db.transition-unguarded</code> 1 found, 0 planned, 0 fixed and verified</li>
+      <li><code>deps.circular</code> 6 found, 0 planned, 0 fixed and verified</li>
+      <li><code>deps.layering</code> 8 found, 0 planned, 0 fixed and verified</li>
+      <li><code>deps.unpinned</code> 1 found, 0 planned, 0 fixed and verified</li>
+    </ul>
+  </section>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

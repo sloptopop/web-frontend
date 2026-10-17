@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<meta name="htmx-config" content='{"selfRequestsOnly":false,"allowEval":false,"allowScriptTags":false,"includeIndicatorStyles":false,"historyCacheSize":0,"withCredentials":false,"responseHandling":[{"code":".*","swap":true}]}'>
+<script src="/assets/htmx-2.0.11.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" defer></script>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li><a href="/compliance">Compliance</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="pricing" aria-labelledby="pricing-title">
+  <div class="section-head">
+    <p class="eyebrow">Pricing</p>
+    <h1 id="pricing-title">Pricing to be announced</h1>
+    <p>We have not decided on pricing yet. The CLI and the language libraries are open source under MIT OR Apache-2.0. Leave your e-mail address and we will write to you once, when pricing is announced.</p>
+  </div>
+
+  <form class="waitlist" id="waitlist" action="https://api.sloptopop.dev/waitlist" method="post" hx-post="https://api.sloptopop.dev/waitlist" hx-target="#waitlist-reply" hx-swap="innerHTML" hx-disabled-elt="find button">
+    <h2 id="waitlist-title">Join the waitlist</h2>
+    <p class="waitlist__field">
+      <label for="waitlist-email">E-mail address</label>
+      <input id="waitlist-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email">
+    </p>
+    <p class="waitlist__trap" aria-hidden="true">
+      <label for="waitlist-website">Leave this field empty</label>
+      <input id="waitlist-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </p>
+    <p class="waitlist__consent">
+      <input id="waitlist-consent" name="consent" type="checkbox" value="yes" required>
+      <label for="waitlist-consent">Store my e-mail address so sloptopop can tell me when pricing is announced, as described below and in the <a href="/privacy#waitlist">privacy notice</a>.</label>
+    </p>
+    <p><button class="button button--pop" type="submit">Join the waitlist</button></p>
+    <div id="waitlist-reply" class="waitlist__replies" role="status" aria-live="polite"></div>
+    <noscript><p class="fineprint">Without JavaScript the form still works: sending it opens a confirmation page on https://api.sloptopop.dev.</p></noscript>
+  </form>
+
+  <section class="notice" id="what-we-store" aria-labelledby="notice-title">
+    <h2 id="notice-title">What we store</h2>
+    <ul>
+      <li><strong>Stored:</strong> your e-mail address, the time you signed up, and which version of the privacy notice you agreed to. Nothing else.</li>
+      <li><strong>Used and forgotten:</strong> your IP address, kept in memory for a few minutes to limit how many sign-ups one network can send. It is not written to the waitlist.</li>
+      <li><strong>Not used:</strong> cookies, analytics, tracking pixels or any third-party script.</li>
+      <li><strong>Where:</strong> the form goes to our backend at https://api.sloptopop.dev, which passes the address over HTTPS to a database on our own server. The database is not reachable from the internet.</li>
+      <li><strong>What for:</strong> one e-mail when pricing is announced. Ask us and we delete your address; the <a href="/privacy#waitlist">privacy notice</a> says how.</li>
+    </ul>
+  </section>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

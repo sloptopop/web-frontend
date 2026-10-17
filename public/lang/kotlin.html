@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sloptopop · from AI slop to pop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li><a href="/compliance">Compliance</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__halftone" aria-hidden="true"></div>
+  <p class="hero__kicker">Policy-as-code for AI-written software</p>
+  <h1 id="hero-title" class="hero__title">
+    <span class="hero__slop" data-text="Slop">Slop</span>
+    <span class="hero__arrow" aria-hidden="true">→</span><span class="visually-hidden"> to </span>
+    <span class="hero__pop">Pop!</span>
+  </h1>
+  <p class="hero__lede">AI writes code fast. sloptopop makes it good. The <strong>Detector</strong> finds the slop, the <strong>Architect</strong> plans the fix and the <strong>Implementor</strong> makes it pop. The <strong>Guider</strong> checks every AI step against standards that don't bend.</p>
+  <p class="hero__actions">
+    <a class="button button--pop" href="#install">Install sloptopop</a>
+    <a class="button" href="https://github.com/sloptopop" rel="noopener noreferrer">View on GitHub</a>
+  </p>
+  <p class="hero__scroll" aria-hidden="true">Scroll to clean it up ↓</p>
+</section>
+
+<section class="install" id="install" aria-labelledby="install-title">
+  <div class="section-head">
+    <p class="eyebrow">Install</p>
+    <h2 id="install-title">One CLI. Twelve languages.</h2>
+    <p>The <code>sloptopop</code> CLI does the work; a thin library for each language talks to it, so your build tool can run the checks natively. Pick yours: one click selects the whole command.</p>
+  </div>
+  <fieldset class="lang">
+    <legend class="visually-hidden">Language</legend>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-cli"><label class="lang__tab" for="lang-cli">CLI</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-python"><label class="lang__tab" for="lang-python">Python</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-node"><label class="lang__tab" for="lang-node">Node / TypeScript</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-go"><label class="lang__tab" for="lang-go">Go</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-java"><label class="lang__tab" for="lang-java">Java</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-kotlin" checked><label class="lang__tab" for="lang-kotlin">Kotlin</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-dotnet"><label class="lang__tab" for="lang-dotnet">.NET (C#/F#)</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-cpp"><label class="lang__tab" for="lang-cpp">C++</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-php"><label class="lang__tab" for="lang-php">PHP</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-powershell"><label class="lang__tab" for="lang-powershell">PowerShell</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-shell"><label class="lang__tab" for="lang-shell">Shell</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-rust"><label class="lang__tab" for="lang-rust">Rust</label>
+    <input class="lang__radio visually-hidden" type="radio" name="lang" id="lang-swift"><label class="lang__tab" for="lang-swift">Swift</label>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cli" id="tool-cli-1" checked><label class="tool__tab" for="tool-cli-1">Homebrew</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cli" id="tool-cli-2"><label class="tool__tab" for="tool-cli-2">curl</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cli" id="tool-cli-3"><label class="tool__tab" for="tool-cli-3">PowerShell</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cli" id="tool-cli-4"><label class="tool__tab" for="tool-cli-4">cargo</label>
+      <pre class="lang__command" tabindex="0" aria-label="CLI install: Homebrew"><code>brew install sloptopop/tap/sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="CLI install: curl"><code>curl -LsSf https://sloptopop.dev/install.sh | sh</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="CLI install: PowerShell"><code>irm https://sloptopop.dev/install.ps1 | iex</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="CLI install: cargo"><code>cargo install sloptopop-cli</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/cli</code> · <a href="https://github.com/sloptopop/cli/blob/main/LANGUAGE.md" rel="noopener noreferrer">CLI guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-python" id="tool-python-1" checked><label class="tool__tab" for="tool-python-1">pip</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-python" id="tool-python-2"><label class="tool__tab" for="tool-python-2">uv</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-python" id="tool-python-3"><label class="tool__tab" for="tool-python-3">pipx (CLI only)</label>
+      <pre class="lang__command" tabindex="0" aria-label="Python install: pip"><code>pip install sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Python install: uv"><code>uv add sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Python install: pipx (CLI only)"><code>pipx install sloptopop</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/python</code> · <a href="https://github.com/sloptopop/python/blob/main/LANGUAGE.md" rel="noopener noreferrer">Python guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-node" id="tool-node-1" checked><label class="tool__tab" for="tool-node-1">npm</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-node" id="tool-node-2"><label class="tool__tab" for="tool-node-2">pnpm</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-node" id="tool-node-3"><label class="tool__tab" for="tool-node-3">yarn</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-node" id="tool-node-4"><label class="tool__tab" for="tool-node-4">bun</label>
+      <pre class="lang__command" tabindex="0" aria-label="Node / TypeScript install: npm"><code>npm install sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Node / TypeScript install: pnpm"><code>pnpm add sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Node / TypeScript install: yarn"><code>yarn add sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Node / TypeScript install: bun"><code>bun add sloptopop</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/node</code> · <a href="https://github.com/sloptopop/node/blob/main/LANGUAGE.md" rel="noopener noreferrer">Node / TypeScript guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <pre class="lang__command" tabindex="0" aria-label="Go install: go get"><code>go get github.com/sloptopop/go</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/go</code> · <a href="https://github.com/sloptopop/go/blob/main/LANGUAGE.md" rel="noopener noreferrer">Go guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-java" id="tool-java-1" checked><label class="tool__tab" for="tool-java-1">Gradle</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-java" id="tool-java-2"><label class="tool__tab" for="tool-java-2">Maven</label>
+      <pre class="lang__command" tabindex="0" aria-label="Java install: Gradle"><code>implementation(&#34;io.github.sloptopop:sloptopop:0.1.0&#34;)</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Java install: Maven"><code>&#60;dependency&#62;
+  &#60;groupId&#62;io.github.sloptopop&#60;/groupId&#62;
+  &#60;artifactId&#62;sloptopop&#60;/artifactId&#62;
+  &#60;version&#62;0.1.0&#60;/version&#62;
+&#60;/dependency&#62;</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/java</code> · <a href="https://github.com/sloptopop/jvm/blob/main/LANGUAGE.md" rel="noopener noreferrer">Java guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-kotlin" id="tool-kotlin-1" checked><label class="tool__tab" for="tool-kotlin-1">Gradle (Kotlin DSL)</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-kotlin" id="tool-kotlin-2"><label class="tool__tab" for="tool-kotlin-2">Maven</label>
+      <pre class="lang__command" tabindex="0" aria-label="Kotlin install: Gradle (Kotlin DSL)"><code>implementation(&#34;io.github.sloptopop:sloptopop-kotlin:0.1.0&#34;)</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Kotlin install: Maven"><code>&#60;dependency&#62;
+  &#60;groupId&#62;io.github.sloptopop&#60;/groupId&#62;
+  &#60;artifactId&#62;sloptopop-kotlin&#60;/artifactId&#62;
+  &#60;version&#62;0.1.0&#60;/version&#62;
+&#60;/dependency&#62;</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/kotlin</code> · <a href="https://github.com/sloptopop/jvm/blob/main/LANGUAGE.md" rel="noopener noreferrer">Kotlin guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-dotnet" id="tool-dotnet-1" checked><label class="tool__tab" for="tool-dotnet-1">dotnet CLI</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-dotnet" id="tool-dotnet-2"><label class="tool__tab" for="tool-dotnet-2">PackageReference</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-dotnet" id="tool-dotnet-3"><label class="tool__tab" for="tool-dotnet-3">dotnet tool (CLI)</label>
+      <pre class="lang__command" tabindex="0" aria-label=".NET (C#/F#) install: dotnet CLI"><code>dotnet add package Sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label=".NET (C#/F#) install: PackageReference"><code>&#60;PackageReference Include=&#34;Sloptopop&#34; Version=&#34;0.1.0&#34; /&#62;</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label=".NET (C#/F#) install: dotnet tool (CLI)"><code>dotnet tool install -g Sloptopop.Tool</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/dotnet</code> · <a href="https://github.com/sloptopop/dotnet/blob/main/LANGUAGE.md" rel="noopener noreferrer">.NET (C#/F#) guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cpp" id="tool-cpp-1" checked><label class="tool__tab" for="tool-cpp-1">vcpkg</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cpp" id="tool-cpp-2"><label class="tool__tab" for="tool-cpp-2">Conan</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-cpp" id="tool-cpp-3"><label class="tool__tab" for="tool-cpp-3">CMake</label>
+      <pre class="lang__command" tabindex="0" aria-label="C++ install: vcpkg"><code>vcpkg add port sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="C++ install: Conan"><code>conan install --requires=sloptopop/0.1.0</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="C++ install: CMake"><code>FetchContent_Declare(sloptopop GIT_REPOSITORY https://github.com/sloptopop/cpp GIT_TAG v0.1.0)</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/cpp</code> · <a href="https://github.com/sloptopop/cpp/blob/main/LANGUAGE.md" rel="noopener noreferrer">C++ guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <pre class="lang__command" tabindex="0" aria-label="PHP install: Composer"><code>composer require sloptopop/sloptopop</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/php</code> · <a href="https://github.com/sloptopop/php/blob/main/LANGUAGE.md" rel="noopener noreferrer">PHP guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-powershell" id="tool-powershell-1" checked><label class="tool__tab" for="tool-powershell-1">Install-PSResource</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-powershell" id="tool-powershell-2"><label class="tool__tab" for="tool-powershell-2">Install-Module</label>
+      <pre class="lang__command" tabindex="0" aria-label="PowerShell install: Install-PSResource"><code>Install-PSResource Sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="PowerShell install: Install-Module"><code>Install-Module Sloptopop</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/powershell</code> · <a href="https://github.com/sloptopop/powershell/blob/main/LANGUAGE.md" rel="noopener noreferrer">PowerShell guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-shell" id="tool-shell-1" checked><label class="tool__tab" for="tool-shell-1">Homebrew</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-shell" id="tool-shell-2"><label class="tool__tab" for="tool-shell-2">curl</label>
+      <pre class="lang__command" tabindex="0" aria-label="Shell install: Homebrew"><code>brew install sloptopop/tap/sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Shell install: curl"><code>curl -LsSf https://sloptopop.dev/install.sh | sh
+source &#34;$(sloptopop-shell-lib)&#34;</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/shell</code> · <a href="https://github.com/sloptopop/shell/blob/main/LANGUAGE.md" rel="noopener noreferrer">Shell guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-rust" id="tool-rust-1" checked><label class="tool__tab" for="tool-rust-1">cargo add</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-rust" id="tool-rust-2"><label class="tool__tab" for="tool-rust-2">cargo install (CLI)</label>
+      <pre class="lang__command" tabindex="0" aria-label="Rust install: cargo add"><code>cargo add sloptopop</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Rust install: cargo install (CLI)"><code>cargo install sloptopop-cli</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/rust</code> · <a href="https://github.com/sloptopop/rust/blob/main/LANGUAGE.md" rel="noopener noreferrer">Rust guide (LANGUAGE.md)</a></p>
+    </div>
+    <div class="lang__panel">
+      <input class="tool__radio visually-hidden" type="radio" name="tool-swift" id="tool-swift-1" checked><label class="tool__tab" for="tool-swift-1">Package.swift</label>
+      <input class="tool__radio visually-hidden" type="radio" name="tool-swift" id="tool-swift-2"><label class="tool__tab" for="tool-swift-2">Xcode: Add Package Dependencies…</label>
+      <pre class="lang__command" tabindex="0" aria-label="Swift install: Package.swift"><code>.package(url: &#34;https://github.com/sloptopop/swift&#34;, from: &#34;0.1.0&#34;)</code></pre>
+      <pre class="lang__command" tabindex="0" aria-label="Swift install: Xcode: Add Package Dependencies…"><code>https://github.com/sloptopop/swift</code></pre>
+      <p class="lang__guide">Share this tab: <code>sloptopop.dev/lang/swift</code> · <a href="https://github.com/sloptopop/swift/blob/main/LANGUAGE.md" rel="noopener noreferrer">Swift guide (LANGUAGE.md)</a></p>
+    </div>
+  </fieldset>
+</section>
+
+<section class="how" id="how" aria-labelledby="how-title">
+  <div class="section-head">
+    <p class="eyebrow">How it works</p>
+    <h2 id="how-title">Three engines. One referee.</h2>
+    <p>sloptopop is a pipeline of engines that work on AI-generated changes. A fourth engine, the Guider, checks the output of every AI step before the next one may use it.</p>
+  </div>
+  <ol class="pipeline" aria-label="The sloptopop pipeline">
+    <li class="pipeline__engine pipeline__engine--detector"><span class="pipeline__name">Detector</span> <span class="pipeline__does">finds the slop</span></li>
+    <li class="pipeline__engine pipeline__engine--architect"><span class="pipeline__name">Architect</span> <span class="pipeline__does">plans the fix</span></li>
+    <li class="pipeline__engine pipeline__engine--implementor"><span class="pipeline__name">Implementor</span> <span class="pipeline__does">makes it pop</span></li>
+  </ol>
+  <p class="pipeline__guider"><span class="pipeline__name">Guider</span> checks every AI step</p>
+
+  <div class="journey">
+    <div class="journey__stage">
+      <figure class="code-card code-card--after" aria-labelledby="after-caption">
+        <div class="code-card__bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="code-card__file">real open-source repositories</span></div>
+        <ol class="stage-tags" aria-hidden="true">
+          <li class="stage-tag stage-tag--slop">AI slop</li>
+          <li class="stage-tag stage-tag--detector">Detector</li>
+          <li class="stage-tag stage-tag--architect">Architect</li>
+          <li class="stage-tag stage-tag--implementor">Implementor</li>
+          <li class="stage-tag stage-tag--guider">Guider: approved</li>
+        </ol>
+        <div class="drips" aria-hidden="true"><span class="drip drip-1"></span><span class="drip drip-2"></span><span class="drip drip-3"></span><span class="drip drip-4"></span><span class="drip drip-5"></span><span class="drip drip-6"></span></div>
+        <div class="explorer">
+          <input class="explorer__radio visually-hidden" type="radio" name="demo-file" id="demo-1" checked><input class="explorer__radio visually-hidden" type="radio" name="demo-file" id="demo-2"><input class="explorer__radio visually-hidden" type="radio" name="demo-file" id="demo-3"><input class="explorer__radio visually-hidden" type="radio" name="demo-file" id="demo-4"><input class="explorer__radio visually-hidden" type="radio" name="demo-file" id="demo-5">
+          <ul class="explorer__files" aria-label="Files from real open-source repositories">
+            <li><label class="explorer__file explorer__file--fixed" for="demo-1"><span class="explorer__dir">chatbot-ui</span><span class="explorer__name">route.ts</span><span class="explorer__badge">fixed</span></label></li><li><label class="explorer__file explorer__file--fixed" for="demo-2"><span class="explorer__dir">headshots-starter</span><span class="explorer__name">route.ts</span><span class="explorer__badge">fixed</span></label></li><li><label class="explorer__file explorer__file--fixed" for="demo-3"><span class="explorer__dir">supabase-auth-with-ssr</span><span class="explorer__name">chatHelpers.ts</span><span class="explorer__badge">fixed</span></label></li><li><label class="explorer__file explorer__file--manual" for="demo-4"><span class="explorer__dir">nextjs-subscription-payments</span><span class="explorer__name">server.ts</span><span class="explorer__badge">for you</span></label></li><li><label class="explorer__file explorer__file--manual" for="demo-5"><span class="explorer__dir">supabase-auth-with-ssr</span><span class="explorer__name">FileManager.tsx</span><span class="explorer__badge">for you</span></label></li>
+          </ul>
+          <div class="explorer__panels">
+      <div class="explorer__panel explorer__panel--1">
+        <p class="explorer__path"><a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/app/api/retrieval/process/route.ts#L155" rel="noopener noreferrer">mckaywrigley/chatbot-ui · app/api/retrieval/process/route.ts:155</a> <span class="explorer__licence">@ 81328b6 · MIT licence</span></p>
+        <div class="code-card__layers">
+          <pre class="code code--slop" tabindex="0" aria-label="app/api/retrieval/process/route.ts in mckaywrigley/chatbot-ui, before: the Detector's finding on line 155"><code><span class="ln ln-1"><span>      local_embedding:</span></span>
+<span class="ln ln-2"><span>        embeddingsProvider === <span class="str">"local"</span></span></span>
+<span class="ln ln-3"><span>          ? ((embeddings[index] || <span class="kw">null</span>) as any)</span></span>
+<span class="ln ln-4"><span>          : <span class="kw">null</span></span></span>
+<span class="ln ln-5"><span>    &#125;))</span></span>
+<span class="ln ln-6"><span> </span></span>
+<span class="ln ln-7"><span>    <mark class="finding"><span class="kw">await</span> supabaseAdmin.<span class="kw">from</span>(<span class="str">"file_items"</span>).upsert(file_items)</mark></span><span class="note">write unchecked</span></span>
+<span class="ln ln-8"><span> </span></span>
+<span class="ln ln-9"><span>    <span class="kw">const</span> totalTokens = file_items.reduce((acc, item) =&gt; acc + item.tokens, <span class="num">0</span>)</span></span>
+<span class="ln ln-10"><span> </span></span>
+<span class="ln ln-1"><span>    <span class="kw">await</span> supabaseAdmin</span></span>
+<span class="ln ln-2"><span>      .<span class="kw">from</span>(<span class="str">"files"</span>)</span></span></code></pre>
+          <svg class="wireframe" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
+            <rect class="wire" x="12" y="14" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="92" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="170" width="376" height="56" rx="4" pathLength="1"/>
+            <path class="wire" d="M200 70 V92 M200 148 V170" pathLength="1"/>
+            <text class="wire-label" x="200" y="48">finding: db.result-unchecked</text>
+            <text class="wire-label" x="200" y="126">plan: QUERY_THROW_ON_ERROR</text>
+            <text class="wire-label wire-label--small" x="200" y="203">a failed write now throws instead of passing silently</text>
+          </svg>
+          <pre class="code code--pop" tabindex="0" aria-label="app/api/retrieval/process/route.ts in mckaywrigley/chatbot-ui, after"><code><span class="ln"><span>      local_embedding:</span></span>
+<span class="ln"><span>        embeddingsProvider === <span class="str">"local"</span></span></span>
+<span class="ln"><span>          ? ((embeddings[index] || <span class="kw">null</span>) as any)</span></span>
+<span class="ln"><span>          : <span class="kw">null</span></span></span>
+<span class="ln"><span>    &#125;))</span></span>
+<span class="ln"><span> </span></span>
+<span class="ln ln--added"><span>    <span class="kw">await</span> supabaseAdmin.<span class="kw">from</span>(<span class="str">"file_items"</span>).upsert(file_items).throwOnError()</span></span>
+<span class="ln"><span> </span></span>
+<span class="ln"><span>    <span class="kw">const</span> totalTokens = file_items.reduce((acc, item) =&gt; acc + item.tokens, <span class="num">0</span>)</span></span>
+<span class="ln"><span> </span></span>
+<span class="ln"><span>    <span class="kw">await</span> supabaseAdmin</span></span>
+<span class="ln"><span>      .<span class="kw">from</span>(<span class="str">"files"</span>)</span></span></code></pre>
+          <p class="pop-burst" aria-hidden="true"><span>POP!</span></p>
+        </div>
+        <ul class="checks" aria-label="Guider checks for app/api/retrieval/process/route.ts">
+          <li class="check">Applied, and the Guider verified the BIR delta</li>
+          <li class="check">Re-detection on the edited file: finding gone</li>
+          <li class="check">tsc on the whole project: 0 new errors</li>
+          <li class="check">Edit inside its span; nothing else in the file changed</li>
+        </ul>
+      </div>
+      <div class="explorer__panel explorer__panel--2">
+        <p class="explorer__path"><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/astria/train-model/route.ts#L221" rel="noopener noreferrer">astriaai/headshots-starter · app/astria/train-model/route.ts:221</a> <span class="explorer__licence">@ 86771e4 · MIT licence</span></p>
+        <div class="code-card__layers">
+          <pre class="code code--slop" tabindex="0" aria-label="app/astria/train-model/route.ts in astriaai/headshots-starter, before: the Detector's finding on line 221"><code><span class="ln ln-1"><span>    <span class="kw">const</span> &#123; status &#125; = response;</span></span>
+<span class="ln ln-2"><span> </span></span>
+<span class="ln ln-3"><span>    <span class="kw">if</span> (status !== <span class="num">201</span>) &#123;</span></span>
+<span class="ln ln-4"><span>      console.error(&#123; status &#125;);</span></span>
+<span class="ln ln-5"><span>      <span class="cm">// Rollback: Delete the created model if something goes wrong</span></span></span>
+<span class="ln ln-6"><span>      <span class="kw">if</span> (modelId) &#123;</span></span>
+<span class="ln ln-7"><span>        <mark class="finding"><span class="kw">await</span> supabase.<span class="kw">from</span>(<span class="str">"models"</span>).delete().eq(<span class="str">"id"</span>, modelId);</mark></span><span class="note">write unchecked</span></span>
+<span class="ln ln-8"><span>      &#125;</span></span>
+<span class="ln ln-9"><span> </span></span>
+<span class="ln ln-10"><span>      <span class="kw">if</span> (status === <span class="num">400</span>) &#123;</span></span>
+<span class="ln ln-1"><span>        <span class="kw">return</span> NextResponse.json(</span></span>
+<span class="ln ln-2"><span>          &#123;</span></span></code></pre>
+          <svg class="wireframe" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
+            <rect class="wire" x="12" y="14" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="92" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="170" width="376" height="56" rx="4" pathLength="1"/>
+            <path class="wire" d="M200 70 V92 M200 148 V170" pathLength="1"/>
+            <text class="wire-label" x="200" y="48">finding: db.result-unchecked</text>
+            <text class="wire-label" x="200" y="126">plan: QUERY_THROW_ON_ERROR</text>
+            <text class="wire-label wire-label--small" x="200" y="203">a failed write now throws instead of passing silently</text>
+          </svg>
+          <pre class="code code--pop" tabindex="0" aria-label="app/astria/train-model/route.ts in astriaai/headshots-starter, after"><code><span class="ln"><span>    <span class="kw">const</span> &#123; status &#125; = response;</span></span>
+<span class="ln"><span> </span></span>
+<span class="ln"><span>    <span class="kw">if</span> (status !== <span class="num">201</span>) &#123;</span></span>
+<span class="ln"><span>      console.error(&#123; status &#125;);</span></span>
+<span class="ln"><span>      <span class="cm">// Rollback: Delete the created model if something goes wrong</span></span></span>
+<span class="ln"><span>      <span class="kw">if</span> (modelId) &#123;</span></span>
+<span class="ln ln--added"><span>        <span class="kw">await</span> supabase.<span class="kw">from</span>(<span class="str">"models"</span>).delete().eq(<span class="str">"id"</span>, modelId).throwOnError();</span></span>
+<span class="ln"><span>      &#125;</span></span>
+<span class="ln"><span> </span></span>
+<span class="ln"><span>      <span class="kw">if</span> (status === <span class="num">400</span>) &#123;</span></span>
+<span class="ln"><span>        <span class="kw">return</span> NextResponse.json(</span></span>
+<span class="ln"><span>          &#123;</span></span></code></pre>
+          <p class="pop-burst" aria-hidden="true"><span>POP!</span></p>
+        </div>
+        <ul class="checks" aria-label="Guider checks for app/astria/train-model/route.ts">
+          <li class="check">Applied, and the Guider verified the BIR delta</li>
+          <li class="check">Re-detection on the edited file: finding gone</li>
+          <li class="check">tsc: not run</li>
+          <li class="check">Edit inside its span; nothing else in the file changed</li>
+        </ul>
+      </div>
+      <div class="explorer__panel explorer__panel--3">
+        <p class="explorer__path"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/api/chat/chatHelpers.ts#L132" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/api/chat/chatHelpers.ts:132</a> <span class="explorer__licence">@ 355c56e · MIT licence</span></p>
+        <div class="code-card__layers">
+          <pre class="code code--slop" tabindex="0" aria-label="app/api/chat/chatHelpers.ts in ElectricCodeGuy/SupabaseAuthWithSSR, before: the Detector's finding on line 132"><code><span class="ln ln-1"><span>    <span class="cm">// clobber a name the user set (or an earlier generated one).</span></span></span>
+<span class="ln ln-2"><span>    <span class="kw">await</span> supabase</span></span>
+<span class="ln ln-3"><span>      .<span class="kw">from</span>(<span class="str">'chat_sessions'</span>)</span></span>
+<span class="ln ln-4"><span>      .update(&#123; chat_title: title &#125;)</span></span>
+<span class="ln ln-5"><span>      .eq(<span class="str">'id'</span>, chatSessionId)</span></span>
+<span class="ln ln-6"><span>      .eq(<span class="str">'user_id'</span>, userId)</span></span>
+<span class="ln ln-7"><span>      <mark class="finding">.is(<span class="str">'chat_title'</span>, <span class="kw">null</span>);</mark></span><span class="note">write unchecked</span></span>
+<span class="ln ln-8"><span>  &#125; <span class="kw">catch</span> (error) &#123;</span></span>
+<span class="ln ln-9"><span>    console.error(<span class="str">'Error generating chat title:'</span>, error);</span></span>
+<span class="ln ln-10"><span>  &#125;</span></span>
+<span class="ln ln-1"><span>&#125;</span></span>
+<span class="ln ln-2"><span> </span></span></code></pre>
+          <svg class="wireframe" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
+            <rect class="wire" x="12" y="14" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="92" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="170" width="376" height="56" rx="4" pathLength="1"/>
+            <path class="wire" d="M200 70 V92 M200 148 V170" pathLength="1"/>
+            <text class="wire-label" x="200" y="48">finding: db.result-unchecked</text>
+            <text class="wire-label" x="200" y="126">plan: QUERY_THROW_ON_ERROR</text>
+            <text class="wire-label wire-label--small" x="200" y="203">a failed write now throws instead of passing silently</text>
+          </svg>
+          <pre class="code code--pop" tabindex="0" aria-label="app/api/chat/chatHelpers.ts in ElectricCodeGuy/SupabaseAuthWithSSR, after"><code><span class="ln"><span>    <span class="cm">// clobber a name the user set (or an earlier generated one).</span></span></span>
+<span class="ln"><span>    <span class="kw">await</span> supabase</span></span>
+<span class="ln"><span>      .<span class="kw">from</span>(<span class="str">'chat_sessions'</span>)</span></span>
+<span class="ln"><span>      .update(&#123; chat_title: title &#125;)</span></span>
+<span class="ln"><span>      .eq(<span class="str">'id'</span>, chatSessionId)</span></span>
+<span class="ln"><span>      .eq(<span class="str">'user_id'</span>, userId)</span></span>
+<span class="ln ln--added"><span>      .is(<span class="str">'chat_title'</span>, <span class="kw">null</span>).throwOnError();</span></span>
+<span class="ln"><span>  &#125; <span class="kw">catch</span> (error) &#123;</span></span>
+<span class="ln"><span>    console.error(<span class="str">'Error generating chat title:'</span>, error);</span></span>
+<span class="ln"><span>  &#125;</span></span>
+<span class="ln"><span>&#125;</span></span>
+<span class="ln"><span> </span></span></code></pre>
+          <p class="pop-burst" aria-hidden="true"><span>POP!</span></p>
+        </div>
+        <ul class="checks" aria-label="Guider checks for app/api/chat/chatHelpers.ts">
+          <li class="check">Applied, and the Guider verified the BIR delta</li>
+          <li class="check">Re-detection on the edited file: finding gone</li>
+          <li class="check">tsc on the whole project: 0 new errors</li>
+          <li class="check">Edit inside its span; nothing else in the file changed</li>
+        </ul>
+      </div>
+      <div class="explorer__panel explorer__panel--4">
+        <p class="explorer__path"><a href="https://github.com/vercel/nextjs-subscription-payments/blob/bdd0813206e47e6b218d42f15a7976c8a0d3c3eb/utils/supabase/server.ts#L26" rel="noopener noreferrer">vercel/nextjs-subscription-payments · utils/supabase/server.ts:26</a> <span class="explorer__licence">@ bdd0813 · MIT licence</span></p>
+        <div class="code-card__layers">
+          <pre class="code code--slop" tabindex="0" aria-label="utils/supabase/server.ts in vercel/nextjs-subscription-payments, before: the Detector's finding on line 26"><code><span class="ln ln-1"><span>          <span class="kw">return</span> cookieStore.get(name)?.value;</span></span>
+<span class="ln ln-2"><span>        &#125;,</span></span>
+<span class="ln ln-3"><span>        <span class="cm">// The set method is used to set a cookie with a given name, value, and options</span></span></span>
+<span class="ln ln-4"><span>        set(name: string, value: string, options: CookieOptions) &#123;</span></span>
+<span class="ln ln-5"><span>          <span class="kw">try</span> &#123;</span></span>
+<span class="ln ln-6"><span>            cookieStore.set(&#123; name, value, ...options &#125;);</span></span>
+<span class="ln ln-7"><span>          <mark class="finding">&#125; <span class="kw">catch</span> (error) &#123;</mark></span><span class="note">error swallowed</span></span>
+<span class="ln ln-8"><span>            <span class="cm">// If the set method is called from a Server Component, an error may occur</span></span></span>
+<span class="ln ln-9"><span>            <span class="cm">// This can be ignored if there is middleware refreshing user sessions</span></span></span>
+<span class="ln ln-10"><span>          &#125;</span></span>
+<span class="ln ln-1"><span>        &#125;,</span></span>
+<span class="ln ln-2"><span>        <span class="cm">// The remove method is used to delete a cookie by its name</span></span></span></code></pre>
+          <svg class="wireframe" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
+            <rect class="wire" x="12" y="14" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="92" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="170" width="376" height="56" rx="4" pathLength="1"/>
+            <path class="wire" d="M200 70 V92 M200 148 V170" pathLength="1"/>
+            <text class="wire-label" x="200" y="48">finding: errors.swallowed</text>
+            <text class="wire-label" x="200" y="126">plan: no edit (commented-intent)</text>
+            <text class="wire-label wire-label--small" x="200" y="203">a comment marks the swallow as deliberate (the framework's documented idiom)</text>
+          </svg>
+          <pre class="code code--pop" tabindex="0" aria-label="utils/supabase/server.ts in vercel/nextjs-subscription-payments, after"><code><span class="ln"><span>          <span class="kw">return</span> cookieStore.get(name)?.value;</span></span>
+<span class="ln"><span>        &#125;,</span></span>
+<span class="ln"><span>        <span class="cm">// The set method is used to set a cookie with a given name, value, and options</span></span></span>
+<span class="ln"><span>        set(name: string, value: string, options: CookieOptions) &#123;</span></span>
+<span class="ln"><span>          <span class="kw">try</span> &#123;</span></span>
+<span class="ln"><span>            cookieStore.set(&#123; name, value, ...options &#125;);</span></span>
+<span class="ln ln--kept"><span>          &#125; <span class="kw">catch</span> (error) &#123;</span></span>
+<span class="ln"><span>            <span class="cm">// If the set method is called from a Server Component, an error may occur</span></span></span>
+<span class="ln"><span>            <span class="cm">// This can be ignored if there is middleware refreshing user sessions</span></span></span>
+<span class="ln"><span>          &#125;</span></span>
+<span class="ln"><span>        &#125;,</span></span>
+<span class="ln"><span>        <span class="cm">// The remove method is used to delete a cookie by its name</span></span></span>
+<span class="ln ln--manual"><span><span class="cm">// No edit. MANUAL commented-intent: the comment marks intent;</span></span></span>
+<span class="ln ln--manual"><span><span class="cm">// sloptopop hands this to a person with a checklist.</span></span></span></code></pre>
+          <p class="pop-burst" aria-hidden="true"><span>SAFE!</span></p>
+        </div>
+        <ul class="checks" aria-label="Guider checks for utils/supabase/server.ts">
+          <li class="check">Refused: the file is left exactly as it was</li>
+          <li class="check">Reason recorded: commented-intent</li>
+          <li class="check">A checklist goes with the task</li>
+          <li class="check">Wrong edits applied: 0</li>
+        </ul>
+      </div>
+      <div class="explorer__panel explorer__panel--5">
+        <p class="explorer__path"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/chat/filer/components/FileManager.tsx#L203" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/chat/filer/components/FileManager.tsx:203</a> <span class="explorer__licence">@ 355c56e · MIT licence</span></p>
+        <div class="code-card__layers">
+          <pre class="code code--slop" tabindex="0" aria-label="app/chat/filer/components/FileManager.tsx in ElectricCodeGuy/SupabaseAuthWithSSR, before: the Detector's finding on line 203"><code><span class="ln ln-1"><span>          <span class="kw">try</span> &#123;</span></span>
+<span class="ln ln-2"><span>            <span class="kw">await</span> fetch(<span class="str">'/api/upload/cleanup'</span>, &#123;</span></span>
+<span class="ln ln-3"><span>              method: <span class="str">'POST'</span>,</span></span>
+<span class="ln ln-4"><span>              headers: &#123; <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> &#125;,</span></span>
+<span class="ln ln-5"><span>              body: JSON.stringify(&#123; filePath: uploadedFilePath &#125;)</span></span>
+<span class="ln ln-6"><span>            &#125;);</span></span>
+<span class="ln ln-7"><span>          <mark class="finding">&#125; <span class="kw">catch</span> &#123;&#125;</mark></span><span class="note">error swallowed</span></span>
+<span class="ln ln-8"><span>        &#125;</span></span>
+<span class="ln ln-9"><span> </span></span>
+<span class="ln ln-10"><span>        setUploadStatus(</span></span>
+<span class="ln ln-1"><span>          error instanceof Error ? error.message : <span class="str">'Upload failed'</span></span></span>
+<span class="ln ln-2"><span>        );</span></span></code></pre>
+          <svg class="wireframe" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
+            <rect class="wire" x="12" y="14" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="92" width="376" height="56" rx="4" pathLength="1"/>
+            <rect class="wire" x="12" y="170" width="376" height="56" rx="4" pathLength="1"/>
+            <path class="wire" d="M200 70 V92 M200 148 V170" pathLength="1"/>
+            <text class="wire-label" x="200" y="48">finding: errors.swallowed</text>
+            <text class="wire-label" x="200" y="126">plan: no edit (client-catch)</text>
+            <text class="wire-label wire-label--small" x="200" y="203">client code: a rethrow would reach the browser</text>
+          </svg>
+          <pre class="code code--pop" tabindex="0" aria-label="app/chat/filer/components/FileManager.tsx in ElectricCodeGuy/SupabaseAuthWithSSR, after"><code><span class="ln"><span>          <span class="kw">try</span> &#123;</span></span>
+<span class="ln"><span>            <span class="kw">await</span> fetch(<span class="str">'/api/upload/cleanup'</span>, &#123;</span></span>
+<span class="ln"><span>              method: <span class="str">'POST'</span>,</span></span>
+<span class="ln"><span>              headers: &#123; <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> &#125;,</span></span>
+<span class="ln"><span>              body: JSON.stringify(&#123; filePath: uploadedFilePath &#125;)</span></span>
+<span class="ln"><span>            &#125;);</span></span>
+<span class="ln ln--kept"><span>          &#125; <span class="kw">catch</span> &#123;&#125;</span></span>
+<span class="ln"><span>        &#125;</span></span>
+<span class="ln"><span> </span></span>
+<span class="ln"><span>        setUploadStatus(</span></span>
+<span class="ln"><span>          error instanceof Error ? error.message : <span class="str">'Upload failed'</span></span></span>
+<span class="ln"><span>        );</span></span>
+<span class="ln ln--manual"><span><span class="cm">// No edit. MANUAL client-catch: client code;</span></span></span>
+<span class="ln ln--manual"><span><span class="cm">// sloptopop hands this to a person with a checklist.</span></span></span></code></pre>
+          <p class="pop-burst" aria-hidden="true"><span>SAFE!</span></p>
+        </div>
+        <ul class="checks" aria-label="Guider checks for app/chat/filer/components/FileManager.tsx">
+          <li class="check">Refused: the file is left exactly as it was</li>
+          <li class="check">Reason recorded: client-catch</li>
+          <li class="check">A checklist goes with the task</li>
+          <li class="check">Wrong edits applied: 0</li>
+        </ul>
+      </div>
+          </div>
+        </div>
+        <figcaption id="after-caption" class="code-card__caption"><span class="tag tag--pop">Real</span> Results from public repositories sloptopop was run on. Pick a file; each links to its source. The last two are refusals.</figcaption>
+      </figure>
+    </div>
+
+    <ol class="steps">
+      <li class="step step--detector">
+        <img class="step__icon" src="/assets/detector.svg" alt="" width="64" height="64">
+        <p class="step__number">Stage 1</p>
+        <h3>Detector finds the slop</h3>
+        <p>It reads the code, and the reports of the open-source analyzers you already run, for the problems that hurt in production: database results nobody checks, swallowed errors, committed secrets, hard-coded hosts. Every finding points at a line.</p>
+      </li>
+      <li class="step step--architect">
+        <img class="step__icon" src="/assets/architect.svg" alt="" width="64" height="64">
+        <p class="step__number">Stage 2</p>
+        <h3>Architect plans the fix</h3>
+        <p>It turns each finding into a plan built only from a closed set of known-safe edits. Where the context makes a change unsafe, such as client code or a deliberate comment, it plans no edit and hands you a task with a checklist instead.</p>
+      </li>
+      <li class="step step--implementor">
+        <img class="step__icon" src="/assets/implementor.svg" alt="" width="64" height="64">
+        <p class="step__number">Stage 3</p>
+        <h3>Implementor makes it pop</h3>
+        <p>It applies the plan as small, byte-exact edits, one reviewable commit per step. Each edit names the exact code it expects to change, and nothing is written if that code has moved.</p>
+      </li>
+      <li class="step step--guider">
+        <img class="step__icon" src="/assets/guider.svg" alt="" width="64" height="64">
+        <p class="step__number">Stage 4</p>
+        <h3>Guider checks every AI step</h3>
+        <p>An independent check runs on the output of the Detector, the Architect and the Implementor. Nothing moves to the next stage, or to your main branch, unless it passes.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="standards" id="standards" aria-labelledby="standards-title">
+  <div class="section-head">
+    <p class="eyebrow">Standards</p>
+    <h2 id="standards-title">Policy as code, not vibes</h2>
+    <p>The same checks run on every repository, in every language, on every push. A missing tool fails the gate; it never skips a step.</p>
+  </div>
+  <ul class="standard-grid">
+    <li class="standard"><h3>100% coverage</h3><p>Lines, branches or regions, and functions, on all product code. 99% fails.</p></li>
+    <li class="standard"><h3>Every mutant killed</h3><p>Mutation testing changes the code on purpose. If no test notices, the gate fails.</p></li>
+    <li class="standard"><h3>Zero warnings</h3><p>Strictest practical linter profile. Each suppression sits on one line, with a written reason.</p></li>
+    <li class="standard"><h3>Supply chain checked</h3><p>An SBOM, a licence allow-list, and an OSV vulnerability scan of every dependency.</p></li>
+    <li class="standard"><h3>Pinned toolchains</h3><p>Exact compiler and tool versions, verified by the gate itself.</p></li>
+    <li class="standard"><h3>Gated everywhere</h3><p>The pre-push hook and CI run the same script, so nothing reaches a remote unchecked.</p></li>
+  </ul>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

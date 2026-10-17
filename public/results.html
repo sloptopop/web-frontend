@@ -1,0 +1,1801 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results on real repositories · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li><a href="/compliance">Compliance</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="results" aria-labelledby="results-title">
+  <div class="section-head">
+    <p class="eyebrow">Results</p>
+    <h1 id="results-title">What sloptopop did to real repositories</h1>
+    <p>Every repository sloptopop was tested on, with what it found, what it changed, what it refused to change and how each change was checked. The numbers come straight from the result files of each run through a generator script; nothing on this page is edited by hand. Work that is planned but not applied is labelled as planned. How often a finding is a real problem is measured separately, in the <a href="#precision">precision study</a>.</p>
+  </div>
+  <nav class="toc" aria-label="On this page">
+    <ol>
+      <li><a href="#public">Public corpus</a> <span class="toc__note">21 run</span></li>
+      <li><a href="#testing">Vibe-coded testing corpus</a> <span class="toc__note">0 run</span></li>
+      <li><a href="#precision">How precise the findings are</a></li>
+    </ol>
+  </nav>
+  <section class="corpus" id="public" aria-labelledby="public-title">
+    <h2 id="public-title">Public corpus</h2>
+    <p>Popular open-source starters and apps (Next.js with Supabase, Express, FastAPI, Flask, Go) and a few projects that say they were vibe-coded, each pinned to one commit.</p>
+    <p class="corpus__run">Run of 2026-10-16</p>
+    <dl class="stats">
+      <div class="stat"><dt>Repositories</dt><dd>21</dd></div>
+      <div class="stat"><dt>Lines of code</dt><dd>230664</dd></div>
+      <div class="stat"><dt>Findings</dt><dd>531</dd></div>
+      <div class="stat"><dt>Findings in a plan</dt><dd>146</dd></div>
+      <div class="stat"><dt>Edit steps applied</dt><dd>13</dd></div>
+      <div class="stat stat--pop"><dt>Findings fixed and verified</dt><dd>20</dd></div>
+      <div class="stat"><dt>Tasks handed to a person</dt><dd>126</dd></div>
+      <div class="stat"><dt>Steps refused</dt><dd>0</dd></div>
+    </dl>
+    <p class="fineprint">"In a plan" counts findings the Architect planned for, either as an automated edit or as a task with a checklist for a person. "Verified" means the edit was applied, sloptopop no longer reports the finding on that file, and the checks on the touched files passed.</p>
+
+    <h3 id="public-overview">All repositories</h3>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table class="results-table">
+        <caption>Per repository, in this run</caption>
+        <thead>
+          <tr><th scope="col">Repository</th><th scope="col">Language</th><th scope="col">Stars</th><th scope="col">Lines</th><th scope="col">Findings</th><th scope="col">In a plan</th><th scope="col">Steps applied</th><th scope="col">Verified</th><th scope="col">For a person</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><a href="#public-go-clean-arch">go-clean-arch</a></th><td>Go</td><td>10175</td><td>1895</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row"><a href="#public-golang-gin-realworld">golang-gin-realworld</a></th><td>Go</td><td>2718</td><td>4375</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row"><a href="#public-hackathon-starter">hackathon-starter</a></th><td>JavaScript</td><td>35253</td><td>16130</td><td>33</td><td>20</td><td>0</td><td>0</td><td>20</td></tr>
+          <tr><th scope="row"><a href="#public-node-express-boilerplate">node-express-boilerplate</a></th><td>JavaScript</td><td>7669</td><td>3708</td><td>19</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+          <tr><th scope="row"><a href="#public-express-rest-boilerplate">express-rest-boilerplate</a></th><td>JavaScript</td><td>2357</td><td>2639</td><td>13</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+          <tr><th scope="row"><a href="#public-full-stack-fastapi-template">full-stack-fastapi-template</a></th><td>Python</td><td>46017</td><td>14178</td><td>24</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+          <tr><th scope="row"><a href="#public-microblog">microblog</a></th><td>Python</td><td>4774</td><td>1854</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row"><a href="#public-fastapi-realworld">fastapi-realworld</a></th><td>Python</td><td>3103</td><td>4108</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row"><a href="#public-chatbot-ui">chatbot-ui</a></th><td>TypeScript</td><td>33331</td><td>28996</td><td>55</td><td>12</td><td>2</td><td>4</td><td>8</td></tr>
+          <tr><th scope="row"><a href="#public-aicommits">aicommits</a></th><td>TypeScript</td><td>9112</td><td>8024</td><td>30</td><td>10</td><td>0</td><td>0</td><td>10</td></tr>
+          <tr><th scope="row"><a href="#public-nextjs-subscription-payments">nextjs-subscription-payments</a></th><td>TypeScript</td><td>7713</td><td>4008</td><td>15</td><td>5</td><td>0</td><td>0</td><td>5</td></tr>
+          <tr><th scope="row"><a href="#public-headshots-starter">headshots-starter</a></th><td>TypeScript</td><td>4461</td><td>7309</td><td>21</td><td>10</td><td>3</td><td>5</td><td>5</td></tr>
+          <tr><th scope="row"><a href="#public-nextbase-nextjs-supabase-starter">nextbase-nextjs-supabase-starter</a></th><td>TypeScript</td><td>827</td><td>13378</td><td>17</td><td>5</td><td>0</td><td>0</td><td>5</td></tr>
+          <tr><th scope="row"><a href="#public-next-supabase-stripe-starter">next-supabase-stripe-starter</a></th><td>TypeScript</td><td>818</td><td>2955</td><td>13</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><th scope="row"><a href="#public-nextjs-saas-starter-kit-lite">nextjs-saas-starter-kit-lite</a></th><td>TypeScript</td><td>461</td><td>25955</td><td>61</td><td>10</td><td>0</td><td>0</td><td>10</td></tr>
+          <tr><th scope="row"><a href="#public-supabase-auth-with-ssr">supabase-auth-with-ssr</a></th><td>TypeScript</td><td>397</td><td>22876</td><td>39</td><td>19</td><td>7</td><td>10</td><td>9</td></tr>
+          <tr><th scope="row"><a href="#public-paddle-nextjs-starter-kit">paddle-nextjs-starter-kit</a></th><td>TypeScript</td><td>360</td><td>4538</td><td>13</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+          <tr><th scope="row"><a href="#public-app-landing">app-landing</a></th><td>TypeScript</td><td>223</td><td>2131</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row"><a href="#public-voice-training-ui">voice-training-ui</a></th><td>TypeScript</td><td>81</td><td>4157</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row"><a href="#public-git-on-cloudflare">git-on-cloudflare</a></th><td>TypeScript</td><td>79</td><td>47401</td><td>111</td><td>42</td><td>0</td><td>0</td><td>42</td></tr>
+          <tr><th scope="row"><a href="#public-vocal-note-keeper-ai">vocal-note-keeper-ai</a></th><td>TypeScript</td><td>44</td><td>10049</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="public-languages">Per language</h3>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table class="results-table">
+        <caption>Totals per language</caption>
+        <thead>
+          <tr><th scope="col">Language</th><th scope="col">Repositories</th><th scope="col">Lines</th><th scope="col">Findings</th><th scope="col">In a plan</th><th scope="col">Steps applied</th><th scope="col">Verified</th><th scope="col">For a person</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Go</th><td>2</td><td>6270</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><th scope="row">JavaScript</th><td>3</td><td>22477</td><td>65</td><td>25</td><td>0</td><td>0</td><td>25</td></tr>
+          <tr><th scope="row">Python</th><td>3</td><td>20140</td><td>53</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+          <tr><th scope="row">TypeScript</th><td>13</td><td>181777</td><td>397</td><td>118</td><td>13</td><td>20</td><td>98</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="public-rules">Per rule</h3>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table class="results-table">
+        <caption>Findings per rule, summed over the repositories, with the rule's sampled precision</caption>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">Repositories</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Precision (<a href="#precision">95% interval</a>)</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><code>analyzer.finding</code></th><td>13</td><td>80</td><td>0</td><td>0</td><td>0</td><td>0.28 (0.14–0.48)</td></tr>
+          <tr><th scope="row"><code>errors.swallowed</code></th><td>10</td><td>66</td><td>66</td><td>0</td><td>0</td><td>0.08 (0.02–0.25)</td></tr>
+          <tr><th scope="row"><code>secrets.committed</code></th><td>13</td><td>47</td><td>47</td><td>0</td><td>0</td><td>0.08 (0.02–0.25)</td></tr>
+          <tr><th scope="row"><code>arch.module-internals-access</code></th><td>3</td><td>44</td><td>0</td><td>0</td><td>0</td><td>0.00 (0.00–0.13)</td></tr>
+          <tr><th scope="row"><code>db.result-unchecked</code></th><td>5</td><td>33</td><td>33</td><td>20</td><td>20</td><td>0.76 (0.57–0.89)</td></tr>
+          <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>8</td><td>23</td><td>0</td><td>0</td><td>0</td><td>0.15 (0.05–0.36)</td></tr>
+          <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>21</td><td>21</td><td>0</td><td>0</td><td>0</td><td>0.00 (0.00–0.15)</td></tr>
+          <tr><th scope="row"><code>ci.missing</code></th><td>21</td><td>21</td><td>0</td><td>0</td><td>0</td><td>0.45 (0.26–0.66)</td></tr>
+          <tr><th scope="row"><code>hook.missing</code></th><td>21</td><td>21</td><td>0</td><td>0</td><td>0</td><td>0.81 (0.60–0.92)</td></tr>
+          <tr><th scope="row"><code>arch.package-cycle</code></th><td>11</td><td>19</td><td>0</td><td>0</td><td>0</td><td>0.16 (0.06–0.38)</td></tr>
+          <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>19</td><td>19</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.83–1.00)</td></tr>
+          <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>5</td><td>18</td><td>0</td><td>0</td><td>0</td><td>0.33 (0.16–0.56)</td></tr>
+          <tr><th scope="row"><code>toolchain.unpinned</code></th><td>17</td><td>18</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.82–1.00)</td></tr>
+          <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>16</td><td>16</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.81–1.00)</td></tr>
+          <tr><th scope="row"><code>config.hardcoded-host</code></th><td>10</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0.11 (0.03–0.31)</td></tr>
+          <tr><th scope="row"><code>arch.hub-dependency</code></th><td>7</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0.33 (0.14–0.61)</td></tr>
+          <tr><th scope="row"><code>deps.layering</code></th><td>1</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0.75 (0.41–0.93)</td></tr>
+          <tr><th scope="row"><code>arch.adr-missing</code></th><td>6</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.67 (0.30–0.90)</td></tr>
+          <tr><th scope="row"><code>arch.rules-missing</code></th><td>6</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.67 (0.30–0.90)</td></tr>
+          <tr><th scope="row"><code>db.fk-missing</code></th><td>3</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.50 (0.19–0.81)</td></tr>
+          <tr><th scope="row"><code>db.multi-write-no-tx</code></th><td>3</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.67 (0.30–0.90)</td></tr>
+          <tr><th scope="row"><code>deps.circular</code></th><td>3</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.33 (0.10–0.70)</td></tr>
+          <tr><th scope="row"><code>db.duplicate-table</code></th><td>1</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0.40 (0.12–0.77)</td></tr>
+          <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0.75 (0.30–0.95)</td></tr>
+          <tr><th scope="row"><code>types.disabled</code></th><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0.50 (0.15–0.85)</td></tr>
+          <tr><th scope="row"><code>db.cascade-reach</code></th><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.34–1.00)</td></tr>
+          <tr><th scope="row"><code>arch.duplicate-across-units</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0.00 (0.00–0.79)</td></tr>
+          <tr><th scope="row"><code>db.transition-unguarded</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.21–1.00)</td></tr>
+          <tr><th scope="row"><code>deps.unpinned</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.21–1.00)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <article class="repo" id="public-go-clean-arch" aria-labelledby="public-go-clean-arch-title">
+      <h3 id="public-go-clean-arch-title">go-clean-arch</h3>
+      <p class="repo__meta"><a href="https://github.com/bxcodec/go-clean-arch/tree/e06c6d0cb37069b0ef56e3df67f80ca130a1ab82" rel="noopener noreferrer">bxcodec/go-clean-arch at e06c6d0</a> · Go · <a href="https://github.com/bxcodec/go-clean-arch/blob/e06c6d0cb37069b0ef56e3df67f80ca130a1ab82/LICENSE" rel="noopener noreferrer">MIT licence</a> · 10175 stars on 2026-10-17 · 1895 lines of code</p>
+      <p>11 findings before, 11 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in go-clean-arch</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>db.fk-missing</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.adr-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.rules-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 11 findings before, 11 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+    <article class="repo" id="public-golang-gin-realworld" aria-labelledby="public-golang-gin-realworld-title">
+      <h3 id="public-golang-gin-realworld-title">golang-gin-realworld</h3>
+      <p class="repo__meta"><a href="https://github.com/gothinkster/golang-gin-realworld-example-app/tree/626c372d259472148d93303f74aa9b9a1cdcef24" rel="noopener noreferrer">gothinkster/golang-gin-realworld-example-app at 626c372</a> · Go · <a href="https://github.com/gothinkster/golang-gin-realworld-example-app/blob/626c372d259472148d93303f74aa9b9a1cdcef24/LICENSE" rel="noopener noreferrer">MIT licence</a> · 2718 stars on 2026-10-17 · 4375 lines of code</p>
+      <p>5 findings before, 5 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in golang-gin-realworld</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 5 findings before, 5 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+    <article class="repo" id="public-hackathon-starter" aria-labelledby="public-hackathon-starter-title">
+      <h3 id="public-hackathon-starter-title">hackathon-starter</h3>
+      <p class="repo__meta"><a href="https://github.com/sahat/hackathon-starter/tree/d7a20cce5e41f45f14eaf400af874f86817aea0d" rel="noopener noreferrer">sahat/hackathon-starter at d7a20cc</a> · JavaScript · <a href="https://github.com/sahat/hackathon-starter/blob/d7a20cce5e41f45f14eaf400af874f86817aea0d/LICENSE" rel="noopener noreferrer">MIT licence</a> · 35253 stars on 2026-10-17 · 16130 lines of code</p>
+      <p>33 findings before, 33 after. The plan had 20 steps: 0 edit steps applied, 20 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in hackathon-starter</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>18</td><td>18</td><td>0</td><td>0</td><td>18</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>deps.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 33 findings before, 33 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 17 before, 17 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 3 before, 3 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (20), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in logMissingFixtures (test/tools/nock-server-fixtures.js) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in theme (public/js/theme.js) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in test/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in test/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in test/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in test/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-node-express-boilerplate" aria-labelledby="public-node-express-boilerplate-title">
+      <h3 id="public-node-express-boilerplate-title">node-express-boilerplate</h3>
+      <p class="repo__meta"><a href="https://github.com/hagopj13/node-express-boilerplate/tree/179ae84efec61b14206d0305d941daed6c6d07f9" rel="noopener noreferrer">hagopj13/node-express-boilerplate at 179ae84</a> · JavaScript · <a href="https://github.com/hagopj13/node-express-boilerplate/blob/179ae84efec61b14206d0305d941daed6c6d07f9/LICENSE" rel="noopener noreferrer">MIT licence</a> · 7669 stars on 2026-10-17 · 3708 lines of code</p>
+      <p>19 findings before, 19 after. The plan had 3 steps: 0 edit steps applied, 3 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in node-express-boilerplate</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>arch.module-internals-access</code></th><td>5</td><td>0</td><td>0</td><td>0</td><td>5</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>3</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 19 findings before, 19 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 3 before, 3 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (3), with the recorded reasons</summary>
+        <ul>
+          <li>Move the exposed credential in src/docs/components.yml to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in src/routes/v1/auth.route.js to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in src/routes/v1/auth.route.js to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-express-rest-boilerplate" aria-labelledby="public-express-rest-boilerplate-title">
+      <h3 id="public-express-rest-boilerplate-title">express-rest-boilerplate</h3>
+      <p class="repo__meta"><a href="https://github.com/danielfsousa/express-rest-boilerplate/tree/b8bed6d7cfce3cf2ef89ec1b5e47b52dfc50e874" rel="noopener noreferrer">danielfsousa/express-rest-boilerplate at b8bed6d</a> · JavaScript · <a href="https://github.com/danielfsousa/express-rest-boilerplate/blob/b8bed6d7cfce3cf2ef89ec1b5e47b52dfc50e874/LICENSE" rel="noopener noreferrer">MIT licence</a> · 2357 stars on 2026-10-17 · 2639 lines of code</p>
+      <p>13 findings before, 13 after. The plan had 2 steps: 0 edit steps applied, 2 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in express-rest-boilerplate</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 13 findings before, 13 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 2 before, 2 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (2), with the recorded reasons</summary>
+        <ul>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .travis.yml to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-full-stack-fastapi-template" aria-labelledby="public-full-stack-fastapi-template-title">
+      <h3 id="public-full-stack-fastapi-template-title">full-stack-fastapi-template</h3>
+      <p class="repo__meta"><a href="https://github.com/fastapi/full-stack-fastapi-template/tree/7257e606cb94eada1dca40173e2b7f99dd549bc6" rel="noopener noreferrer">fastapi/full-stack-fastapi-template at 7257e60</a> · Python · <a href="https://github.com/fastapi/full-stack-fastapi-template/blob/7257e606cb94eada1dca40173e2b7f99dd549bc6/LICENSE" rel="noopener noreferrer">MIT licence</a> · 46017 stars on 2026-10-17 · 14178 lines of code</p>
+      <p>24 findings before, 24 after. The plan had 3 steps: 0 edit steps applied, 3 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in full-stack-fastapi-template</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>7</td><td>0</td><td>0</td><td>0</td><td>7</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.adr-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.rules-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>types.disabled</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 24 findings before, 24 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 2 before, 2 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (3), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in createSseClient (frontend/src/client/core/serverSentEvents.gen.ts) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>generated-file</code> The file is generated.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in frontend/.env to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-microblog" aria-labelledby="public-microblog-title">
+      <h3 id="public-microblog-title">microblog</h3>
+      <p class="repo__meta"><a href="https://github.com/miguelgrinberg/microblog/tree/a975ef64864354867c88e0ed3a17ba7d17dca752" rel="noopener noreferrer">miguelgrinberg/microblog at a975ef6</a> · Python · <a href="https://github.com/miguelgrinberg/microblog/blob/a975ef64864354867c88e0ed3a17ba7d17dca752/LICENSE" rel="noopener noreferrer">MIT licence</a> · 4774 stars on 2026-10-17 · 1854 lines of code</p>
+      <p>13 findings before, 13 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in microblog</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>arch.module-internals-access</code></th><td>4</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>deps.circular</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 13 findings before, 13 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+    <article class="repo" id="public-fastapi-realworld" aria-labelledby="public-fastapi-realworld-title">
+      <h3 id="public-fastapi-realworld-title">fastapi-realworld</h3>
+      <p class="repo__meta"><a href="https://github.com/nsidnev/fastapi-realworld-example-app/tree/029eb7781c60d5f563ee8990a0cbfb79b244538c" rel="noopener noreferrer">nsidnev/fastapi-realworld-example-app at 029eb77</a> · Python · <a href="https://github.com/nsidnev/fastapi-realworld-example-app/blob/029eb7781c60d5f563ee8990a0cbfb79b244538c/LICENSE" rel="noopener noreferrer">MIT licence</a> · 3103 stars on 2026-10-17 · 4108 lines of code</p>
+      <p>16 findings before, 16 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in fastapi-realworld</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>types.disabled</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 16 findings before, 16 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+    <article class="repo" id="public-chatbot-ui" aria-labelledby="public-chatbot-ui-title">
+      <h3 id="public-chatbot-ui-title">chatbot-ui</h3>
+      <p class="repo__meta"><a href="https://github.com/mckaywrigley/chatbot-ui/tree/81328b61d2a4ab597a7a057be70e785cf756d9f8" rel="noopener noreferrer">mckaywrigley/chatbot-ui at 81328b6</a> · TypeScript · <a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/license" rel="noopener noreferrer">MIT licence</a> · 33331 stars on 2026-10-17 · 28996 lines of code</p>
+      <p>55 findings before, 47 after. The plan had 10 steps: 2 edit steps applied, 8 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in chatbot-ui</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>db.result-unchecked</code></th><td>8</td><td>8</td><td>4</td><td>4</td><td>4</td></tr>
+            <tr><th scope="row"><code>deps.layering</code></th><td>8</td><td>0</td><td>0</td><td>0</td><td>8</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>6</td><td>0</td><td>0</td><td>0</td><td>6</td></tr>
+            <tr><th scope="row"><code>db.duplicate-table</code></th><td>5</td><td>0</td><td>0</td><td>0</td><td>5</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>deps.circular</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>db.cascade-reach</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>db.multi-write-no-tx</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>db.fk-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--pass">passed</span> tsc --noEmit on the whole project: 10 errors before, 10 after, 0 new</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 55 findings before, 47 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 1 before, 1 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 6 before, 2 after</li>
+      </ul>
+      <h4>Applied edits (real excerpts)</h4>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/app/api/retrieval/process/docx/route.ts#L101" rel="noopener noreferrer">mckaywrigley/chatbot-ui · app/api/retrieval/process/docx/route.ts:101</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">98</span>            : null</span><span class="diff__line"><span class="diff__number">99</span>      }))</span><span class="diff__line"><span class="diff__number">100</span>  </span><span class="diff__line diff__line--del"><span class="diff__number">101</span>-     await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items)</span><span class="diff__line diff__line--add"><span class="diff__number">101</span>+     await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items).throwOnError()</span><span class="diff__line"><span class="diff__number">102</span>  </span><span class="diff__line"><span class="diff__number">103</span>      const totalTokens = file_items.reduce((acc, item) =&#62; acc + item.tokens, 0)</span><span class="diff__line"><span class="diff__number">104</span>  </span></code></pre>
+      </figure>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/app/api/retrieval/process/docx/route.ts#L108" rel="noopener noreferrer">mckaywrigley/chatbot-ui · app/api/retrieval/process/docx/route.ts:108</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">105</span>      await supabaseAdmin</span><span class="diff__line"><span class="diff__number">106</span>        .from(&#34;files&#34;)</span><span class="diff__line"><span class="diff__number">107</span>        .update({ tokens: totalTokens })</span><span class="diff__line diff__line--del"><span class="diff__number">108</span>-       .eq(&#34;id&#34;, fileId)</span><span class="diff__line diff__line--add"><span class="diff__number">108</span>+       .eq(&#34;id&#34;, fileId).throwOnError()</span><span class="diff__line"><span class="diff__number">109</span>  </span><span class="diff__line"><span class="diff__number">110</span>      return new NextResponse(&#34;Embed Successful&#34;, {</span><span class="diff__line"><span class="diff__number">111</span>        status: 200</span></code></pre>
+      </figure>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/app/api/retrieval/process/route.ts#L155" rel="noopener noreferrer">mckaywrigley/chatbot-ui · app/api/retrieval/process/route.ts:155</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">152</span>            : null</span><span class="diff__line"><span class="diff__number">153</span>      }))</span><span class="diff__line"><span class="diff__number">154</span>  </span><span class="diff__line diff__line--del"><span class="diff__number">155</span>-     await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items)</span><span class="diff__line diff__line--add"><span class="diff__number">155</span>+     await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items).throwOnError()</span><span class="diff__line"><span class="diff__number">156</span>  </span><span class="diff__line"><span class="diff__number">157</span>      const totalTokens = file_items.reduce((acc, item) =&#62; acc + item.tokens, 0)</span><span class="diff__line"><span class="diff__number">158</span>  </span></code></pre>
+      </figure>
+      <p class="excerpt__attribution">Excerpts from mckaywrigley/chatbot-ui at commit 81328b6, © its authors, under the MIT licence; shown unchanged except for sloptopop&#39;s edit.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (8), with the recorded reasons</summary>
+        <ul>
+          <li>Check the result of the read of chats in getChatById (db/chats.ts) by hand
+            <ul class="reasons">
+              <li><code>unhandled-in-client</code> The query runs in a client module or a component file.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of messages in getMessageById (db/messages.ts) by hand
+            <ul class="reasons">
+              <li><code>single-row-read</code> The query is a read that asks for one row with .single(), where PostgREST reports zero rows as an error, so a throw would turn not-found into a failure.</li>
+              <li><code>unhandled-in-client</code> The query runs in a client module or a component file.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of messages in getMessagesByChatId (db/messages.ts) by hand
+            <ul class="reasons">
+              <li><code>unhandled-in-client</code> The query runs in a client module or a component file.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of profiles in getServerProfile (lib/server/server-chat-helpers.ts) by hand
+            <ul class="reasons">
+              <li><code>single-row-read</code> The query is a read that asks for one row with .single(), where PostgREST reports zero rows as an error, so a throw would turn not-found into a failure.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in createClient (lib/supabase/server.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in createClient (lib/supabase/server.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in supabase/migrations/20240108234540_setup.sql to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-aicommits" aria-labelledby="public-aicommits-title">
+      <h3 id="public-aicommits-title">aicommits</h3>
+      <p class="repo__meta"><a href="https://github.com/Nutlope/aicommits/tree/a414dd43b6ac2c5ff0f31eae758c5e6e106089c3" rel="noopener noreferrer">Nutlope/aicommits at a414dd4</a> · TypeScript · <a href="https://github.com/Nutlope/aicommits/blob/a414dd43b6ac2c5ff0f31eae758c5e6e106089c3/LICENSE" rel="noopener noreferrer">MIT licence</a> · 9112 stars on 2026-10-17 · 8024 lines of code</p>
+      <p>30 findings before, 30 after. The plan had 10 steps: 0 edit steps applied, 10 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in aicommits</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>11</td><td>0</td><td>0</td><td>0</td><td>11</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>9</td><td>9</td><td>0</td><td>0</td><td>9</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.adr-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.rules-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 30 findings before, 30 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 1 before, 1 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 11 before, 11 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (10), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in detectPackageManager (src/commands/update.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in detectPackageManager (src/commands/update.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in detectPackageManager (src/commands/update.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in detectPackageManager (src/commands/update.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in getConfig (src/utils/config-runtime.ts) by hand
+            <ul class="reasons">
+              <li><code>loop-continues</code> The catch sits in a loop, which it lets continue.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in hook (src/commands/hook.ts) by hand
+            <ul class="reasons">
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in its function (src/commands/setup.ts) by hand
+            <ul class="reasons">
+              <li><code>no-handler-site</code> No handler of the BIR, with the spans an edit needs, starts at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in pr (src/commands/pr.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in writeCache (src/feature/models.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-nextjs-subscription-payments" aria-labelledby="public-nextjs-subscription-payments-title">
+      <h3 id="public-nextjs-subscription-payments-title">nextjs-subscription-payments</h3>
+      <p class="repo__meta"><a href="https://github.com/vercel/nextjs-subscription-payments/tree/bdd0813206e47e6b218d42f15a7976c8a0d3c3eb" rel="noopener noreferrer">vercel/nextjs-subscription-payments at bdd0813</a> · TypeScript · <a href="https://github.com/vercel/nextjs-subscription-payments/blob/bdd0813206e47e6b218d42f15a7976c8a0d3c3eb/LICENSE" rel="noopener noreferrer">MIT licence</a> · 7713 stars on 2026-10-17 · 4008 lines of code</p>
+      <p>15 findings before, 15 after. The plan had 5 steps: 0 edit steps applied, 5 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in nextjs-subscription-payments</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>db.result-unchecked</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 15 findings before, 15 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 1 before, 1 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 3 before, 3 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (5), with the recorded reasons</summary>
+        <ul>
+          <li>Check the result of the read of users in getUserDetails (utils/supabase/queries.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>single-row-read</code> The query is a read that asks for one row with .single(), where PostgREST reports zero rows as an error, so a throw would turn not-found into a failure.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in createClient (utils/supabase/server.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in createClient (utils/supabase/server.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-headshots-starter" aria-labelledby="public-headshots-starter-title">
+      <h3 id="public-headshots-starter-title">headshots-starter</h3>
+      <p class="repo__meta"><a href="https://github.com/astriaai/headshots-starter/tree/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141" rel="noopener noreferrer">astriaai/headshots-starter at 86771e4</a> · TypeScript · <a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/LICENSE.md" rel="noopener noreferrer">MIT licence</a> · 4461 stars on 2026-10-17 · 7309 lines of code</p>
+      <p>21 findings before, 14 after. The plan had 8 steps: 3 edit steps applied, 5 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in headshots-starter</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>db.result-unchecked</code></th><td>8</td><td>8</td><td>5</td><td>5</td><td>3</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>db.multi-write-no-tx</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>db.transition-unguarded</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: no package-lock.json or pnpm-lock.yaml</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 21 findings before, 14 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 1 before, 1 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 2 before, 0 after</li>
+      </ul>
+      <h4>Applied edits (real excerpts)</h4>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/astria/train-model/route.ts#L221" rel="noopener noreferrer">astriaai/headshots-starter · app/astria/train-model/route.ts:221</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">218</span>        console.error({ status });</span><span class="diff__line"><span class="diff__number">219</span>        // Rollback: Delete the created model if something goes wrong</span><span class="diff__line"><span class="diff__number">220</span>        if (modelId) {</span><span class="diff__line diff__line--del"><span class="diff__number">221</span>-         await supabase.from(&#34;models&#34;).delete().eq(&#34;id&#34;, modelId);</span><span class="diff__line diff__line--add"><span class="diff__number">221</span>+         await supabase.from(&#34;models&#34;).delete().eq(&#34;id&#34;, modelId).throwOnError();</span><span class="diff__line"><span class="diff__number">222</span>        }</span><span class="diff__line"><span class="diff__number">223</span>  </span><span class="diff__line"><span class="diff__number">224</span>        if (status === 400) {</span></code></pre>
+      </figure>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/overview/models/[id]/page.tsx#L39" rel="noopener noreferrer">astriaai/headshots-starter · app/overview/models/[id]/page.tsx:39</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">36</span>    const { data: images } = await supabase</span><span class="diff__line"><span class="diff__number">37</span>      .from(&#34;images&#34;)</span><span class="diff__line"><span class="diff__number">38</span>      .select(&#34;*&#34;)</span><span class="diff__line diff__line--del"><span class="diff__number">39</span>-     .eq(&#34;modelId&#34;, model.id);</span><span class="diff__line diff__line--add"><span class="diff__number">39</span>+     .eq(&#34;modelId&#34;, model.id).throwOnError();</span><span class="diff__line"><span class="diff__number">40</span>  </span><span class="diff__line"><span class="diff__number">41</span>    const { data: samples } = await supabase.from(&#34;samples&#34;).select(&#34;*&#34;).eq(&#34;modelId&#34;, model.id);</span><span class="diff__line"><span class="diff__number">42</span>  </span></code></pre>
+      </figure>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/overview/page.tsx#L26" rel="noopener noreferrer">astriaai/headshots-starter · app/overview/page.tsx:26</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">23</span>        *</span><span class="diff__line"><span class="diff__number">24</span>      )`</span><span class="diff__line"><span class="diff__number">25</span>      )</span><span class="diff__line diff__line--del"><span class="diff__number">26</span>-     .eq(&#34;user_id&#34;, user.id);</span><span class="diff__line diff__line--add"><span class="diff__number">26</span>+     .eq(&#34;user_id&#34;, user.id).throwOnError();</span><span class="diff__line"><span class="diff__number">27</span>  </span><span class="diff__line"><span class="diff__number">28</span>    return &#60;ClientSideModelsList serverModels={models ?? []} /&#62;;</span><span class="diff__line"><span class="diff__number">29</span>  }</span></code></pre>
+      </figure>
+      <p class="excerpt__attribution">Excerpts from astriaai/headshots-starter at commit 86771e4, © its authors, under the MIT licence; shown unchanged except for sloptopop&#39;s edit.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (5), with the recorded reasons</summary>
+        <ul>
+          <li>Check the result of the read of credits in Navbar (components/Navbar.tsx) by hand
+            <ul class="reasons">
+              <li><code>single-row-read</code> The query is a read that asks for one row with .single(), where PostgREST reports zero rows as an error, so a throw would turn not-found into a failure.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of credits in POST (app/stripe/subscription-webhook/route.ts) by hand
+            <ul class="reasons">
+              <li><code>single-row-read</code> The query is a read that asks for one row with .single(), where PostgREST reports zero rows as an error, so a throw would turn not-found into a failure.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of models in Index (app/overview/models/[id]/page.tsx) by hand
+            <ul class="reasons">
+              <li><code>single-row-read</code> The query is a read that asks for one row with .single(), where PostgREST reports zero rows as an error, so a throw would turn not-found into a failure.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in components/stripe/StripeTable.tsx to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-nextbase-nextjs-supabase-starter" aria-labelledby="public-nextbase-nextjs-supabase-starter-title">
+      <h3 id="public-nextbase-nextjs-supabase-starter-title">nextbase-nextjs-supabase-starter</h3>
+      <p class="repo__meta"><a href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter/tree/00ad2da857b84322ff359db098cbf1cb4f4b7282" rel="noopener noreferrer">imbhargav5/nextbase-nextjs-supabase-starter at 00ad2da</a> · TypeScript · <a href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter/blob/00ad2da857b84322ff359db098cbf1cb4f4b7282/LICENSE" rel="noopener noreferrer">MIT licence</a> · 827 stars on 2026-10-17 · 13378 lines of code</p>
+      <p>17 findings before, 17 after. The plan had 5 steps: 0 edit steps applied, 5 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in nextbase-nextjs-supabase-starter</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>4</td><td>4</td><td>0</td><td>0</td><td>4</td></tr>
+            <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.adr-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.rules-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 17 findings before, 17 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 1 before, 1 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 1 before, 1 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (5), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in createSupabaseClient (apps/web/src/supabase-clients/server.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.development.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.development.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-next-supabase-stripe-starter" aria-labelledby="public-next-supabase-stripe-starter-title">
+      <h3 id="public-next-supabase-stripe-starter-title">next-supabase-stripe-starter</h3>
+      <p class="repo__meta"><a href="https://github.com/KolbySisk/next-supabase-stripe-starter/tree/9839fd47d282b1b41a80fb82efea80ac7d1080bc" rel="noopener noreferrer">KolbySisk/next-supabase-stripe-starter at 9839fd4</a> · TypeScript · <a href="https://github.com/KolbySisk/next-supabase-stripe-starter/blob/9839fd47d282b1b41a80fb82efea80ac7d1080bc/LICENSE" rel="noopener noreferrer">MIT licence</a> · 818 stars on 2026-10-17 · 2955 lines of code</p>
+      <p>13 findings before, 12 after. The plan had 2 steps: 1 edit steps applied, 1 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in next-supabase-stripe-starter</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>db.result-unchecked</code></th><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: no package-lock.json or pnpm-lock.yaml</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 13 findings before, 12 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 2 before, 2 after</li>
+      </ul>
+      <h4>Applied edits (real excerpts)</h4>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/KolbySisk/next-supabase-stripe-starter/blob/9839fd47d282b1b41a80fb82efea80ac7d1080bc/src/app/(auth)/auth/callback/route.ts#L32" rel="noopener noreferrer">KolbySisk/next-supabase-stripe-starter · src/app/(auth)/auth/callback/route.ts:32</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">29</span>        .from(&#39;subscriptions&#39;)</span><span class="diff__line"><span class="diff__number">30</span>        .select(&#39;*, prices(*, products(*))&#39;)</span><span class="diff__line"><span class="diff__number">31</span>        .in(&#39;status&#39;, [&#39;trialing&#39;, &#39;active&#39;])</span><span class="diff__line diff__line--del"><span class="diff__number">32</span>-       .maybeSingle();</span><span class="diff__line diff__line--add"><span class="diff__number">32</span>+       .maybeSingle().throwOnError();</span><span class="diff__line"><span class="diff__number">33</span>  </span><span class="diff__line"><span class="diff__number">34</span>      if (!userSubscription) {</span><span class="diff__line"><span class="diff__number">35</span>        return NextResponse.redirect(`${siteUrl}/pricing`);</span></code></pre>
+      </figure>
+      <p class="excerpt__attribution">Excerpts from KolbySisk/next-supabase-stripe-starter at commit 9839fd4, © its authors, under the MIT licence; shown unchanged except for sloptopop&#39;s edit.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (1), with the recorded reasons</summary>
+        <ul>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-nextjs-saas-starter-kit-lite" aria-labelledby="public-nextjs-saas-starter-kit-lite-title">
+      <h3 id="public-nextjs-saas-starter-kit-lite-title">nextjs-saas-starter-kit-lite</h3>
+      <p class="repo__meta"><a href="https://github.com/makerkit/nextjs-saas-starter-kit-lite/tree/c5cba64391a80620309c4178163dc2df42568d1b" rel="noopener noreferrer">makerkit/nextjs-saas-starter-kit-lite at c5cba64</a> · TypeScript · <a href="https://github.com/makerkit/nextjs-saas-starter-kit-lite/blob/c5cba64391a80620309c4178163dc2df42568d1b/LICENSE" rel="noopener noreferrer">MIT licence</a> · 461 stars on 2026-10-17 · 25955 lines of code</p>
+      <p>61 findings before, 61 after. The plan had 10 steps: 0 edit steps applied, 10 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in nextjs-saas-starter-kit-lite</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>arch.module-internals-access</code></th><td>35</td><td>0</td><td>0</td><td>0</td><td>35</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>8</td><td>8</td><td>0</td><td>0</td><td>8</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.adr-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.duplicate-across-units</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.rules-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 61 findings before, 61 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 5 before, 5 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 2 before, 2 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (10), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in PasswordSignInContainer (packages/features/auth/src/components/password-sign-in-container.tsx) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in getSupabaseServerClient (packages/supabase/src/clients/server-client.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.development to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.development to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.development to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in apps/web/.env.test to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in tooling/scripts/src/checks.mjs to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-supabase-auth-with-ssr" aria-labelledby="public-supabase-auth-with-ssr-title">
+      <h3 id="public-supabase-auth-with-ssr-title">supabase-auth-with-ssr</h3>
+      <p class="repo__meta"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/tree/355c56ea09c16f3ae5a069718130b50945d1f580" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR at 355c56e</a> · TypeScript · <a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/LICENSE.md" rel="noopener noreferrer">MIT licence</a> · 397 stars on 2026-10-17 · 22876 lines of code</p>
+      <p>39 findings before, 28 after. The plan had 16 steps: 7 edit steps applied, 9 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in supabase-auth-with-ssr</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>db.result-unchecked</code></th><td>15</td><td>15</td><td>10</td><td>10</td><td>5</td></tr>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>4</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>db.multi-write-no-tx</code></th><td>3</td><td>0</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>3</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--pass">passed</span> tsc --noEmit on the whole project: 1 errors before, 1 after, 0 new</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 39 findings before, 28 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 2 before, 1 after</li>
+      </ul>
+      <h4>Applied edits (real excerpts)</h4>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/api/chat-title/[id]/route.ts#L35" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/api/chat-title/[id]/route.ts:35</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">32</span>        &#39;chat_title, message_parts(role, type, text_text, order, created_at)&#39;</span><span class="diff__line"><span class="diff__number">33</span>      )</span><span class="diff__line"><span class="diff__number">34</span>      .eq(&#39;id&#39;, id)</span><span class="diff__line diff__line--del"><span class="diff__number">35</span>-     .maybeSingle();</span><span class="diff__line diff__line--add"><span class="diff__number">35</span>+     .maybeSingle().throwOnError();</span><span class="diff__line"><span class="diff__number">36</span>  </span><span class="diff__line"><span class="diff__number">37</span>    if (!data) {</span><span class="diff__line"><span class="diff__number">38</span>      return NextResponse.json({ title: &#39;Chat&#39; }, { headers: NO_STORE });</span></code></pre>
+      </figure>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/api/chat/chatHelpers.ts#L132" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/api/chat/chatHelpers.ts:132</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">129</span>        .update({ chat_title: title })</span><span class="diff__line"><span class="diff__number">130</span>        .eq(&#39;id&#39;, chatSessionId)</span><span class="diff__line"><span class="diff__number">131</span>        .eq(&#39;user_id&#39;, userId)</span><span class="diff__line diff__line--del"><span class="diff__number">132</span>-       .is(&#39;chat_title&#39;, null);</span><span class="diff__line diff__line--add"><span class="diff__number">132</span>+       .is(&#39;chat_title&#39;, null).throwOnError();</span><span class="diff__line"><span class="diff__number">133</span>    } catch (error) {</span><span class="diff__line"><span class="diff__number">134</span>      console.error(&#39;Error generating chat title:&#39;, error);</span><span class="diff__line"><span class="diff__number">135</span>    }</span></code></pre>
+      </figure>
+      <figure class="excerpt">
+        <figcaption><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/chat/admin/actions.ts#L24" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/chat/admin/actions.ts:24</a> · finding <code>db.result-unchecked</code> · edit <code>QUERY_THROW_ON_ERROR</code></figcaption>
+        <pre class="step__code diff" tabindex="0"><code><span class="diff__line"><span class="diff__number">21</span>      .from(&#39;users&#39;)</span><span class="diff__line"><span class="diff__number">22</span>      .select(&#39;is_admin&#39;)</span><span class="diff__line"><span class="diff__number">23</span>      .eq(&#39;id&#39;, session.sub)</span><span class="diff__line diff__line--del"><span class="diff__number">24</span>-     .maybeSingle();</span><span class="diff__line diff__line--add"><span class="diff__number">24</span>+     .maybeSingle().throwOnError();</span><span class="diff__line"><span class="diff__number">25</span>  </span><span class="diff__line"><span class="diff__number">26</span>    if (!data?.is_admin) return { ok: false, message: &#39;Not authorized.&#39; };</span><span class="diff__line"><span class="diff__number">27</span>    return { ok: true, userId: session.sub };</span></code></pre>
+      </figure>
+      <p class="excerpt__attribution">Excerpts from ElectricCodeGuy/SupabaseAuthWithSSR at commit 355c56e, © its authors, under the MIT licence; shown unchanged except for sloptopop&#39;s edit.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (9), with the recorded reasons</summary>
+        <ul>
+          <li>Check the result of the read of user_documents in createPDF (app/api/chat/tools/CreatePDFTool.ts) by hand
+            <ul class="reasons">
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of user_documents in searchUserDocument (app/api/chat/tools/documentChat.ts) by hand
+            <ul class="reasons">
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+              <li><code>unhandled-in-client</code> The query runs in a client module or a component file.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of user_documents in searchUserDocument (app/api/chat/tools/documentChat.ts) by hand
+            <ul class="reasons">
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+              <li><code>unhandled-in-client</code> The query runs in a client module or a component file.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of user_documents in searchUserDocument (app/api/chat/tools/documentChat.ts) by hand
+            <ul class="reasons">
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+              <li><code>unhandled-in-client</code> The query runs in a client module or a component file.</li>
+            </ul>
+          </li>
+          <li>Check the result of the read of user_memories in saveMemory (app/api/chat/tools/MemoryTool.ts) by hand
+            <ul class="reasons">
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in FileManager (app/chat/filer/components/FileManager.tsx) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in its function (app/chat/components/HtmlFrame.tsx) by hand
+            <ul class="reasons">
+              <li><code>no-handler-site</code> No handler of the BIR, with the spans an edit needs, starts at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in its function (app/chat/components/HtmlFrame.tsx) by hand
+            <ul class="reasons">
+              <li><code>no-handler-site</code> No handler of the BIR, with the spans an edit needs, starts at the finding&#39;s line.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-paddle-nextjs-starter-kit" aria-labelledby="public-paddle-nextjs-starter-kit-title">
+      <h3 id="public-paddle-nextjs-starter-kit-title">paddle-nextjs-starter-kit</h3>
+      <p class="repo__meta"><a href="https://github.com/PaddleHQ/paddle-nextjs-starter-kit/tree/a8c5168e5411af7a4a4c8521d0a8a342ce0307ac" rel="noopener noreferrer">PaddleHQ/paddle-nextjs-starter-kit at a8c5168</a> · TypeScript · <a href="https://github.com/PaddleHQ/paddle-nextjs-starter-kit/blob/a8c5168e5411af7a4a4c8521d0a8a342ce0307ac/LICENSE" rel="noopener noreferrer">Apache-2.0 licence</a> · 360 stars on 2026-10-17 · 4538 lines of code</p>
+      <p>13 findings before, 13 after. The plan had 3 steps: 0 edit steps applied, 3 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in paddle-nextjs-starter-kit</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>db.fk-missing</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>secrets.committed</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 13 findings before, 13 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 2 before, 2 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (3), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in createClient (src/utils/supabase/server-internal.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in createClient (src/utils/supabase/server.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Move the exposed credential in .env.local.example to configuration by hand
+            <ul class="reasons">
+              <li><code>external-system</code> The work happens outside the repository.</li>
+              <li><code>no-value-site</code> No secret literal of the BIR is at the finding&#39;s line.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-app-landing" aria-labelledby="public-app-landing-title">
+      <h3 id="public-app-landing-title">app-landing</h3>
+      <p class="repo__meta"><a href="https://github.com/bohd4nx/app-landing/tree/8bd07982803fffc3f247381493de492546287a1f" rel="noopener noreferrer">bohd4nx/app-landing at 8bd0798</a> · TypeScript · <a href="https://github.com/bohd4nx/app-landing/blob/8bd07982803fffc3f247381493de492546287a1f/LICENSE" rel="noopener noreferrer">MIT licence</a> · 223 stars on 2026-10-17 · 2131 lines of code</p>
+      <p>8 findings before, 8 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in app-landing</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.adr-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.rules-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 8 findings before, 8 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+    <article class="repo" id="public-voice-training-ui" aria-labelledby="public-voice-training-ui-title">
+      <h3 id="public-voice-training-ui-title">voice-training-ui</h3>
+      <p class="repo__meta"><a href="https://github.com/scratchyone/voice-training-ui/tree/d62587062ab1ed010064a1e6b4511c8e5cfa8502" rel="noopener noreferrer">scratchyone/voice-training-ui at d625870</a> · TypeScript · <a href="https://github.com/scratchyone/voice-training-ui/blob/d62587062ab1ed010064a1e6b4511c8e5cfa8502/LICENSE" rel="noopener noreferrer">MIT licence</a> · 81 stars on 2026-10-17 · 4157 lines of code</p>
+      <p>6 findings before, 6 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in voice-training-ui</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 6 findings before, 6 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+    <article class="repo" id="public-git-on-cloudflare" aria-labelledby="public-git-on-cloudflare-title">
+      <h3 id="public-git-on-cloudflare-title">git-on-cloudflare</h3>
+      <p class="repo__meta"><a href="https://github.com/zllovesuki/git-on-cloudflare/tree/007a96eae94c8f562d223f81eb7548c8f7c38673" rel="noopener noreferrer">zllovesuki/git-on-cloudflare at 007a96e</a> · TypeScript · <a href="https://github.com/zllovesuki/git-on-cloudflare/blob/007a96eae94c8f562d223f81eb7548c8f7c38673/LICENSE" rel="noopener noreferrer">MIT licence</a> · 79 stars on 2026-10-17 · 47401 lines of code</p>
+      <p>111 findings before, 111 after. The plan had 42 steps: 0 edit steps applied, 42 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in git-on-cloudflare</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>43</td><td>0</td><td>0</td><td>0</td><td>43</td></tr>
+            <tr><th scope="row"><code>errors.swallowed</code></th><td>42</td><td>42</td><td>0</td><td>0</td><td>42</td></tr>
+            <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>8</td><td>0</td><td>0</td><td>0</td><td>8</td></tr>
+            <tr><th scope="row"><code>arch.package-cycle</code></th><td>6</td><td>0</td><td>0</td><td>0</td><td>6</td></tr>
+            <tr><th scope="row"><code>arch.hub-dependency</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>deps.circular</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>types.disabled</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 111 findings before, 111 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 43 before, 43 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+      <details class="tasks">
+        <summary>Tasks handed to a person (42), with the recorded reasons</summary>
+        <ul>
+          <li>Handle the error swallowed in RepoDurableObject (src/worker/do/repo/repoDO.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in ThemeToggleIsland (src/client/islands/theme-toggle.tsx) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in TokensIsland (src/client/islands/tokens.tsx) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in bytesToText (src/shared/web/format.ts) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in bytesToText (src/shared/web/format.ts) by hand
+            <ul class="reasons">
+              <li><code>client-catch</code> The handler is in a client module or a component file, where neither a rethrow nor a server logger belongs.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in cacheOrLoadJSON (src/worker/cache/cache.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in cacheOrLoadJSONWithTTL (src/worker/cache/cache.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in cacheOrLoadObject (src/worker/cache/cache.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in cachePutJSON (src/worker/cache/cache.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in cachePutObject (src/worker/cache/cache.ts) by hand
+            <ul class="reasons">
+              <li><code>commented-intent</code> The handler&#39;s body holds only comments: a documented decision.</li>
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in capabilityAdvertisement (src/worker/git/core/protocol.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in computeCompactionStatus (src/worker/routes/ui/helpers.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in createRewriteStream (src/worker/git/pack/rewrite/stream.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in debugCheckCommit (src/worker/do/repo/debug/checks.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in debugCheckCommit (src/worker/do/repo/debug/checks.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in debugCheckOid (src/worker/do/repo/debug/checks.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in ensureAccessAndAlarm (src/worker/do/repo/repoDO/access.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in getRouteCacheRecord (src/worker/repositories/routeCache.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleError (src/client/server/error.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleFetchV2Streaming (src/worker/git/operations/uploadStream/index.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleRawPath (src/worker/routes/ui/raw.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleRepoOverview (src/worker/routes/ui/overview.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-callback</code> The query sits in a callback nested in its function.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleStreamingReceivePackPOST (src/worker/git/receive/streamReceivePack.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleStreamingReceivePackPOST (src/worker/git/receive/streamReceivePack.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleStreamingReceivePackPOST (src/worker/git/receive/streamReceivePack.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleTree (src/worker/routes/ui/tree.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in handleUploadPackPOST (src/worker/routes/git.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in listLooseSample (src/worker/do/repo/debug/state.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in listMergeSideFirstParent (src/worker/git/operations/read/commits.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in listMergeSideFirstParent (src/worker/git/operations/read/commits.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>loop-continues</code> The catch sits in a loop, which it lets continue.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in listMergeSideFirstParent (src/worker/git/operations/read/commits.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>loop-continues</code> The catch sits in a loop, which it lets continue.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in pipePackWithSideband (src/worker/git/operations/fetch/sideband.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in readCommitFromStore (src/worker/do/repo/storage.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in schedulePackRefBackfill (src/worker/git/operations/fetch/plan.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>no-logger-for-fire-and-forget</code> A fire-and-forget .catch in a project without a reachable logger.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in stageKnownLengthPack (src/worker/git/receive/r2Upload.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in stageKnownLengthPack (src/worker/git/receive/r2Upload.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in stageKnownLengthPack (src/worker/git/receive/r2Upload.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in stageMultipartPack (src/worker/git/receive/r2Upload.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in stageMultipartPack (src/worker/git/receive/r2Upload.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in stageMultipartPack (src/worker/git/receive/r2Upload.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+              <li><code>in-handler</code> The handler sits in another handler&#39;s body.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in touchAndMaybeSchedule (src/worker/do/repo/repoDO/access.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+          <li>Handle the error swallowed in updateHeadIfChanged (src/worker/do/repo/refs.ts) by hand
+            <ul class="reasons">
+              <li><code>handler-unknown</code> It is not known what handles an error thrown in the query&#39;s module.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="repo" id="public-vocal-note-keeper-ai" aria-labelledby="public-vocal-note-keeper-ai-title">
+      <h3 id="public-vocal-note-keeper-ai-title">vocal-note-keeper-ai</h3>
+      <p class="repo__meta"><a href="https://github.com/kingsidharth/vocal-note-keeper-ai/tree/b777df9b96cd3777738fcf1a8e6e8decbc0661c7" rel="noopener noreferrer">kingsidharth/vocal-note-keeper-ai at b777df9</a> · TypeScript · <a href="https://github.com/kingsidharth/vocal-note-keeper-ai/blob/b777df9b96cd3777738fcf1a8e6e8decbc0661c7/LICENSE.md" rel="noopener noreferrer">MIT licence</a> · 44 stars on 2026-10-17 · 10049 lines of code</p>
+      <p>8 findings before, 8 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in vocal-note-keeper-ai</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>analyzer.finding</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>ci.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>config.hardcoded-host</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>types.disabled</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 8 findings before, 8 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 1 before, 1 after</li>
+      </ul>
+      <p class="fineprint">No automated edit was applied to this repository in this run.</p>
+    </article>
+  </section>
+  <section class="corpus" id="testing" aria-labelledby="testing-title">
+    <h2 id="testing-title">Vibe-coded testing corpus</h2>
+    <p>Projects whose own history shows they were written mostly by AI, chosen by stars per language. Transformations exist for TypeScript and JavaScript so far; the other languages measure detection.</p>
+    <p class="corpus__run">not run yet</p>
+    <p class="fineprint">Not run yet: 120 repositories are queued. Their results appear here after the first run.</p>
+  </section>
+
+  <section class="precision" id="precision" aria-labelledby="precision-title">
+    <h2 id="precision-title">How precise the findings are</h2>
+    <p>Precision study of 2026-10-16, on the run before this one. One person read a stratified sample of 389 of the 534 findings at their pinned commits and labelled each: 161 real problems, 223 not, 5 unclear. Pooled over the sample, 0.42 of the decided findings were real.</p>
+    <p class="fineprint">Caveats: one labeller and no second rater; rules with few findings have wide intervals; the study ran on the run before the results above. A finding that is not a real problem costs a reader's time even when sloptopop hands it to a person instead of editing, which is why each rule's precision sits next to its counts in the tables above.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+      <table class="results-table">
+        <caption>Precision per rule (true / (true + false), unclear left out, 95% Wilson interval)</caption>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">Findings</th><th scope="col">Sampled</th><th scope="col">Real</th><th scope="col">Not real</th><th scope="col">Unclear</th><th scope="col">Precision</th><th scope="col">95% interval</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>19</td><td>19</td><td>19</td><td>0</td><td>0</td><td>1.00</td><td>0.83–1.00</td></tr>
+          <tr><th scope="row"><code>toolchain.unpinned</code></th><td>18</td><td>18</td><td>18</td><td>0</td><td>0</td><td>1.00</td><td>0.82–1.00</td></tr>
+          <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>16</td><td>16</td><td>16</td><td>0</td><td>0</td><td>1.00</td><td>0.81–1.00</td></tr>
+          <tr><th scope="row"><code>db.cascade-reach</code></th><td>2</td><td>2</td><td>2</td><td>0</td><td>0</td><td>1.00</td><td>0.34–1.00</td></tr>
+          <tr><th scope="row"><code>db.transition-unguarded</code></th><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1.00</td><td>0.21–1.00</td></tr>
+          <tr><th scope="row"><code>deps.unpinned</code></th><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1.00</td><td>0.21–1.00</td></tr>
+          <tr><th scope="row"><code>hook.missing</code></th><td>21</td><td>21</td><td>17</td><td>4</td><td>0</td><td>0.81</td><td>0.60–0.92</td></tr>
+          <tr><th scope="row"><code>db.result-unchecked</code></th><td>33</td><td>25</td><td>19</td><td>6</td><td>0</td><td>0.76</td><td>0.57–0.89</td></tr>
+          <tr><th scope="row"><code>deps.layering</code></th><td>8</td><td>8</td><td>6</td><td>2</td><td>0</td><td>0.75</td><td>0.41–0.93</td></tr>
+          <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>4</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.30–0.95</td></tr>
+          <tr><th scope="row"><code>arch.adr-missing</code></th><td>6</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0.67</td><td>0.30–0.90</td></tr>
+          <tr><th scope="row"><code>arch.rules-missing</code></th><td>6</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0.67</td><td>0.30–0.90</td></tr>
+          <tr><th scope="row"><code>db.multi-write-no-tx</code></th><td>6</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0.67</td><td>0.30–0.90</td></tr>
+          <tr><th scope="row"><code>db.fk-missing</code></th><td>6</td><td>6</td><td>3</td><td>3</td><td>0</td><td>0.50</td><td>0.19–0.81</td></tr>
+          <tr><th scope="row"><code>types.disabled</code></th><td>4</td><td>4</td><td>2</td><td>2</td><td>0</td><td>0.50</td><td>0.15–0.85</td></tr>
+          <tr><th scope="row"><code>ci.missing</code></th><td>21</td><td>21</td><td>9</td><td>11</td><td>1</td><td>0.45</td><td>0.26–0.66</td></tr>
+          <tr><th scope="row"><code>db.duplicate-table</code></th><td>5</td><td>5</td><td>2</td><td>3</td><td>0</td><td>0.40</td><td>0.12–0.77</td></tr>
+          <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>18</td><td>18</td><td>6</td><td>12</td><td>0</td><td>0.33</td><td>0.16–0.56</td></tr>
+          <tr><th scope="row"><code>arch.hub-dependency</code></th><td>13</td><td>13</td><td>4</td><td>8</td><td>1</td><td>0.33</td><td>0.14–0.61</td></tr>
+          <tr><th scope="row"><code>deps.circular</code></th><td>6</td><td>6</td><td>2</td><td>4</td><td>0</td><td>0.33</td><td>0.10–0.70</td></tr>
+          <tr><th scope="row"><code>analyzer.finding</code></th><td>80</td><td>25</td><td>7</td><td>18</td><td>0</td><td>0.28</td><td>0.14–0.48</td></tr>
+          <tr><th scope="row"><code>arch.package-cycle</code></th><td>19</td><td>19</td><td>3</td><td>16</td><td>0</td><td>0.16</td><td>0.06–0.38</td></tr>
+          <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>23</td><td>23</td><td>3</td><td>17</td><td>3</td><td>0.15</td><td>0.05–0.36</td></tr>
+          <tr><th scope="row"><code>config.hardcoded-host</code></th><td>19</td><td>19</td><td>2</td><td>17</td><td>0</td><td>0.11</td><td>0.03–0.31</td></tr>
+          <tr><th scope="row"><code>errors.swallowed</code></th><td>66</td><td>25</td><td>2</td><td>23</td><td>0</td><td>0.08</td><td>0.02–0.25</td></tr>
+          <tr><th scope="row"><code>secrets.committed</code></th><td>47</td><td>25</td><td>2</td><td>23</td><td>0</td><td>0.08</td><td>0.02–0.25</td></tr>
+          <tr><th scope="row"><code>arch.module-internals-access</code></th><td>44</td><td>25</td><td>0</td><td>25</td><td>0</td><td>0.00</td><td>0.00–0.13</td></tr>
+          <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>21</td><td>21</td><td>0</td><td>21</td><td>0</td><td>0.00</td><td>0.00–0.15</td></tr>
+          <tr><th scope="row"><code>arch.duplicate-across-units</code></th><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0.00</td><td>0.00–0.79</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>
