@@ -2,7 +2,7 @@
 
 The public website, served as static files by Vercel (owner's infrastructure
 plan, 2026-10-16). The dynamic parts (waitlist, sign-in, dashboard) call the
-website backend at `https://api.sloptopop.dev`, which lives in the `web`
+website backend at `https://web-api.sloptopop.dev`, which lives in the `web`
 repository and runs as a Docker service on Render.
 
 - `public/`: everything Vercel serves; no build step, no JavaScript framework.
@@ -11,11 +11,15 @@ repository and runs as a Docker service on Render.
   <this repo>` replaces `public/` with the result. htmx (vendored and
   hash-pinned, `public/assets/htmx-2.0.11.min.js`) is the only script, and
   only on the Pricing page, which sends the waitlist form to the backend.
-- `vercel.json`: strict CSP (no inline script or style; fetches and form
-  posts only to `https://api.sloptopop.dev`), HSTS, no framing, the same
+- `vercel.json`: strict CSP (no inline script or style; fetches only to
+  `https://web-api.sloptopop.dev`, forms to it or to this site: the
+  compliance search box is a same-site `GET`), HSTS, no framing, the same
   Permissions-Policy as the backend, and one day of caching for `/assets/`
   (the backend's value; the asset names are not content-hashed, so longer
   caching would keep old styles on returning visitors).
+  Its `redirects` answer the compliance search box like the backend does:
+  `/compliance/<key>/find?q=<row or rule>` goes to `/compliance/<key>#<q>`,
+  where the stylesheet shows only the `:target`ed row or rule.
   Clean URLs serve `/coverage` from `coverage.html` and a language tab
   from `/lang/<id>`; `404.html` is the not-found page.
 
@@ -42,7 +46,7 @@ header from `vercel.json`, and change `robots.txt` in the `web` repository
 1. Create the GitHub repository and push this one.
 2. In Vercel, import it with framework preset "Other": no build command,
    output directory `public` (also set in `vercel.json`).
-3. Add the domain `sloptopop.dev`; `api.sloptopop.dev` points at Render.
+3. Add the domain `sloptopop.dev`; `web-api.sloptopop.dev` points at Render.
 4. Set the environment variable `SITE_PASSWORD` (Production and Preview)
    to the password you choose; it is never stored in this repository.
    Check: https://sloptopop.dev asks for a password, and answers with the
