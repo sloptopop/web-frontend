@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>db.result-unchecked · fixes · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css?v=17753629598558183050">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li class="site-nav__menu"><details class="standards-menu">
+  <summary>Compliance</summary>
+  <div class="standards-menu__panel">
+    <p class="standards-menu__all"><a href="/compliance">All frameworks: overview</a></p>
+    <ul class="standards-menu__groups">
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">International</p>
+        <ul>
+          <li><a href="/compliance/intl-owasp-asvs">ASVS</a></li>
+          <li><a href="/compliance/intl-mitre-attack">ATT&amp;CK</a></li>
+          <li><a href="/compliance/intl-cis-controls">CIS Controls</a></li>
+          <li><a href="/compliance/intl-csa-ccm">CSA CCM</a></li>
+          <li><a href="/compliance/intl-cwe">CWE</a></li>
+          <li><a href="/compliance/intl-etsi-en-303-645">EN 303 645</a></li>
+          <li><a href="/compliance/intl-owasp-top10">OWASP Top 10</a></li>
+          <li><a href="/compliance/intl-pci-dss">PCI DSS</a></li>
+          <li><a href="/compliance/intl-pci-sslc">PCI Secure SLC</a></li>
+          <li><a href="/compliance/intl-pci-sss">PCI SSS</a></li>
+          <li><a href="/compliance/intl-owasp-samm">SAMM</a></li>
+          <li><a href="/compliance/intl-scf">SCF</a></li>
+          <li><a href="/compliance/intl-soc2">SOC 2</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">European Union</p>
+        <ul>
+          <li><a href="/compliance/eu-ai-act">AI Act</a></li>
+          <li><a href="/compliance/eu-nl-bio2">BIO2</a></li>
+          <li><a href="/compliance/eu-de-bsig">BSIG 2025</a></li>
+          <li><a href="/compliance/eu-de-bsi-c5">C5</a></li>
+          <li><a href="/compliance/eu-nl-cbw">Cbw</a></li>
+          <li><a href="/compliance/eu-cer">CER</a></li>
+          <li><a href="/compliance/eu-cra">CRA</a></li>
+          <li><a href="/compliance/eu-cybersecurity-act">CSA</a></li>
+          <li><a href="/compliance/eu-data-act">Data Act</a></li>
+          <li><a href="/compliance/eu-dora">DORA</a></li>
+          <li><a href="/compliance/eu-dora-rts-2024-1774">DORA RTS 2024/1774</a></li>
+          <li><a href="/compliance/eu-eaa">EAA</a></li>
+          <li><a href="/compliance/eu-eba-gl-2019-04">EBA/GL/2019/04</a></li>
+          <li><a href="/compliance/eu-ehds">EHDS</a></li>
+          <li><a href="/compliance/eu-eidas">eIDAS 2</a></li>
+          <li><a href="/compliance/eu-es-ens">ENS</a></li>
+          <li><a href="/compliance/eu-eprivacy">ePrivacy</a></li>
+          <li><a href="/compliance/eu-eucc">EUCC</a></li>
+          <li><a href="/compliance/eu-eucs">EUCS</a></li>
+          <li><a href="/compliance/eu-fr-nis2-bill">FR NIS2 bill</a></li>
+          <li><a href="/compliance/eu-gdpr">GDPR</a></li>
+          <li><a href="/compliance/eu-it-nis">IT NIS</a></li>
+          <li><a href="/compliance/eu-ivdr">IVDR</a></li>
+          <li><a href="/compliance/eu-mdr">MDR</a></li>
+          <li><a href="/compliance/eu-mica">MiCA</a></li>
+          <li><a href="/compliance/eu-nis2">NIS2</a></li>
+          <li><a href="/compliance/eu-nis2-ir-2024-2690">NIS2 IR 2024/2690</a></li>
+          <li><a href="/compliance/eu-pld">PLD</a></li>
+          <li><a href="/compliance/eu-psd2">PSD2</a></li>
+          <li><a href="/compliance/eu-psd2-rts-sca">PSD2 RTS SCA</a></li>
+          <li><a href="/compliance/eu-red-da-2022-30">RED DA 2022/30</a></li>
+          <li><a href="/compliance/eu-fr-rgs">RGS</a></li>
+          <li><a href="/compliance/eu-fr-secnumcloud">SecNumCloud</a></li>
+          <li><a href="/compliance/eu-de-bsi-tr-02102">TR-02102</a></li>
+          <li><a href="/compliance/eu-cz-264-2025">ZKB 264/2025</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">United States</p>
+        <ul>
+          <li><a href="/compliance/us-ma-201-cmr-17">201 CMR 17</a></li>
+          <li><a href="/compliance/us-ny-23-nycrr-500">23 NYCRR 500</a></li>
+          <li><a href="/compliance/us-disa-asd-stig">ASD STIG</a></li>
+          <li><a href="/compliance/us-ca-ccpa">CCPA/CPRA</a></li>
+          <li><a href="/compliance/us-cjis">CJIS</a></li>
+          <li><a href="/compliance/us-cmmc">CMMC</a></li>
+          <li><a href="/compliance/us-coppa">COPPA Rule</a></li>
+          <li><a href="/compliance/us-co-cpa">CPA</a></li>
+          <li><a href="/compliance/us-nist-csf">CSF 2.0</a></li>
+          <li><a href="/compliance/us-ct-ctdpa">CTDPA</a></li>
+          <li><a href="/compliance/us-dfars-252-204-7012">DFARS 7012</a></li>
+          <li><a href="/compliance/us-dod-cc-srg">DoD CC SRG</a></li>
+          <li><a href="/compliance/us-de-dpdpa">DPDPA</a></li>
+          <li><a href="/compliance/us-eo-14028">EO 14028</a></li>
+          <li><a href="/compliance/us-fda-524b">FDA 524B</a></li>
+          <li><a href="/compliance/us-fedramp">FedRAMP</a></li>
+          <li><a href="/compliance/us-ferpa">FERPA</a></li>
+          <li><a href="/compliance/us-ffiec-it-handbook">FFIEC IT HB</a></li>
+          <li><a href="/compliance/us-fips-140-3">FIPS 140-3</a></li>
+          <li><a href="/compliance/us-fisma">FISMA</a></li>
+          <li><a href="/compliance/us-glba-safeguards">GLBA Safeguards</a></li>
+          <li><a href="/compliance/us-govramp">GovRAMP</a></li>
+          <li><a href="/compliance/us-ftc-hbnr">HBNR</a></li>
+          <li><a href="/compliance/us-hipaa-security">HIPAA Security</a></li>
+          <li><a href="/compliance/us-ia-icdpa">ICDPA</a></li>
+          <li><a href="/compliance/us-in-icdpa">ICDPA (IN)</a></li>
+          <li><a href="/compliance/us-irs-pub-1075">IRS Pub 1075</a></li>
+          <li><a href="/compliance/us-omb-m-22-18">M-22-18</a></li>
+          <li><a href="/compliance/us-mt-mcdpa">MCDPA</a></li>
+          <li><a href="/compliance/us-mn-mcdpa">MCDPA (MN)</a></li>
+          <li><a href="/compliance/us-wa-mhmda">MHMDA</a></li>
+          <li><a href="/compliance/us-md-modpa">MODPA</a></li>
+          <li><a href="/compliance/us-naic-668">NAIC 668</a></li>
+          <li><a href="/compliance/us-nerc-cip">NERC CIP</a></li>
+          <li><a href="/compliance/us-nj-njdpa">NJDPA</a></li>
+          <li><a href="/compliance/us-ny-shield">NY SHIELD</a></li>
+          <li><a href="/compliance/us-sec-reg-s-p">Reg S-P</a></li>
+          <li><a href="/compliance/us-sec-reg-sci">Reg SCI</a></li>
+          <li><a href="/compliance/us-sec-cyber-disclosure">SEC cyber disclosure</a></li>
+          <li><a href="/compliance/us-section-508">Section 508</a></li>
+          <li><a href="/compliance/us-sox-itgc">SOX ITGC</a></li>
+          <li><a href="/compliance/us-nist-800-171">SP 800-171r3</a></li>
+          <li><a href="/compliance/us-nist-800-172">SP 800-172</a></li>
+          <li><a href="/compliance/us-nist-800-218a">SP 800-218A</a></li>
+          <li><a href="/compliance/us-nist-800-52">SP 800-52r2</a></li>
+          <li><a href="/compliance/us-nist-800-53">SP 800-53r5</a></li>
+          <li><a href="/compliance/us-nist-800-63b">SP 800-63B-4</a></li>
+          <li><a href="/compliance/us-nist-ssdf">SSDF</a></li>
+          <li><a href="/compliance/us-tx-tdpsa">TDPSA</a></li>
+          <li><a href="/compliance/us-tx-521">Tex. BCC 521</a></li>
+          <li><a href="/compliance/us-tx-ramp">TX-RAMP</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Canada</p>
+        <ul>
+          <li><a href="/compliance/ca-ab-hia">AB HIA</a></li>
+          <li><a href="/compliance/ca-ab-pipa">AB PIPA</a></li>
+          <li><a href="/compliance/ca-bc-pipa">BC PIPA</a></li>
+          <li><a href="/compliance/ca-cccs-baseline">CCCS Baseline</a></li>
+          <li><a href="/compliance/ca-ccspa">CCSPA</a></li>
+          <li><a href="/compliance/ca-cpcsc">CPCSC</a></li>
+          <li><a href="/compliance/ca-itsg-33">ITSG-33</a></li>
+          <li><a href="/compliance/ca-itsp-10-171">ITSP.10.171</a></li>
+          <li><a href="/compliance/ca-itsp-40-062">ITSP.40.062</a></li>
+          <li><a href="/compliance/ca-itsp-40-111">ITSP.40.111</a></li>
+          <li><a href="/compliance/ca-osfi-b10">OSFI B-10</a></li>
+          <li><a href="/compliance/ca-osfi-b13">OSFI B-13</a></li>
+          <li><a href="/compliance/ca-on-phipa">PHIPA</a></li>
+          <li><a href="/compliance/ca-pipeda">PIPEDA</a></li>
+          <li><a href="/compliance/ca-privacy-act">Privacy Act (CA)</a></li>
+          <li><a href="/compliance/ca-qc-law-25">Quebec Law 25</a></li>
+          <li><a href="/compliance/ca-tbs-dsm">TBS DSM</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Australia</p>
+        <ul>
+          <li><a href="/compliance/au-asd-essentials">ASD Essentials</a></li>
+          <li><a href="/compliance/au-cdr-rules">CDR Rules</a></li>
+          <li><a href="/compliance/au-apra-cpg-234">CPG 234</a></li>
+          <li><a href="/compliance/au-apra-cps-230">CPS 230</a></li>
+          <li><a href="/compliance/au-apra-cps-234">CPS 234</a></li>
+          <li><a href="/compliance/au-cyber-security-act">Cyber Security Act</a></li>
+          <li><a href="/compliance/au-essential-eight">Essential Eight</a></li>
+          <li><a href="/compliance/au-irap">IRAP</a></li>
+          <li><a href="/compliance/au-qld-is18">IS18</a></li>
+          <li><a href="/compliance/au-ism">ISM</a></li>
+          <li><a href="/compliance/au-my-health-records">My Health Records</a></li>
+          <li><a href="/compliance/au-nsw-cyber-policy">NSW CSP</a></li>
+          <li><a href="/compliance/au-privacy-app">Privacy Act / APP 11</a></li>
+          <li><a href="/compliance/au-pspf">PSPF</a></li>
+          <li><a href="/compliance/au-smart-device-rules">Smart Device Rules</a></li>
+          <li><a href="/compliance/au-soci-act">SOCI Act</a></li>
+          <li><a href="/compliance/au-soci-rmp">SOCI RMP Rules</a></li>
+          <li><a href="/compliance/au-vic-vpdss">VPDSS</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</details></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="fixes" aria-labelledby="fix-title">
+  <div class="lookup__head">
+    <p class="eyebrow">Issue type · error for writes, warning for reads</p>
+    <h1 id="fix-title"><code>db.result-unchecked</code></h1>
+    <p><strong>What it means.</strong> A query&#39;s error is never read. The result is dropped, destructured without <code>error</code>, or destructured with an <code>error</code> that the function never uses. Writes (<code>insert</code>, <code>upsert</code>, <code>update</code>, <code>delete</code>) are errors; reads (<code>select</code>) are warnings.</p>
+    <p><strong>Why it matters.</strong> A failed write passes silently, and the code carries on as if the row was written. A failed read looks like &#34;no rows&#34;.</p>
+    <p><strong>What to do.</strong> Read <code>error</code> from every query result and handle it (return an error response, roll back, retry or stop), or call <code>.throwOnError()</code> so failures throw.</p>
+    <p><strong>Automatic fix.</strong> Transformation for writes: unchecked writes. Coming for reads: unchecked reads.</p>
+  </div>
+
+  <h2>Real fixes, by language</h2>
+  <p>Each one is an edit sloptopop applied to a public repository, checked by the Guider, linked to the file at the commit it was made on. Committed secret values are shortened, never republished.</p>
+  <section class="fixes__language" aria-labelledby="lang-1">
+    <h3 id="lang-1">TypeScript <span class="fixes__count">13 real fixes</span></h3>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/api/chat-title/[id]/route.ts#L35" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/api/chat-title/[id]/route.ts:35</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/api/chat-title/[id]/route.ts before"><code><span class="ln" data-n="31"><span class="ln__code">    .select(</span></span>
+<span class="ln" data-n="32"><span class="ln__code">      &#39;chat_title, message_parts(role, type, text_text, order, created_at)&#39;</span></span>
+<span class="ln" data-n="33"><span class="ln__code">    )</span></span>
+<span class="ln" data-n="34"><span class="ln__code">    .eq(&#39;id&#39;, id)</span></span>
+<span class="ln ln--removed" data-n="35"><span class="ln__code">    .maybeSingle()<del class="del"></del>;</span></span>
+<span class="ln" data-n="36"><span class="ln__code"></span></span>
+<span class="ln" data-n="37"><span class="ln__code">  if (!data) {</span></span>
+<span class="ln" data-n="38"><span class="ln__code">    return NextResponse.json({ title: &#39;Chat&#39; }, { headers: NO_STORE });</span></span>
+<span class="ln" data-n="39"><span class="ln__code">  }</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/api/chat-title/[id]/route.ts after"><code><span class="ln" data-n="31"><span class="ln__code">    .select(</span></span>
+<span class="ln" data-n="32"><span class="ln__code">      &#39;chat_title, message_parts(role, type, text_text, order, created_at)&#39;</span></span>
+<span class="ln" data-n="33"><span class="ln__code">    )</span></span>
+<span class="ln" data-n="34"><span class="ln__code">    .eq(&#39;id&#39;, id)</span></span>
+<span class="ln ln--added" data-n="35"><span class="ln__code">    .maybeSingle()<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="36"><span class="ln__code"></span></span>
+<span class="ln" data-n="37"><span class="ln__code">  if (!data) {</span></span>
+<span class="ln" data-n="38"><span class="ln__code">    return NextResponse.json({ title: &#39;Chat&#39; }, { headers: NO_STORE });</span></span>
+<span class="ln" data-n="39"><span class="ln__code">  }</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/api/chat/chatHelpers.ts#L132" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/api/chat/chatHelpers.ts:132</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/api/chat/chatHelpers.ts before"><code><span class="ln" data-n="128"><span class="ln__code">      .from(&#39;chat_sessions&#39;)</span></span>
+<span class="ln" data-n="129"><span class="ln__code">      .update({ chat_title: title })</span></span>
+<span class="ln" data-n="130"><span class="ln__code">      .eq(&#39;id&#39;, chatSessionId)</span></span>
+<span class="ln" data-n="131"><span class="ln__code">      .eq(&#39;user_id&#39;, userId)</span></span>
+<span class="ln ln--removed" data-n="132"><span class="ln__code">      .is(&#39;chat_title&#39;, null)<del class="del"></del>;</span></span>
+<span class="ln" data-n="133"><span class="ln__code">  } catch (error) {</span></span>
+<span class="ln" data-n="134"><span class="ln__code">    console.error(&#39;Error generating chat title:&#39;, error);</span></span>
+<span class="ln" data-n="135"><span class="ln__code">  }</span></span>
+<span class="ln" data-n="136"><span class="ln__code">}</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/api/chat/chatHelpers.ts after"><code><span class="ln" data-n="128"><span class="ln__code">      .from(&#39;chat_sessions&#39;)</span></span>
+<span class="ln" data-n="129"><span class="ln__code">      .update({ chat_title: title })</span></span>
+<span class="ln" data-n="130"><span class="ln__code">      .eq(&#39;id&#39;, chatSessionId)</span></span>
+<span class="ln" data-n="131"><span class="ln__code">      .eq(&#39;user_id&#39;, userId)</span></span>
+<span class="ln ln--added" data-n="132"><span class="ln__code">      .is(&#39;chat_title&#39;, null)<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="133"><span class="ln__code">  } catch (error) {</span></span>
+<span class="ln" data-n="134"><span class="ln__code">    console.error(&#39;Error generating chat title:&#39;, error);</span></span>
+<span class="ln" data-n="135"><span class="ln__code">  }</span></span>
+<span class="ln" data-n="136"><span class="ln__code">}</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/chat/admin/actions.ts#L24" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/chat/admin/actions.ts:24</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/chat/admin/actions.ts before"><code><span class="ln" data-n="20"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln" data-n="21"><span class="ln__code">    .from(&#39;users&#39;)</span></span>
+<span class="ln" data-n="22"><span class="ln__code">    .select(&#39;is_admin&#39;)</span></span>
+<span class="ln" data-n="23"><span class="ln__code">    .eq(&#39;id&#39;, session.sub)</span></span>
+<span class="ln ln--removed" data-n="24"><span class="ln__code">    .maybeSingle()<del class="del"></del>;</span></span>
+<span class="ln" data-n="25"><span class="ln__code"></span></span>
+<span class="ln" data-n="26"><span class="ln__code">  if (!data?.is_admin) return { ok: false, message: &#39;Not authorized.&#39; };</span></span>
+<span class="ln" data-n="27"><span class="ln__code">  return { ok: true, userId: session.sub };</span></span>
+<span class="ln" data-n="28"><span class="ln__code">}</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/chat/admin/actions.ts after"><code><span class="ln" data-n="20"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln" data-n="21"><span class="ln__code">    .from(&#39;users&#39;)</span></span>
+<span class="ln" data-n="22"><span class="ln__code">    .select(&#39;is_admin&#39;)</span></span>
+<span class="ln" data-n="23"><span class="ln__code">    .eq(&#39;id&#39;, session.sub)</span></span>
+<span class="ln ln--added" data-n="24"><span class="ln__code">    .maybeSingle()<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="25"><span class="ln__code"></span></span>
+<span class="ln" data-n="26"><span class="ln__code">  if (!data?.is_admin) return { ok: false, message: &#39;Not authorized.&#39; };</span></span>
+<span class="ln" data-n="27"><span class="ln__code">  return { ok: true, userId: session.sub };</span></span>
+<span class="ln" data-n="28"><span class="ln__code">}</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/chat/admin/fetch.ts#L23" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/chat/admin/fetch.ts:23</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/chat/admin/fetch.ts before"><code><span class="ln" data-n="19"><span class="ln__code">  const { data: me } = await supabase</span></span>
+<span class="ln" data-n="20"><span class="ln__code">    .from(&#39;users&#39;)</span></span>
+<span class="ln" data-n="21"><span class="ln__code">    .select(&#39;is_admin&#39;)</span></span>
+<span class="ln" data-n="22"><span class="ln__code">    .eq(&#39;id&#39;, userId)</span></span>
+<span class="ln ln--removed" data-n="23"><span class="ln__code">    .maybeSingle()<del class="del"></del>;</span></span>
+<span class="ln" data-n="24"><span class="ln__code">  return !!me?.is_admin;</span></span>
+<span class="ln" data-n="25"><span class="ln__code">}</span></span>
+<span class="ln" data-n="26"><span class="ln__code"></span></span>
+<span class="ln" data-n="27"><span class="ln__code">interface TopUser {</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/chat/admin/fetch.ts after"><code><span class="ln" data-n="19"><span class="ln__code">  const { data: me } = await supabase</span></span>
+<span class="ln" data-n="20"><span class="ln__code">    .from(&#39;users&#39;)</span></span>
+<span class="ln" data-n="21"><span class="ln__code">    .select(&#39;is_admin&#39;)</span></span>
+<span class="ln" data-n="22"><span class="ln__code">    .eq(&#39;id&#39;, userId)</span></span>
+<span class="ln ln--added" data-n="23"><span class="ln__code">    .maybeSingle()<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="24"><span class="ln__code">  return !!me?.is_admin;</span></span>
+<span class="ln" data-n="25"><span class="ln__code">}</span></span>
+<span class="ln" data-n="26"><span class="ln__code"></span></span>
+<span class="ln" data-n="27"><span class="ln__code">interface TopUser {</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/chat/components/ai-settings/actions.ts#L66" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/chat/components/ai-settings/actions.ts:66</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/chat/components/ai-settings/actions.ts before"><code><span class="ln" data-n="62"><span class="ln__code">    .select(&#39;model_id&#39;)</span></span>
+<span class="ln" data-n="63"><span class="ln__code">    .eq(&#39;model_id&#39;, parsed.data.modelId)</span></span>
+<span class="ln" data-n="64"><span class="ln__code">    .eq(&#39;active&#39;, true)</span></span>
+<span class="ln" data-n="65"><span class="ln__code">    .eq(&#39;selectable&#39;, true)</span></span>
+<span class="ln ln--removed" data-n="66"><span class="ln__code">    .maybeSingle()<del class="del"></del>;</span></span>
+<span class="ln" data-n="67"><span class="ln__code">  if (!model) return { success: false, message: &#39;Unknown model.&#39; };</span></span>
+<span class="ln" data-n="68"><span class="ln__code"></span></span>
+<span class="ln" data-n="69"><span class="ln__code">  const { error } = await supabase</span></span>
+<span class="ln" data-n="70"><span class="ln__code">    .from(&#39;users&#39;)</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/chat/components/ai-settings/actions.ts after"><code><span class="ln" data-n="62"><span class="ln__code">    .select(&#39;model_id&#39;)</span></span>
+<span class="ln" data-n="63"><span class="ln__code">    .eq(&#39;model_id&#39;, parsed.data.modelId)</span></span>
+<span class="ln" data-n="64"><span class="ln__code">    .eq(&#39;active&#39;, true)</span></span>
+<span class="ln" data-n="65"><span class="ln__code">    .eq(&#39;selectable&#39;, true)</span></span>
+<span class="ln ln--added" data-n="66"><span class="ln__code">    .maybeSingle()<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="67"><span class="ln__code">  if (!model) return { success: false, message: &#39;Unknown model.&#39; };</span></span>
+<span class="ln" data-n="68"><span class="ln__code"></span></span>
+<span class="ln" data-n="69"><span class="ln__code">  const { error } = await supabase</span></span>
+<span class="ln" data-n="70"><span class="ln__code">    .from(&#39;users&#39;)</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/chat/models.ts#L26" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/chat/models.ts:26</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/chat/models.ts before"><code><span class="ln" data-n="22"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln" data-n="23"><span class="ln__code">    .from(&#39;ai_models&#39;)</span></span>
+<span class="ln" data-n="24"><span class="ln__code">    .select(&#39;model_id, provider&#39;)</span></span>
+<span class="ln" data-n="25"><span class="ln__code">    .eq(&#39;active&#39;, true)</span></span>
+<span class="ln ln--removed" data-n="26"><span class="ln__code">    .order(&#39;display_order&#39;, { ascending: true })<del class="del"></del>;</span></span>
+<span class="ln" data-n="27"><span class="ln__code">  return data ?? [];</span></span>
+<span class="ln" data-n="28"><span class="ln__code">}</span></span>
+<span class="ln" data-n="29"><span class="ln__code"></span></span>
+<span class="ln" data-n="30"><span class="ln__code">// Models the user is allowed to pick in the chat model dropdown.</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/chat/models.ts after"><code><span class="ln" data-n="22"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln" data-n="23"><span class="ln__code">    .from(&#39;ai_models&#39;)</span></span>
+<span class="ln" data-n="24"><span class="ln__code">    .select(&#39;model_id, provider&#39;)</span></span>
+<span class="ln" data-n="25"><span class="ln__code">    .eq(&#39;active&#39;, true)</span></span>
+<span class="ln ln--added" data-n="26"><span class="ln__code">    .order(&#39;display_order&#39;, { ascending: true })<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="27"><span class="ln__code">  return data ?? [];</span></span>
+<span class="ln" data-n="28"><span class="ln__code">}</span></span>
+<span class="ln" data-n="29"><span class="ln__code"></span></span>
+<span class="ln" data-n="30"><span class="ln__code">// Models the user is allowed to pick in the chat model dropdown.</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/lib/server/usage.ts#L285" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · lib/server/usage.ts:285</a> <span class="fix__meta">@ 355c56e · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="lib/server/usage.ts before"><code><span class="ln" data-n="281"><span class="ln__code">  supabase: SupabaseClient&#60;Database&#62;</span></span>
+<span class="ln" data-n="282"><span class="ln__code">): Promise&#60;Map&#60;string, ModelPricing&#62;&#62; {</span></span>
+<span class="ln" data-n="283"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln" data-n="284"><span class="ln__code">    .from(&#39;ai_models&#39;)</span></span>
+<span class="ln ln--removed" data-n="285"><span class="ln__code">    .select(&#39;model_id, input_cost_per_million_usd, output_cost_per_million_usd&#39;)<del class="del"></del>;</span></span>
+<span class="ln" data-n="286"><span class="ln__code">  return new Map((data ?? []).map((m) =&#62; [m.model_id, m]));</span></span>
+<span class="ln" data-n="287"><span class="ln__code">}</span></span>
+<span class="ln" data-n="288"><span class="ln__code"></span></span>
+<span class="ln" data-n="289"><span class="ln__code">// Group step rows (newest-first) into one entry per assistant message —</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="lib/server/usage.ts after"><code><span class="ln" data-n="281"><span class="ln__code">  supabase: SupabaseClient&#60;Database&#62;</span></span>
+<span class="ln" data-n="282"><span class="ln__code">): Promise&#60;Map&#60;string, ModelPricing&#62;&#62; {</span></span>
+<span class="ln" data-n="283"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln" data-n="284"><span class="ln__code">    .from(&#39;ai_models&#39;)</span></span>
+<span class="ln ln--added" data-n="285"><span class="ln__code">    .select(&#39;model_id, input_cost_per_million_usd, output_cost_per_million_usd&#39;)<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="286"><span class="ln__code">  return new Map((data ?? []).map((m) =&#62; [m.model_id, m]));</span></span>
+<span class="ln" data-n="287"><span class="ln__code">}</span></span>
+<span class="ln" data-n="288"><span class="ln__code"></span></span>
+<span class="ln" data-n="289"><span class="ln__code">// Group step rows (newest-first) into one entry per assistant message —</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/app/api/retrieval/process/docx/route.ts#L101" rel="noopener noreferrer">mckaywrigley/chatbot-ui · app/api/retrieval/process/docx/route.ts:101</a> <span class="fix__meta">@ 81328b6 · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/api/retrieval/process/docx/route.ts before"><code><span class="ln" data-n="97"><span class="ln__code">          ? ((embeddings[index] || null) as any)</span></span>
+<span class="ln" data-n="98"><span class="ln__code">          : null</span></span>
+<span class="ln" data-n="99"><span class="ln__code">    }))</span></span>
+<span class="ln" data-n="100"><span class="ln__code"></span></span>
+<span class="ln ln--removed" data-n="101"><span class="ln__code">    await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items)<del class="del"></del></span></span>
+<span class="ln" data-n="102"><span class="ln__code"></span></span>
+<span class="ln" data-n="103"><span class="ln__code">    const totalTokens = file_items.reduce((acc, item) =&#62; acc + item.tokens, 0)</span></span>
+<span class="ln" data-n="104"><span class="ln__code"></span></span>
+<span class="ln" data-n="105"><span class="ln__code">    await supabaseAdmin</span></span>
+<span class="ln" data-n="106"><span class="ln__code">      .from(&#34;files&#34;)</span></span>
+<span class="ln" data-n="107"><span class="ln__code">      .update({ tokens: totalTokens })</span></span>
+<span class="ln ln--removed" data-n="108"><span class="ln__code">      .eq(&#34;id&#34;, fileId)<del class="del"></del></span></span>
+<span class="ln" data-n="109"><span class="ln__code"></span></span>
+<span class="ln" data-n="110"><span class="ln__code">    return new NextResponse(&#34;Embed Successful&#34;, {</span></span>
+<span class="ln" data-n="111"><span class="ln__code">      status: 200</span></span>
+<span class="ln" data-n="112"><span class="ln__code">    })</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/api/retrieval/process/docx/route.ts after"><code><span class="ln" data-n="97"><span class="ln__code">          ? ((embeddings[index] || null) as any)</span></span>
+<span class="ln" data-n="98"><span class="ln__code">          : null</span></span>
+<span class="ln" data-n="99"><span class="ln__code">    }))</span></span>
+<span class="ln" data-n="100"><span class="ln__code"></span></span>
+<span class="ln ln--added" data-n="101"><span class="ln__code">    await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items)<ins class="ins">.throwOnError()</ins></span></span>
+<span class="ln" data-n="102"><span class="ln__code"></span></span>
+<span class="ln" data-n="103"><span class="ln__code">    const totalTokens = file_items.reduce((acc, item) =&#62; acc + item.tokens, 0)</span></span>
+<span class="ln" data-n="104"><span class="ln__code"></span></span>
+<span class="ln" data-n="105"><span class="ln__code">    await supabaseAdmin</span></span>
+<span class="ln" data-n="106"><span class="ln__code">      .from(&#34;files&#34;)</span></span>
+<span class="ln" data-n="107"><span class="ln__code">      .update({ tokens: totalTokens })</span></span>
+<span class="ln ln--added" data-n="108"><span class="ln__code">      .eq(&#34;id&#34;, fileId)<ins class="ins">.throwOnError()</ins></span></span>
+<span class="ln" data-n="109"><span class="ln__code"></span></span>
+<span class="ln" data-n="110"><span class="ln__code">    return new NextResponse(&#34;Embed Successful&#34;, {</span></span>
+<span class="ln" data-n="111"><span class="ln__code">      status: 200</span></span>
+<span class="ln" data-n="112"><span class="ln__code">    })</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/mckaywrigley/chatbot-ui/blob/81328b61d2a4ab597a7a057be70e785cf756d9f8/app/api/retrieval/process/route.ts#L155" rel="noopener noreferrer">mckaywrigley/chatbot-ui · app/api/retrieval/process/route.ts:155</a> <span class="fix__meta">@ 81328b6 · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/api/retrieval/process/route.ts before"><code><span class="ln" data-n="151"><span class="ln__code">          ? ((embeddings[index] || null) as any)</span></span>
+<span class="ln" data-n="152"><span class="ln__code">          : null</span></span>
+<span class="ln" data-n="153"><span class="ln__code">    }))</span></span>
+<span class="ln" data-n="154"><span class="ln__code"></span></span>
+<span class="ln ln--removed" data-n="155"><span class="ln__code">    await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items)<del class="del"></del></span></span>
+<span class="ln" data-n="156"><span class="ln__code"></span></span>
+<span class="ln" data-n="157"><span class="ln__code">    const totalTokens = file_items.reduce((acc, item) =&#62; acc + item.tokens, 0)</span></span>
+<span class="ln" data-n="158"><span class="ln__code"></span></span>
+<span class="ln" data-n="159"><span class="ln__code">    await supabaseAdmin</span></span>
+<span class="ln" data-n="160"><span class="ln__code">      .from(&#34;files&#34;)</span></span>
+<span class="ln" data-n="161"><span class="ln__code">      .update({ tokens: totalTokens })</span></span>
+<span class="ln ln--removed" data-n="162"><span class="ln__code">      .eq(&#34;id&#34;, file_id)<del class="del"></del></span></span>
+<span class="ln" data-n="163"><span class="ln__code"></span></span>
+<span class="ln" data-n="164"><span class="ln__code">    return new NextResponse(&#34;Embed Successful&#34;, {</span></span>
+<span class="ln" data-n="165"><span class="ln__code">      status: 200</span></span>
+<span class="ln" data-n="166"><span class="ln__code">    })</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/api/retrieval/process/route.ts after"><code><span class="ln" data-n="151"><span class="ln__code">          ? ((embeddings[index] || null) as any)</span></span>
+<span class="ln" data-n="152"><span class="ln__code">          : null</span></span>
+<span class="ln" data-n="153"><span class="ln__code">    }))</span></span>
+<span class="ln" data-n="154"><span class="ln__code"></span></span>
+<span class="ln ln--added" data-n="155"><span class="ln__code">    await supabaseAdmin.from(&#34;file_items&#34;).upsert(file_items)<ins class="ins">.throwOnError()</ins></span></span>
+<span class="ln" data-n="156"><span class="ln__code"></span></span>
+<span class="ln" data-n="157"><span class="ln__code">    const totalTokens = file_items.reduce((acc, item) =&#62; acc + item.tokens, 0)</span></span>
+<span class="ln" data-n="158"><span class="ln__code"></span></span>
+<span class="ln" data-n="159"><span class="ln__code">    await supabaseAdmin</span></span>
+<span class="ln" data-n="160"><span class="ln__code">      .from(&#34;files&#34;)</span></span>
+<span class="ln" data-n="161"><span class="ln__code">      .update({ tokens: totalTokens })</span></span>
+<span class="ln ln--added" data-n="162"><span class="ln__code">      .eq(&#34;id&#34;, file_id)<ins class="ins">.throwOnError()</ins></span></span>
+<span class="ln" data-n="163"><span class="ln__code"></span></span>
+<span class="ln" data-n="164"><span class="ln__code">    return new NextResponse(&#34;Embed Successful&#34;, {</span></span>
+<span class="ln" data-n="165"><span class="ln__code">      status: 200</span></span>
+<span class="ln" data-n="166"><span class="ln__code">    })</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/astria/train-model/route.ts#L221" rel="noopener noreferrer">astriaai/headshots-starter · app/astria/train-model/route.ts:221</a> <span class="fix__meta">@ 86771e4 · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/astria/train-model/route.ts before"><code><span class="ln" data-n="217"><span class="ln__code">    if (status !== 201) {</span></span>
+<span class="ln" data-n="218"><span class="ln__code">      console.error({ status });</span></span>
+<span class="ln" data-n="219"><span class="ln__code">      // Rollback: Delete the created model if something goes wrong</span></span>
+<span class="ln" data-n="220"><span class="ln__code">      if (modelId) {</span></span>
+<span class="ln ln--removed" data-n="221"><span class="ln__code">        await supabase.from(&#34;models&#34;).delete().eq(&#34;id&#34;, modelId)<del class="del"></del>;</span></span>
+<span class="ln" data-n="222"><span class="ln__code">      }</span></span>
+<span class="ln" data-n="223"><span class="ln__code"></span></span>
+<span class="ln" data-n="224"><span class="ln__code">      if (status === 400) {</span></span>
+<span class="ln" data-n="225"><span class="ln__code">        return NextResponse.json(</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/astria/train-model/route.ts after"><code><span class="ln" data-n="217"><span class="ln__code">    if (status !== 201) {</span></span>
+<span class="ln" data-n="218"><span class="ln__code">      console.error({ status });</span></span>
+<span class="ln" data-n="219"><span class="ln__code">      // Rollback: Delete the created model if something goes wrong</span></span>
+<span class="ln" data-n="220"><span class="ln__code">      if (modelId) {</span></span>
+<span class="ln ln--added" data-n="221"><span class="ln__code">        await supabase.from(&#34;models&#34;).delete().eq(&#34;id&#34;, modelId)<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="222"><span class="ln__code">      }</span></span>
+<span class="ln" data-n="223"><span class="ln__code"></span></span>
+<span class="ln" data-n="224"><span class="ln__code">      if (status === 400) {</span></span>
+<span class="ln" data-n="225"><span class="ln__code">        return NextResponse.json(</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/overview/models/[id]/page.tsx#L39" rel="noopener noreferrer">astriaai/headshots-starter · app/overview/models/[id]/page.tsx:39</a> <span class="fix__meta">@ 86771e4 · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/overview/models/[id]/page.tsx before"><code><span class="ln" data-n="35"><span class="ln__code"></span></span>
+<span class="ln" data-n="36"><span class="ln__code">  const { data: images } = await supabase</span></span>
+<span class="ln" data-n="37"><span class="ln__code">    .from(&#34;images&#34;)</span></span>
+<span class="ln" data-n="38"><span class="ln__code">    .select(&#34;*&#34;)</span></span>
+<span class="ln ln--removed" data-n="39"><span class="ln__code">    .eq(&#34;modelId&#34;, model.id)<del class="del"></del>;</span></span>
+<span class="ln" data-n="40"><span class="ln__code"></span></span>
+<span class="ln ln--removed" data-n="41"><span class="ln__code">  const { data: samples } = await supabase.from(&#34;samples&#34;).select(&#34;*&#34;).eq(&#34;modelId&#34;, model.id)<del class="del"></del>;</span></span>
+<span class="ln" data-n="42"><span class="ln__code"></span></span>
+<span class="ln" data-n="43"><span class="ln__code">  return (</span></span>
+<span class="ln" data-n="44"><span class="ln__code">    &#60;div id=&#34;train-model-container&#34; className=&#34;w-full h-full&#34;&#62;</span></span>
+<span class="ln" data-n="45"><span class="ln__code">      &#60;div className=&#34;flex flex-row gap-4&#34;&#62;</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/overview/models/[id]/page.tsx after"><code><span class="ln" data-n="35"><span class="ln__code"></span></span>
+<span class="ln" data-n="36"><span class="ln__code">  const { data: images } = await supabase</span></span>
+<span class="ln" data-n="37"><span class="ln__code">    .from(&#34;images&#34;)</span></span>
+<span class="ln" data-n="38"><span class="ln__code">    .select(&#34;*&#34;)</span></span>
+<span class="ln ln--added" data-n="39"><span class="ln__code">    .eq(&#34;modelId&#34;, model.id)<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="40"><span class="ln__code"></span></span>
+<span class="ln ln--added" data-n="41"><span class="ln__code">  const { data: samples } = await supabase.from(&#34;samples&#34;).select(&#34;*&#34;).eq(&#34;modelId&#34;, model.id)<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="42"><span class="ln__code"></span></span>
+<span class="ln" data-n="43"><span class="ln__code">  return (</span></span>
+<span class="ln" data-n="44"><span class="ln__code">    &#60;div id=&#34;train-model-container&#34; className=&#34;w-full h-full&#34;&#62;</span></span>
+<span class="ln" data-n="45"><span class="ln__code">      &#60;div className=&#34;flex flex-row gap-4&#34;&#62;</span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/astriaai/headshots-starter/blob/86771e4cc7247c3c0b8b3b1d4b3afee715ce9141/app/overview/page.tsx#L26" rel="noopener noreferrer">astriaai/headshots-starter · app/overview/page.tsx:26</a> <span class="fix__meta">@ 86771e4 · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="app/overview/page.tsx before"><code><span class="ln" data-n="22"><span class="ln__code">      `*, samples (</span></span>
+<span class="ln" data-n="23"><span class="ln__code">      *</span></span>
+<span class="ln" data-n="24"><span class="ln__code">    )`</span></span>
+<span class="ln" data-n="25"><span class="ln__code">    )</span></span>
+<span class="ln ln--removed" data-n="26"><span class="ln__code">    .eq(&#34;user_id&#34;, user.id)<del class="del"></del>;</span></span>
+<span class="ln" data-n="27"><span class="ln__code"></span></span>
+<span class="ln" data-n="28"><span class="ln__code">  return &#60;ClientSideModelsList serverModels={models ?? []} /&#62;;</span></span>
+<span class="ln" data-n="29"><span class="ln__code">}</span></span>
+<span class="ln" data-n="30"><span class="ln__code"></span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="app/overview/page.tsx after"><code><span class="ln" data-n="22"><span class="ln__code">      `*, samples (</span></span>
+<span class="ln" data-n="23"><span class="ln__code">      *</span></span>
+<span class="ln" data-n="24"><span class="ln__code">    )`</span></span>
+<span class="ln" data-n="25"><span class="ln__code">    )</span></span>
+<span class="ln ln--added" data-n="26"><span class="ln__code">    .eq(&#34;user_id&#34;, user.id)<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="27"><span class="ln__code"></span></span>
+<span class="ln" data-n="28"><span class="ln__code">  return &#60;ClientSideModelsList serverModels={models ?? []} /&#62;;</span></span>
+<span class="ln" data-n="29"><span class="ln__code">}</span></span>
+<span class="ln" data-n="30"><span class="ln__code"></span></span>
+</code></pre>
+      </div>
+    </article>
+    <article class="fix">
+      <p class="fix__source"><a href="https://github.com/KolbySisk/next-supabase-stripe-starter/blob/9839fd47d282b1b41a80fb82efea80ac7d1080bc/src/app/(auth)/auth/callback/route.ts#L32" rel="noopener noreferrer">KolbySisk/next-supabase-stripe-starter · src/app/(auth)/auth/callback/route.ts:32</a> <span class="fix__meta">@ 9839fd4 · MIT licence · QUERY_THROW_ON_ERROR</span></p>
+      <div class="fix__pair">
+        <pre class="code code--slop" tabindex="0" aria-label="src/app/(auth)/auth/callback/route.ts before"><code><span class="ln" data-n="28"><span class="ln__code">    const { data: userSubscription } = await supabase</span></span>
+<span class="ln" data-n="29"><span class="ln__code">      .from(&#39;subscriptions&#39;)</span></span>
+<span class="ln" data-n="30"><span class="ln__code">      .select(&#39;*, prices(*, products(*))&#39;)</span></span>
+<span class="ln" data-n="31"><span class="ln__code">      .in(&#39;status&#39;, [&#39;trialing&#39;, &#39;active&#39;])</span></span>
+<span class="ln ln--removed" data-n="32"><span class="ln__code">      .maybeSingle()<del class="del"></del>;</span></span>
+<span class="ln" data-n="33"><span class="ln__code"></span></span>
+<span class="ln" data-n="34"><span class="ln__code">    if (!userSubscription) {</span></span>
+<span class="ln" data-n="35"><span class="ln__code">      return NextResponse.redirect(`${siteUrl}/pricing`);</span></span>
+<span class="ln" data-n="36"><span class="ln__code">    } else {</span></span>
+</code></pre>
+        <pre class="code code--pop" tabindex="0" aria-label="src/app/(auth)/auth/callback/route.ts after"><code><span class="ln" data-n="28"><span class="ln__code">    const { data: userSubscription } = await supabase</span></span>
+<span class="ln" data-n="29"><span class="ln__code">      .from(&#39;subscriptions&#39;)</span></span>
+<span class="ln" data-n="30"><span class="ln__code">      .select(&#39;*, prices(*, products(*))&#39;)</span></span>
+<span class="ln" data-n="31"><span class="ln__code">      .in(&#39;status&#39;, [&#39;trialing&#39;, &#39;active&#39;])</span></span>
+<span class="ln ln--added" data-n="32"><span class="ln__code">      .maybeSingle()<ins class="ins">.throwOnError()</ins>;</span></span>
+<span class="ln" data-n="33"><span class="ln__code"></span></span>
+<span class="ln" data-n="34"><span class="ln__code">    if (!userSubscription) {</span></span>
+<span class="ln" data-n="35"><span class="ln__code">      return NextResponse.redirect(`${siteUrl}/pricing`);</span></span>
+<span class="ln" data-n="36"><span class="ln__code">    } else {</span></span>
+</code></pre>
+      </div>
+    </article>
+  </section>
+  <p class="fixes__none"><strong>No real fix recorded yet in:</strong> JavaScript, Python, Go, Java, Kotlin, C#, C, C++, PHP, PowerShell, Rust, Shell, Swift. Examples appear here only once sloptopop has fixed one in a real repository.</p>
+  <h2>Real detections, by language</h2>
+  <p>Where sloptopop found this issue in a public repository: the line it points at, at the commit it was found on.</p>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/ElectricCodeGuy/SupabaseAuthWithSSR/blob/355c56ea09c16f3ae5a069718130b50945d1f580/app/api/chat-title/[id]/route.ts#L30" rel="noopener noreferrer">ElectricCodeGuy/SupabaseAuthWithSSR · app/api/chat-title/[id]/route.ts:30</a> <span class="fix__meta">TypeScript · @ 355c56e · MIT licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="app/api/chat-title/[id]/route.ts, finding on line 30"><code><span class="ln" data-n="26"><span class="ln__code">  }</span></span>
+<span class="ln" data-n="27"><span class="ln__code"></span></span>
+<span class="ln" data-n="28"><span class="ln__code">  const supabase = await createServerSupabaseClient();</span></span>
+<span class="ln" data-n="29"><span class="ln__code">  const { data } = await supabase</span></span>
+<span class="ln ln--finding" data-n="30" data-note="db.result-unchecked"><span class="ln__code"><mark class="finding">    .from(&#39;chat_sessions&#39;)</mark></span></span>
+<span class="ln" data-n="31"><span class="ln__code">    .select(</span></span>
+<span class="ln" data-n="32"><span class="ln__code">      &#39;chat_title, message_parts(role, type, text_text, order, created_at)&#39;</span></span>
+<span class="ln" data-n="33"><span class="ln__code">    )</span></span>
+<span class="ln" data-n="34"><span class="ln__code">    .eq(&#39;id&#39;, id)</span></span>
+</code></pre>
+  </article>
+  <h2>Standards with controls for this issue type</h2>
+  <ul class="fixes__standards">
+    <li><a href="/compliance/eu-dora#db.result-unchecked">DORA</a> <span class="fixes__count">1</span></li>
+    <li><a href="/compliance/intl-owasp-asvs#db.result-unchecked">ASVS</a> <span class="fixes__count">1</span></li>
+    <li><a href="/compliance/us-disa-asd-stig#db.result-unchecked">ASD STIG</a> <span class="fixes__count">1</span></li>
+    <li><a href="/compliance/us-nist-800-218a#db.result-unchecked">SP 800-218A</a> <span class="fixes__count">1</span></li>
+    <li><a href="/compliance/us-nist-ssdf#db.result-unchecked">SSDF</a> <span class="fixes__count">1</span></li>
+  </ul>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

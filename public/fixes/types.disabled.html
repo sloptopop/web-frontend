@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>types.disabled · fixes · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css?v=17753629598558183050">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li class="site-nav__menu"><details class="standards-menu">
+  <summary>Compliance</summary>
+  <div class="standards-menu__panel">
+    <p class="standards-menu__all"><a href="/compliance">All frameworks: overview</a></p>
+    <ul class="standards-menu__groups">
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">International</p>
+        <ul>
+          <li><a href="/compliance/intl-owasp-asvs">ASVS</a></li>
+          <li><a href="/compliance/intl-mitre-attack">ATT&amp;CK</a></li>
+          <li><a href="/compliance/intl-cis-controls">CIS Controls</a></li>
+          <li><a href="/compliance/intl-csa-ccm">CSA CCM</a></li>
+          <li><a href="/compliance/intl-cwe">CWE</a></li>
+          <li><a href="/compliance/intl-etsi-en-303-645">EN 303 645</a></li>
+          <li><a href="/compliance/intl-owasp-top10">OWASP Top 10</a></li>
+          <li><a href="/compliance/intl-pci-dss">PCI DSS</a></li>
+          <li><a href="/compliance/intl-pci-sslc">PCI Secure SLC</a></li>
+          <li><a href="/compliance/intl-pci-sss">PCI SSS</a></li>
+          <li><a href="/compliance/intl-owasp-samm">SAMM</a></li>
+          <li><a href="/compliance/intl-scf">SCF</a></li>
+          <li><a href="/compliance/intl-soc2">SOC 2</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">European Union</p>
+        <ul>
+          <li><a href="/compliance/eu-ai-act">AI Act</a></li>
+          <li><a href="/compliance/eu-nl-bio2">BIO2</a></li>
+          <li><a href="/compliance/eu-de-bsig">BSIG 2025</a></li>
+          <li><a href="/compliance/eu-de-bsi-c5">C5</a></li>
+          <li><a href="/compliance/eu-nl-cbw">Cbw</a></li>
+          <li><a href="/compliance/eu-cer">CER</a></li>
+          <li><a href="/compliance/eu-cra">CRA</a></li>
+          <li><a href="/compliance/eu-cybersecurity-act">CSA</a></li>
+          <li><a href="/compliance/eu-data-act">Data Act</a></li>
+          <li><a href="/compliance/eu-dora">DORA</a></li>
+          <li><a href="/compliance/eu-dora-rts-2024-1774">DORA RTS 2024/1774</a></li>
+          <li><a href="/compliance/eu-eaa">EAA</a></li>
+          <li><a href="/compliance/eu-eba-gl-2019-04">EBA/GL/2019/04</a></li>
+          <li><a href="/compliance/eu-ehds">EHDS</a></li>
+          <li><a href="/compliance/eu-eidas">eIDAS 2</a></li>
+          <li><a href="/compliance/eu-es-ens">ENS</a></li>
+          <li><a href="/compliance/eu-eprivacy">ePrivacy</a></li>
+          <li><a href="/compliance/eu-eucc">EUCC</a></li>
+          <li><a href="/compliance/eu-eucs">EUCS</a></li>
+          <li><a href="/compliance/eu-fr-nis2-bill">FR NIS2 bill</a></li>
+          <li><a href="/compliance/eu-gdpr">GDPR</a></li>
+          <li><a href="/compliance/eu-it-nis">IT NIS</a></li>
+          <li><a href="/compliance/eu-ivdr">IVDR</a></li>
+          <li><a href="/compliance/eu-mdr">MDR</a></li>
+          <li><a href="/compliance/eu-mica">MiCA</a></li>
+          <li><a href="/compliance/eu-nis2">NIS2</a></li>
+          <li><a href="/compliance/eu-nis2-ir-2024-2690">NIS2 IR 2024/2690</a></li>
+          <li><a href="/compliance/eu-pld">PLD</a></li>
+          <li><a href="/compliance/eu-psd2">PSD2</a></li>
+          <li><a href="/compliance/eu-psd2-rts-sca">PSD2 RTS SCA</a></li>
+          <li><a href="/compliance/eu-red-da-2022-30">RED DA 2022/30</a></li>
+          <li><a href="/compliance/eu-fr-rgs">RGS</a></li>
+          <li><a href="/compliance/eu-fr-secnumcloud">SecNumCloud</a></li>
+          <li><a href="/compliance/eu-de-bsi-tr-02102">TR-02102</a></li>
+          <li><a href="/compliance/eu-cz-264-2025">ZKB 264/2025</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">United States</p>
+        <ul>
+          <li><a href="/compliance/us-ma-201-cmr-17">201 CMR 17</a></li>
+          <li><a href="/compliance/us-ny-23-nycrr-500">23 NYCRR 500</a></li>
+          <li><a href="/compliance/us-disa-asd-stig">ASD STIG</a></li>
+          <li><a href="/compliance/us-ca-ccpa">CCPA/CPRA</a></li>
+          <li><a href="/compliance/us-cjis">CJIS</a></li>
+          <li><a href="/compliance/us-cmmc">CMMC</a></li>
+          <li><a href="/compliance/us-coppa">COPPA Rule</a></li>
+          <li><a href="/compliance/us-co-cpa">CPA</a></li>
+          <li><a href="/compliance/us-nist-csf">CSF 2.0</a></li>
+          <li><a href="/compliance/us-ct-ctdpa">CTDPA</a></li>
+          <li><a href="/compliance/us-dfars-252-204-7012">DFARS 7012</a></li>
+          <li><a href="/compliance/us-dod-cc-srg">DoD CC SRG</a></li>
+          <li><a href="/compliance/us-de-dpdpa">DPDPA</a></li>
+          <li><a href="/compliance/us-eo-14028">EO 14028</a></li>
+          <li><a href="/compliance/us-fda-524b">FDA 524B</a></li>
+          <li><a href="/compliance/us-fedramp">FedRAMP</a></li>
+          <li><a href="/compliance/us-ferpa">FERPA</a></li>
+          <li><a href="/compliance/us-ffiec-it-handbook">FFIEC IT HB</a></li>
+          <li><a href="/compliance/us-fips-140-3">FIPS 140-3</a></li>
+          <li><a href="/compliance/us-fisma">FISMA</a></li>
+          <li><a href="/compliance/us-glba-safeguards">GLBA Safeguards</a></li>
+          <li><a href="/compliance/us-govramp">GovRAMP</a></li>
+          <li><a href="/compliance/us-ftc-hbnr">HBNR</a></li>
+          <li><a href="/compliance/us-hipaa-security">HIPAA Security</a></li>
+          <li><a href="/compliance/us-ia-icdpa">ICDPA</a></li>
+          <li><a href="/compliance/us-in-icdpa">ICDPA (IN)</a></li>
+          <li><a href="/compliance/us-irs-pub-1075">IRS Pub 1075</a></li>
+          <li><a href="/compliance/us-omb-m-22-18">M-22-18</a></li>
+          <li><a href="/compliance/us-mt-mcdpa">MCDPA</a></li>
+          <li><a href="/compliance/us-mn-mcdpa">MCDPA (MN)</a></li>
+          <li><a href="/compliance/us-wa-mhmda">MHMDA</a></li>
+          <li><a href="/compliance/us-md-modpa">MODPA</a></li>
+          <li><a href="/compliance/us-naic-668">NAIC 668</a></li>
+          <li><a href="/compliance/us-nerc-cip">NERC CIP</a></li>
+          <li><a href="/compliance/us-nj-njdpa">NJDPA</a></li>
+          <li><a href="/compliance/us-ny-shield">NY SHIELD</a></li>
+          <li><a href="/compliance/us-sec-reg-s-p">Reg S-P</a></li>
+          <li><a href="/compliance/us-sec-reg-sci">Reg SCI</a></li>
+          <li><a href="/compliance/us-sec-cyber-disclosure">SEC cyber disclosure</a></li>
+          <li><a href="/compliance/us-section-508">Section 508</a></li>
+          <li><a href="/compliance/us-sox-itgc">SOX ITGC</a></li>
+          <li><a href="/compliance/us-nist-800-171">SP 800-171r3</a></li>
+          <li><a href="/compliance/us-nist-800-172">SP 800-172</a></li>
+          <li><a href="/compliance/us-nist-800-218a">SP 800-218A</a></li>
+          <li><a href="/compliance/us-nist-800-52">SP 800-52r2</a></li>
+          <li><a href="/compliance/us-nist-800-53">SP 800-53r5</a></li>
+          <li><a href="/compliance/us-nist-800-63b">SP 800-63B-4</a></li>
+          <li><a href="/compliance/us-nist-ssdf">SSDF</a></li>
+          <li><a href="/compliance/us-tx-tdpsa">TDPSA</a></li>
+          <li><a href="/compliance/us-tx-521">Tex. BCC 521</a></li>
+          <li><a href="/compliance/us-tx-ramp">TX-RAMP</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Canada</p>
+        <ul>
+          <li><a href="/compliance/ca-ab-hia">AB HIA</a></li>
+          <li><a href="/compliance/ca-ab-pipa">AB PIPA</a></li>
+          <li><a href="/compliance/ca-bc-pipa">BC PIPA</a></li>
+          <li><a href="/compliance/ca-cccs-baseline">CCCS Baseline</a></li>
+          <li><a href="/compliance/ca-ccspa">CCSPA</a></li>
+          <li><a href="/compliance/ca-cpcsc">CPCSC</a></li>
+          <li><a href="/compliance/ca-itsg-33">ITSG-33</a></li>
+          <li><a href="/compliance/ca-itsp-10-171">ITSP.10.171</a></li>
+          <li><a href="/compliance/ca-itsp-40-062">ITSP.40.062</a></li>
+          <li><a href="/compliance/ca-itsp-40-111">ITSP.40.111</a></li>
+          <li><a href="/compliance/ca-osfi-b10">OSFI B-10</a></li>
+          <li><a href="/compliance/ca-osfi-b13">OSFI B-13</a></li>
+          <li><a href="/compliance/ca-on-phipa">PHIPA</a></li>
+          <li><a href="/compliance/ca-pipeda">PIPEDA</a></li>
+          <li><a href="/compliance/ca-privacy-act">Privacy Act (CA)</a></li>
+          <li><a href="/compliance/ca-qc-law-25">Quebec Law 25</a></li>
+          <li><a href="/compliance/ca-tbs-dsm">TBS DSM</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Australia</p>
+        <ul>
+          <li><a href="/compliance/au-asd-essentials">ASD Essentials</a></li>
+          <li><a href="/compliance/au-cdr-rules">CDR Rules</a></li>
+          <li><a href="/compliance/au-apra-cpg-234">CPG 234</a></li>
+          <li><a href="/compliance/au-apra-cps-230">CPS 230</a></li>
+          <li><a href="/compliance/au-apra-cps-234">CPS 234</a></li>
+          <li><a href="/compliance/au-cyber-security-act">Cyber Security Act</a></li>
+          <li><a href="/compliance/au-essential-eight">Essential Eight</a></li>
+          <li><a href="/compliance/au-irap">IRAP</a></li>
+          <li><a href="/compliance/au-qld-is18">IS18</a></li>
+          <li><a href="/compliance/au-ism">ISM</a></li>
+          <li><a href="/compliance/au-my-health-records">My Health Records</a></li>
+          <li><a href="/compliance/au-nsw-cyber-policy">NSW CSP</a></li>
+          <li><a href="/compliance/au-privacy-app">Privacy Act / APP 11</a></li>
+          <li><a href="/compliance/au-pspf">PSPF</a></li>
+          <li><a href="/compliance/au-smart-device-rules">Smart Device Rules</a></li>
+          <li><a href="/compliance/au-soci-act">SOCI Act</a></li>
+          <li><a href="/compliance/au-soci-rmp">SOCI RMP Rules</a></li>
+          <li><a href="/compliance/au-vic-vpdss">VPDSS</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</details></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="fixes" aria-labelledby="fix-title">
+  <div class="lookup__head">
+    <p class="eyebrow">Issue type · error</p>
+    <h1 id="fix-title"><code>types.disabled</code></h1>
+    <p><strong>What it means.</strong> Type checking is switched off: <code>tsconfig.json</code> with <code>&#34;strict&#34;: false</code>, or with no <code>strict</code> and no <code>extends</code>; a <code>// @ts-nocheck</code> comment; a mypy section without <code>strict = true</code>.</p>
+    <p><strong>Why it matters.</strong> Type errors that the compiler would catch reach production instead.</p>
+    <p><strong>What to do.</strong> Turn strict checking on (<code>&#34;strict&#34;: true</code>, mypy <code>strict = true</code>), remove <code>@ts-nocheck</code>, and fix the errors that appear.</p>
+    <p><strong>Automatic fix.</strong> None yet.</p>
+  </div>
+
+  <h2>Real fixes, by language</h2>
+  <p>Each one is an edit sloptopop applied to a public repository, checked by the Guider, linked to the file at the commit it was made on. Committed secret values are shortened, never republished.</p>
+  <p class="lookup__empty">No real fix for this issue type has been applied to a public repository yet. sloptopop reports it, and plans a task for a person where it can.</p>
+  <p class="fixes__none"><strong>No real fix recorded yet in:</strong> TypeScript, JavaScript, Python, Go, Java, Kotlin, C#, C, C++, PHP, PowerShell, Rust, Shell, Swift. Examples appear here only once sloptopop has fixed one in a real repository.</p>
+  <h2>Real detections, by language</h2>
+  <p>Where sloptopop found this issue in a public repository: the line it points at, at the commit it was found on.</p>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/zllovesuki/git-on-cloudflare/blob/007a96eae94c8f562d223f81eb7548c8f7c38673/vitest.config.ts#L1" rel="noopener noreferrer">zllovesuki/git-on-cloudflare · vitest.config.ts:1</a> <span class="fix__meta">TypeScript · @ 007a96e · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="vitest.config.ts, finding on line 1"><code><span class="ln ln--finding" data-n="1" data-note="types.disabled"><span class="ln__code"><mark class="finding">// @ts-nocheck</mark></span></span>
+<span class="ln" data-n="2"><span class="ln__code">import { cloudflareTest } from &#34;@cloudflare/vitest-pool-workers&#34;;</span></span>
+<span class="ln" data-n="3"><span class="ln__code">import { readFileSync, existsSync } from &#34;node:fs&#34;;</span></span>
+<span class="ln" data-n="4"><span class="ln__code">import path from &#34;path&#34;;</span></span>
+<span class="ln" data-n="5"><span class="ln__code">import { BASE_TEST_BINDINGS } from &#34;./test/vitest.bindings&#34;;</span></span>
+</code></pre>
+  </article>
+  <h2>Standards with controls for this issue type</h2>
+  <ul class="fixes__standards">
+    <li><a href="/compliance/us-nist-800-218a#types.disabled">SP 800-218A</a> <span class="fixes__count">2</span></li>
+    <li><a href="/compliance/us-nist-ssdf#types.disabled">SSDF</a> <span class="fixes__count">2</span></li>
+  </ul>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

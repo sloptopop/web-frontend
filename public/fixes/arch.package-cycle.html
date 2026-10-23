@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>arch.package-cycle · fixes · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css?v=17753629598558183050">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li class="site-nav__menu"><details class="standards-menu">
+  <summary>Compliance</summary>
+  <div class="standards-menu__panel">
+    <p class="standards-menu__all"><a href="/compliance">All frameworks: overview</a></p>
+    <ul class="standards-menu__groups">
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">International</p>
+        <ul>
+          <li><a href="/compliance/intl-owasp-asvs">ASVS</a></li>
+          <li><a href="/compliance/intl-mitre-attack">ATT&amp;CK</a></li>
+          <li><a href="/compliance/intl-cis-controls">CIS Controls</a></li>
+          <li><a href="/compliance/intl-csa-ccm">CSA CCM</a></li>
+          <li><a href="/compliance/intl-cwe">CWE</a></li>
+          <li><a href="/compliance/intl-etsi-en-303-645">EN 303 645</a></li>
+          <li><a href="/compliance/intl-owasp-top10">OWASP Top 10</a></li>
+          <li><a href="/compliance/intl-pci-dss">PCI DSS</a></li>
+          <li><a href="/compliance/intl-pci-sslc">PCI Secure SLC</a></li>
+          <li><a href="/compliance/intl-pci-sss">PCI SSS</a></li>
+          <li><a href="/compliance/intl-owasp-samm">SAMM</a></li>
+          <li><a href="/compliance/intl-scf">SCF</a></li>
+          <li><a href="/compliance/intl-soc2">SOC 2</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">European Union</p>
+        <ul>
+          <li><a href="/compliance/eu-ai-act">AI Act</a></li>
+          <li><a href="/compliance/eu-nl-bio2">BIO2</a></li>
+          <li><a href="/compliance/eu-de-bsig">BSIG 2025</a></li>
+          <li><a href="/compliance/eu-de-bsi-c5">C5</a></li>
+          <li><a href="/compliance/eu-nl-cbw">Cbw</a></li>
+          <li><a href="/compliance/eu-cer">CER</a></li>
+          <li><a href="/compliance/eu-cra">CRA</a></li>
+          <li><a href="/compliance/eu-cybersecurity-act">CSA</a></li>
+          <li><a href="/compliance/eu-data-act">Data Act</a></li>
+          <li><a href="/compliance/eu-dora">DORA</a></li>
+          <li><a href="/compliance/eu-dora-rts-2024-1774">DORA RTS 2024/1774</a></li>
+          <li><a href="/compliance/eu-eaa">EAA</a></li>
+          <li><a href="/compliance/eu-eba-gl-2019-04">EBA/GL/2019/04</a></li>
+          <li><a href="/compliance/eu-ehds">EHDS</a></li>
+          <li><a href="/compliance/eu-eidas">eIDAS 2</a></li>
+          <li><a href="/compliance/eu-es-ens">ENS</a></li>
+          <li><a href="/compliance/eu-eprivacy">ePrivacy</a></li>
+          <li><a href="/compliance/eu-eucc">EUCC</a></li>
+          <li><a href="/compliance/eu-eucs">EUCS</a></li>
+          <li><a href="/compliance/eu-fr-nis2-bill">FR NIS2 bill</a></li>
+          <li><a href="/compliance/eu-gdpr">GDPR</a></li>
+          <li><a href="/compliance/eu-it-nis">IT NIS</a></li>
+          <li><a href="/compliance/eu-ivdr">IVDR</a></li>
+          <li><a href="/compliance/eu-mdr">MDR</a></li>
+          <li><a href="/compliance/eu-mica">MiCA</a></li>
+          <li><a href="/compliance/eu-nis2">NIS2</a></li>
+          <li><a href="/compliance/eu-nis2-ir-2024-2690">NIS2 IR 2024/2690</a></li>
+          <li><a href="/compliance/eu-pld">PLD</a></li>
+          <li><a href="/compliance/eu-psd2">PSD2</a></li>
+          <li><a href="/compliance/eu-psd2-rts-sca">PSD2 RTS SCA</a></li>
+          <li><a href="/compliance/eu-red-da-2022-30">RED DA 2022/30</a></li>
+          <li><a href="/compliance/eu-fr-rgs">RGS</a></li>
+          <li><a href="/compliance/eu-fr-secnumcloud">SecNumCloud</a></li>
+          <li><a href="/compliance/eu-de-bsi-tr-02102">TR-02102</a></li>
+          <li><a href="/compliance/eu-cz-264-2025">ZKB 264/2025</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">United States</p>
+        <ul>
+          <li><a href="/compliance/us-ma-201-cmr-17">201 CMR 17</a></li>
+          <li><a href="/compliance/us-ny-23-nycrr-500">23 NYCRR 500</a></li>
+          <li><a href="/compliance/us-disa-asd-stig">ASD STIG</a></li>
+          <li><a href="/compliance/us-ca-ccpa">CCPA/CPRA</a></li>
+          <li><a href="/compliance/us-cjis">CJIS</a></li>
+          <li><a href="/compliance/us-cmmc">CMMC</a></li>
+          <li><a href="/compliance/us-coppa">COPPA Rule</a></li>
+          <li><a href="/compliance/us-co-cpa">CPA</a></li>
+          <li><a href="/compliance/us-nist-csf">CSF 2.0</a></li>
+          <li><a href="/compliance/us-ct-ctdpa">CTDPA</a></li>
+          <li><a href="/compliance/us-dfars-252-204-7012">DFARS 7012</a></li>
+          <li><a href="/compliance/us-dod-cc-srg">DoD CC SRG</a></li>
+          <li><a href="/compliance/us-de-dpdpa">DPDPA</a></li>
+          <li><a href="/compliance/us-eo-14028">EO 14028</a></li>
+          <li><a href="/compliance/us-fda-524b">FDA 524B</a></li>
+          <li><a href="/compliance/us-fedramp">FedRAMP</a></li>
+          <li><a href="/compliance/us-ferpa">FERPA</a></li>
+          <li><a href="/compliance/us-ffiec-it-handbook">FFIEC IT HB</a></li>
+          <li><a href="/compliance/us-fips-140-3">FIPS 140-3</a></li>
+          <li><a href="/compliance/us-fisma">FISMA</a></li>
+          <li><a href="/compliance/us-glba-safeguards">GLBA Safeguards</a></li>
+          <li><a href="/compliance/us-govramp">GovRAMP</a></li>
+          <li><a href="/compliance/us-ftc-hbnr">HBNR</a></li>
+          <li><a href="/compliance/us-hipaa-security">HIPAA Security</a></li>
+          <li><a href="/compliance/us-ia-icdpa">ICDPA</a></li>
+          <li><a href="/compliance/us-in-icdpa">ICDPA (IN)</a></li>
+          <li><a href="/compliance/us-irs-pub-1075">IRS Pub 1075</a></li>
+          <li><a href="/compliance/us-omb-m-22-18">M-22-18</a></li>
+          <li><a href="/compliance/us-mt-mcdpa">MCDPA</a></li>
+          <li><a href="/compliance/us-mn-mcdpa">MCDPA (MN)</a></li>
+          <li><a href="/compliance/us-wa-mhmda">MHMDA</a></li>
+          <li><a href="/compliance/us-md-modpa">MODPA</a></li>
+          <li><a href="/compliance/us-naic-668">NAIC 668</a></li>
+          <li><a href="/compliance/us-nerc-cip">NERC CIP</a></li>
+          <li><a href="/compliance/us-nj-njdpa">NJDPA</a></li>
+          <li><a href="/compliance/us-ny-shield">NY SHIELD</a></li>
+          <li><a href="/compliance/us-sec-reg-s-p">Reg S-P</a></li>
+          <li><a href="/compliance/us-sec-reg-sci">Reg SCI</a></li>
+          <li><a href="/compliance/us-sec-cyber-disclosure">SEC cyber disclosure</a></li>
+          <li><a href="/compliance/us-section-508">Section 508</a></li>
+          <li><a href="/compliance/us-sox-itgc">SOX ITGC</a></li>
+          <li><a href="/compliance/us-nist-800-171">SP 800-171r3</a></li>
+          <li><a href="/compliance/us-nist-800-172">SP 800-172</a></li>
+          <li><a href="/compliance/us-nist-800-218a">SP 800-218A</a></li>
+          <li><a href="/compliance/us-nist-800-52">SP 800-52r2</a></li>
+          <li><a href="/compliance/us-nist-800-53">SP 800-53r5</a></li>
+          <li><a href="/compliance/us-nist-800-63b">SP 800-63B-4</a></li>
+          <li><a href="/compliance/us-nist-ssdf">SSDF</a></li>
+          <li><a href="/compliance/us-tx-tdpsa">TDPSA</a></li>
+          <li><a href="/compliance/us-tx-521">Tex. BCC 521</a></li>
+          <li><a href="/compliance/us-tx-ramp">TX-RAMP</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Canada</p>
+        <ul>
+          <li><a href="/compliance/ca-ab-hia">AB HIA</a></li>
+          <li><a href="/compliance/ca-ab-pipa">AB PIPA</a></li>
+          <li><a href="/compliance/ca-bc-pipa">BC PIPA</a></li>
+          <li><a href="/compliance/ca-cccs-baseline">CCCS Baseline</a></li>
+          <li><a href="/compliance/ca-ccspa">CCSPA</a></li>
+          <li><a href="/compliance/ca-cpcsc">CPCSC</a></li>
+          <li><a href="/compliance/ca-itsg-33">ITSG-33</a></li>
+          <li><a href="/compliance/ca-itsp-10-171">ITSP.10.171</a></li>
+          <li><a href="/compliance/ca-itsp-40-062">ITSP.40.062</a></li>
+          <li><a href="/compliance/ca-itsp-40-111">ITSP.40.111</a></li>
+          <li><a href="/compliance/ca-osfi-b10">OSFI B-10</a></li>
+          <li><a href="/compliance/ca-osfi-b13">OSFI B-13</a></li>
+          <li><a href="/compliance/ca-on-phipa">PHIPA</a></li>
+          <li><a href="/compliance/ca-pipeda">PIPEDA</a></li>
+          <li><a href="/compliance/ca-privacy-act">Privacy Act (CA)</a></li>
+          <li><a href="/compliance/ca-qc-law-25">Quebec Law 25</a></li>
+          <li><a href="/compliance/ca-tbs-dsm">TBS DSM</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Australia</p>
+        <ul>
+          <li><a href="/compliance/au-asd-essentials">ASD Essentials</a></li>
+          <li><a href="/compliance/au-cdr-rules">CDR Rules</a></li>
+          <li><a href="/compliance/au-apra-cpg-234">CPG 234</a></li>
+          <li><a href="/compliance/au-apra-cps-230">CPS 230</a></li>
+          <li><a href="/compliance/au-apra-cps-234">CPS 234</a></li>
+          <li><a href="/compliance/au-cyber-security-act">Cyber Security Act</a></li>
+          <li><a href="/compliance/au-essential-eight">Essential Eight</a></li>
+          <li><a href="/compliance/au-irap">IRAP</a></li>
+          <li><a href="/compliance/au-qld-is18">IS18</a></li>
+          <li><a href="/compliance/au-ism">ISM</a></li>
+          <li><a href="/compliance/au-my-health-records">My Health Records</a></li>
+          <li><a href="/compliance/au-nsw-cyber-policy">NSW CSP</a></li>
+          <li><a href="/compliance/au-privacy-app">Privacy Act / APP 11</a></li>
+          <li><a href="/compliance/au-pspf">PSPF</a></li>
+          <li><a href="/compliance/au-smart-device-rules">Smart Device Rules</a></li>
+          <li><a href="/compliance/au-soci-act">SOCI Act</a></li>
+          <li><a href="/compliance/au-soci-rmp">SOCI RMP Rules</a></li>
+          <li><a href="/compliance/au-vic-vpdss">VPDSS</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</details></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="fixes" aria-labelledby="fix-title">
+  <div class="lookup__head">
+    <p class="eyebrow">Issue type</p>
+    <h1 id="fix-title"><code>arch.package-cycle</code></h1>
+    <p><strong>What it means.</strong> Components (directories, packages) depend on one another in a cycle.</p>
+  </div>
+
+  <h2>Real fixes, by language</h2>
+  <p>Each one is an edit sloptopop applied to a public repository, checked by the Guider, linked to the file at the commit it was made on. Committed secret values are shortened, never republished.</p>
+  <p class="lookup__empty">No real fix for this issue type has been applied to a public repository yet. sloptopop reports it, and plans a task for a person where it can.</p>
+  <p class="fixes__none"><strong>No real fix recorded yet in:</strong> TypeScript, JavaScript, Python, Go, Java, Kotlin, C#, C, C++, PHP, PowerShell, Rust, Shell, Swift. Examples appear here only once sloptopop has fixed one in a real repository.</p>
+  <h2>Real detections, by language</h2>
+  <p>Where sloptopop found this issue in a public repository: the line it points at, at the commit it was found on.</p>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/zllovesuki/git-on-cloudflare/blob/007a96eae94c8f562d223f81eb7548c8f7c38673/src/worker/do/repo/db/index.ts#L2" rel="noopener noreferrer">zllovesuki/git-on-cloudflare · src/worker/do/repo/db/index.ts:2</a> <span class="fix__meta">TypeScript · @ 007a96e · MIT licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/worker/do/repo/db/index.ts, finding on line 2"><code><span class="ln" data-n="1"><span class="ln__code">export * from &#34;./client&#34;;</span></span>
+<span class="ln ln--finding" data-n="2" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">export * from &#34;./dal&#34;;</mark></span></span>
+<span class="ln" data-n="3"><span class="ln__code">export * from &#34;./schema&#34;;</span></span>
+<span class="ln" data-n="4"><span class="ln__code"></span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/nsidnev/fastapi-realworld-example-app/blob/029eb7781c60d5f563ee8990a0cbfb79b244538c/app/core/config.py#L4" rel="noopener noreferrer">nsidnev/fastapi-realworld-example-app · app/core/config.py:4</a> <span class="fix__meta">Python · @ 029eb77 · MIT licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="app/core/config.py, finding on line 4"><code><span class="ln" data-n="1"><span class="ln__code">from functools import lru_cache</span></span>
+<span class="ln" data-n="2"><span class="ln__code">from typing import Dict, Type</span></span>
+<span class="ln" data-n="3"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="4" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">from app.core.settings.app import AppSettings</mark></span></span>
+<span class="ln" data-n="5"><span class="ln__code">from app.core.settings.base import AppEnvTypes, BaseAppSettings</span></span>
+<span class="ln" data-n="6"><span class="ln__code">from app.core.settings.development import DevAppSettings</span></span>
+<span class="ln" data-n="7"><span class="ln__code">from app.core.settings.production import ProdAppSettings</span></span>
+<span class="ln" data-n="8"><span class="ln__code">from app.core.settings.test import TestAppSettings</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/hagopj13/node-express-boilerplate/blob/179ae84efec61b14206d0305d941daed6c6d07f9/src/config/passport.js#L4" rel="noopener noreferrer">hagopj13/node-express-boilerplate · src/config/passport.js:4</a> <span class="fix__meta">JavaScript · @ 179ae84 · MIT licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/config/passport.js, finding on line 4"><code><span class="ln" data-n="1"><span class="ln__code">const { Strategy: JwtStrategy, ExtractJwt } = require(&#39;passport-jwt&#39;);</span></span>
+<span class="ln" data-n="2"><span class="ln__code">const config = require(&#39;./config&#39;);</span></span>
+<span class="ln" data-n="3"><span class="ln__code">const { tokenTypes } = require(&#39;./tokens&#39;);</span></span>
+<span class="ln ln--finding" data-n="4" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">const { User } = require(&#39;../models&#39;);</mark></span></span>
+<span class="ln" data-n="5"><span class="ln__code"></span></span>
+<span class="ln" data-n="6"><span class="ln__code">const jwtOptions = {</span></span>
+<span class="ln" data-n="7"><span class="ln__code">  secretOrKey: config.jwt.secret,</span></span>
+<span class="ln" data-n="8"><span class="ln__code">  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/PhpCodeArcheology/PhpCodeArcheology/blob/0d2484fdfaa2ac81c5c3355b1a54d7498fba28b1/src/Analysis/ConfigAwareVisitorInterface.php#L7" rel="noopener noreferrer">PhpCodeArcheology/PhpCodeArcheology · src/Analysis/ConfigAwareVisitorInterface.php:7</a> <span class="fix__meta">PHP · @ 0d2484f · MIT licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/Analysis/ConfigAwareVisitorInterface.php, finding on line 7"><code><span class="ln" data-n="3"><span class="ln__code">declare(strict_types=1);</span></span>
+<span class="ln" data-n="4"><span class="ln__code"></span></span>
+<span class="ln" data-n="5"><span class="ln__code">namespace PhpCodeArch\Analysis;</span></span>
+<span class="ln" data-n="6"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="7" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">use PhpCodeArch\Application\Config;</mark></span></span>
+<span class="ln" data-n="8"><span class="ln__code"></span></span>
+<span class="ln" data-n="9"><span class="ln__code">interface ConfigAwareVisitorInterface</span></span>
+<span class="ln" data-n="10"><span class="ln__code">{</span></span>
+<span class="ln" data-n="11"><span class="ln__code">    public function injectConfig(Config $config): void;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/rtk-ai/rtk/blob/16a20a2ea25ddb9996393e4285abc3b3d0f7e5b4/src/analytics/cc_economics.rs#L12" rel="noopener noreferrer">rtk-ai/rtk · src/analytics/cc_economics.rs:12</a> <span class="fix__meta">Rust · @ 16a20a2 · Apache-2.0 licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/analytics/cc_economics.rs, finding on line 12"><code><span class="ln" data-n="8"><span class="ln__code">use serde::Serialize;</span></span>
+<span class="ln" data-n="9"><span class="ln__code">use std::collections::HashMap;</span></span>
+<span class="ln" data-n="10"><span class="ln__code"></span></span>
+<span class="ln" data-n="11"><span class="ln__code">use super::ccusage::{self, CcusagePeriod, Granularity};</span></span>
+<span class="ln ln--finding" data-n="12" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">use crate::core::tracking::{DayStats, MonthStats, Tracker, WeekStats};</mark></span></span>
+<span class="ln" data-n="13"><span class="ln__code">use crate::core::utils::{format_cpt, format_tokens, format_usd};</span></span>
+<span class="ln" data-n="14"><span class="ln__code"></span></span>
+<span class="ln" data-n="15"><span class="ln__code">// ── Constants ──</span></span>
+<span class="ln" data-n="16"><span class="ln__code"></span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/artivisi/balaka/blob/182c32c8d57e3f21f9035c975eabaa8c44a299a3/src/main/java/com/artivisi/accountingfinance/config/CspNonceInterceptor.java#L3" rel="noopener noreferrer">artivisi/balaka · src/main/java/com/artivisi/accountingfinance/config/CspNonceInterceptor.java:3</a> <span class="fix__meta">Java · @ 182c32c · Apache-2.0 licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/main/java/com/artivisi/accountingfinance/config/CspNonceInterceptor.java, finding on line 3"><code><span class="ln" data-n="1"><span class="ln__code">package com.artivisi.accountingfinance.config;</span></span>
+<span class="ln" data-n="2"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="3" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">import com.artivisi.accountingfinance.security.CspNonceFilter;</mark></span></span>
+<span class="ln" data-n="4"><span class="ln__code">import jakarta.servlet.http.HttpServletRequest;</span></span>
+<span class="ln" data-n="5"><span class="ln__code">import jakarta.servlet.http.HttpServletResponse;</span></span>
+<span class="ln" data-n="6"><span class="ln__code">import org.springframework.stereotype.Component;</span></span>
+<span class="ln" data-n="7"><span class="ln__code">import org.springframework.web.servlet.HandlerInterceptor;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/Luce-Org/lucebox/blob/6f2b17958ebb49f2b7060ac0a40ce6509aa90039/server/deps/llama.cpp/ggml/rocmfp4/rocmfp4.c#L2" rel="noopener noreferrer">Luce-Org/lucebox · server/deps/llama.cpp/ggml/rocmfp4/rocmfp4.c:2</a> <span class="fix__meta">C · @ 6f2b179 · Apache-2.0 licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="server/deps/llama.cpp/ggml/rocmfp4/rocmfp4.c, finding on line 2"><code><span class="ln" data-n="1"><span class="ln__code">#define GGML_COMMON_DECL_C</span></span>
+<span class="ln ln--finding" data-n="2" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">#include &#34;../src/ggml-common.h&#34;</mark></span></span>
+<span class="ln" data-n="3"><span class="ln__code"></span></span>
+<span class="ln" data-n="4"><span class="ln__code">#include &#34;rocmfp4.h&#34;</span></span>
+<span class="ln" data-n="5"><span class="ln__code"></span></span>
+<span class="ln" data-n="6"><span class="ln__code">#include &#60;assert.h&#62;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/Luce-Org/lucebox/blob/6f2b17958ebb49f2b7060ac0a40ce6509aa90039/server/src/common/moe_expert_compute_ipc.cpp#L17" rel="noopener noreferrer">Luce-Org/lucebox · server/src/common/moe_expert_compute_ipc.cpp:17</a> <span class="fix__meta">C++ · @ 6f2b179 · Apache-2.0 licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="server/src/common/moe_expert_compute_ipc.cpp, finding on line 17"><code><span class="ln" data-n="13"><span class="ln__code">#include &#34;moe_hybrid_storage.h&#34;</span></span>
+<span class="ln" data-n="14"><span class="ln__code">#include &#34;ggml_graph_precision.h&#34;</span></span>
+<span class="ln" data-n="15"><span class="ln__code">#include &#34;internal.h&#34;</span></span>
+<span class="ln" data-n="16"><span class="ln__code">#include &#34;laguna_internal.h&#34;</span></span>
+<span class="ln ln--finding" data-n="17" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">#include &#34;../deepseek4/deepseek4_internal.h&#34;</mark></span></span>
+<span class="ln" data-n="18"><span class="ln__code">#include &#34;moe_hybrid_types_impl.h&#34;</span></span>
+<span class="ln" data-n="19"><span class="ln__code">#include &#34;model_capabilities.h&#34;</span></span>
+<span class="ln" data-n="20"><span class="ln__code"></span></span>
+<span class="ln" data-n="21"><span class="ln__code">#include &#34;ggml-backend.h&#34;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/risa-labs-inc/BossConsole/blob/824884f1cf976bb91a14c95f0312162f097b5001/composeApp/src/commonMain/kotlin/ai/rever/boss/app/BossAppDialogs.kt#L3" rel="noopener noreferrer">risa-labs-inc/BossConsole · composeApp/src/commonMain/kotlin/ai/rever/boss/app/BossAppDialogs.kt:3</a> <span class="fix__meta">Kotlin · @ 824884f · Apache-2.0 licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="composeApp/src/commonMain/kotlin/ai/rever/boss/app/BossAppDialogs.kt, finding on line 3"><code><span class="ln" data-n="1"><span class="ln__code">package ai.rever.boss.app</span></span>
+<span class="ln" data-n="2"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="3" data-note="arch.package-cycle"><span class="ln__code"><mark class="finding">import ai.rever.boss.components.bars.horizontal.StatusMessageManager</mark></span></span>
+<span class="ln" data-n="4"><span class="ln__code">import ai.rever.boss.components.dialogs.CloneProjectDialog</span></span>
+<span class="ln" data-n="5"><span class="ln__code">import ai.rever.boss.components.dialogs.ConfirmationDialog</span></span>
+<span class="ln" data-n="6"><span class="ln__code">import ai.rever.boss.components.dialogs.GlobalSearchDialog</span></span>
+<span class="ln" data-n="7"><span class="ln__code">import ai.rever.boss.components.dialogs.HtmlFileOpenDialog</span></span>
+</code></pre>
+  </article>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

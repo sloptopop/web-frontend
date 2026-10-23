@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>deps.circular · fixes · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css?v=17753629598558183050">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#standards">Standards</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/results">Results</a></li>
+      <li class="site-nav__menu"><details class="standards-menu">
+  <summary>Compliance</summary>
+  <div class="standards-menu__panel">
+    <p class="standards-menu__all"><a href="/compliance">All frameworks: overview</a></p>
+    <ul class="standards-menu__groups">
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">International</p>
+        <ul>
+          <li><a href="/compliance/intl-owasp-asvs">ASVS</a></li>
+          <li><a href="/compliance/intl-mitre-attack">ATT&amp;CK</a></li>
+          <li><a href="/compliance/intl-cis-controls">CIS Controls</a></li>
+          <li><a href="/compliance/intl-csa-ccm">CSA CCM</a></li>
+          <li><a href="/compliance/intl-cwe">CWE</a></li>
+          <li><a href="/compliance/intl-etsi-en-303-645">EN 303 645</a></li>
+          <li><a href="/compliance/intl-owasp-top10">OWASP Top 10</a></li>
+          <li><a href="/compliance/intl-pci-dss">PCI DSS</a></li>
+          <li><a href="/compliance/intl-pci-sslc">PCI Secure SLC</a></li>
+          <li><a href="/compliance/intl-pci-sss">PCI SSS</a></li>
+          <li><a href="/compliance/intl-owasp-samm">SAMM</a></li>
+          <li><a href="/compliance/intl-scf">SCF</a></li>
+          <li><a href="/compliance/intl-soc2">SOC 2</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">European Union</p>
+        <ul>
+          <li><a href="/compliance/eu-ai-act">AI Act</a></li>
+          <li><a href="/compliance/eu-nl-bio2">BIO2</a></li>
+          <li><a href="/compliance/eu-de-bsig">BSIG 2025</a></li>
+          <li><a href="/compliance/eu-de-bsi-c5">C5</a></li>
+          <li><a href="/compliance/eu-nl-cbw">Cbw</a></li>
+          <li><a href="/compliance/eu-cer">CER</a></li>
+          <li><a href="/compliance/eu-cra">CRA</a></li>
+          <li><a href="/compliance/eu-cybersecurity-act">CSA</a></li>
+          <li><a href="/compliance/eu-data-act">Data Act</a></li>
+          <li><a href="/compliance/eu-dora">DORA</a></li>
+          <li><a href="/compliance/eu-dora-rts-2024-1774">DORA RTS 2024/1774</a></li>
+          <li><a href="/compliance/eu-eaa">EAA</a></li>
+          <li><a href="/compliance/eu-eba-gl-2019-04">EBA/GL/2019/04</a></li>
+          <li><a href="/compliance/eu-ehds">EHDS</a></li>
+          <li><a href="/compliance/eu-eidas">eIDAS 2</a></li>
+          <li><a href="/compliance/eu-es-ens">ENS</a></li>
+          <li><a href="/compliance/eu-eprivacy">ePrivacy</a></li>
+          <li><a href="/compliance/eu-eucc">EUCC</a></li>
+          <li><a href="/compliance/eu-eucs">EUCS</a></li>
+          <li><a href="/compliance/eu-fr-nis2-bill">FR NIS2 bill</a></li>
+          <li><a href="/compliance/eu-gdpr">GDPR</a></li>
+          <li><a href="/compliance/eu-it-nis">IT NIS</a></li>
+          <li><a href="/compliance/eu-ivdr">IVDR</a></li>
+          <li><a href="/compliance/eu-mdr">MDR</a></li>
+          <li><a href="/compliance/eu-mica">MiCA</a></li>
+          <li><a href="/compliance/eu-nis2">NIS2</a></li>
+          <li><a href="/compliance/eu-nis2-ir-2024-2690">NIS2 IR 2024/2690</a></li>
+          <li><a href="/compliance/eu-pld">PLD</a></li>
+          <li><a href="/compliance/eu-psd2">PSD2</a></li>
+          <li><a href="/compliance/eu-psd2-rts-sca">PSD2 RTS SCA</a></li>
+          <li><a href="/compliance/eu-red-da-2022-30">RED DA 2022/30</a></li>
+          <li><a href="/compliance/eu-fr-rgs">RGS</a></li>
+          <li><a href="/compliance/eu-fr-secnumcloud">SecNumCloud</a></li>
+          <li><a href="/compliance/eu-de-bsi-tr-02102">TR-02102</a></li>
+          <li><a href="/compliance/eu-cz-264-2025">ZKB 264/2025</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">United States</p>
+        <ul>
+          <li><a href="/compliance/us-ma-201-cmr-17">201 CMR 17</a></li>
+          <li><a href="/compliance/us-ny-23-nycrr-500">23 NYCRR 500</a></li>
+          <li><a href="/compliance/us-disa-asd-stig">ASD STIG</a></li>
+          <li><a href="/compliance/us-ca-ccpa">CCPA/CPRA</a></li>
+          <li><a href="/compliance/us-cjis">CJIS</a></li>
+          <li><a href="/compliance/us-cmmc">CMMC</a></li>
+          <li><a href="/compliance/us-coppa">COPPA Rule</a></li>
+          <li><a href="/compliance/us-co-cpa">CPA</a></li>
+          <li><a href="/compliance/us-nist-csf">CSF 2.0</a></li>
+          <li><a href="/compliance/us-ct-ctdpa">CTDPA</a></li>
+          <li><a href="/compliance/us-dfars-252-204-7012">DFARS 7012</a></li>
+          <li><a href="/compliance/us-dod-cc-srg">DoD CC SRG</a></li>
+          <li><a href="/compliance/us-de-dpdpa">DPDPA</a></li>
+          <li><a href="/compliance/us-eo-14028">EO 14028</a></li>
+          <li><a href="/compliance/us-fda-524b">FDA 524B</a></li>
+          <li><a href="/compliance/us-fedramp">FedRAMP</a></li>
+          <li><a href="/compliance/us-ferpa">FERPA</a></li>
+          <li><a href="/compliance/us-ffiec-it-handbook">FFIEC IT HB</a></li>
+          <li><a href="/compliance/us-fips-140-3">FIPS 140-3</a></li>
+          <li><a href="/compliance/us-fisma">FISMA</a></li>
+          <li><a href="/compliance/us-glba-safeguards">GLBA Safeguards</a></li>
+          <li><a href="/compliance/us-govramp">GovRAMP</a></li>
+          <li><a href="/compliance/us-ftc-hbnr">HBNR</a></li>
+          <li><a href="/compliance/us-hipaa-security">HIPAA Security</a></li>
+          <li><a href="/compliance/us-ia-icdpa">ICDPA</a></li>
+          <li><a href="/compliance/us-in-icdpa">ICDPA (IN)</a></li>
+          <li><a href="/compliance/us-irs-pub-1075">IRS Pub 1075</a></li>
+          <li><a href="/compliance/us-omb-m-22-18">M-22-18</a></li>
+          <li><a href="/compliance/us-mt-mcdpa">MCDPA</a></li>
+          <li><a href="/compliance/us-mn-mcdpa">MCDPA (MN)</a></li>
+          <li><a href="/compliance/us-wa-mhmda">MHMDA</a></li>
+          <li><a href="/compliance/us-md-modpa">MODPA</a></li>
+          <li><a href="/compliance/us-naic-668">NAIC 668</a></li>
+          <li><a href="/compliance/us-nerc-cip">NERC CIP</a></li>
+          <li><a href="/compliance/us-nj-njdpa">NJDPA</a></li>
+          <li><a href="/compliance/us-ny-shield">NY SHIELD</a></li>
+          <li><a href="/compliance/us-sec-reg-s-p">Reg S-P</a></li>
+          <li><a href="/compliance/us-sec-reg-sci">Reg SCI</a></li>
+          <li><a href="/compliance/us-sec-cyber-disclosure">SEC cyber disclosure</a></li>
+          <li><a href="/compliance/us-section-508">Section 508</a></li>
+          <li><a href="/compliance/us-sox-itgc">SOX ITGC</a></li>
+          <li><a href="/compliance/us-nist-800-171">SP 800-171r3</a></li>
+          <li><a href="/compliance/us-nist-800-172">SP 800-172</a></li>
+          <li><a href="/compliance/us-nist-800-218a">SP 800-218A</a></li>
+          <li><a href="/compliance/us-nist-800-52">SP 800-52r2</a></li>
+          <li><a href="/compliance/us-nist-800-53">SP 800-53r5</a></li>
+          <li><a href="/compliance/us-nist-800-63b">SP 800-63B-4</a></li>
+          <li><a href="/compliance/us-nist-ssdf">SSDF</a></li>
+          <li><a href="/compliance/us-tx-tdpsa">TDPSA</a></li>
+          <li><a href="/compliance/us-tx-521">Tex. BCC 521</a></li>
+          <li><a href="/compliance/us-tx-ramp">TX-RAMP</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Canada</p>
+        <ul>
+          <li><a href="/compliance/ca-ab-hia">AB HIA</a></li>
+          <li><a href="/compliance/ca-ab-pipa">AB PIPA</a></li>
+          <li><a href="/compliance/ca-bc-pipa">BC PIPA</a></li>
+          <li><a href="/compliance/ca-cccs-baseline">CCCS Baseline</a></li>
+          <li><a href="/compliance/ca-ccspa">CCSPA</a></li>
+          <li><a href="/compliance/ca-cpcsc">CPCSC</a></li>
+          <li><a href="/compliance/ca-itsg-33">ITSG-33</a></li>
+          <li><a href="/compliance/ca-itsp-10-171">ITSP.10.171</a></li>
+          <li><a href="/compliance/ca-itsp-40-062">ITSP.40.062</a></li>
+          <li><a href="/compliance/ca-itsp-40-111">ITSP.40.111</a></li>
+          <li><a href="/compliance/ca-osfi-b10">OSFI B-10</a></li>
+          <li><a href="/compliance/ca-osfi-b13">OSFI B-13</a></li>
+          <li><a href="/compliance/ca-on-phipa">PHIPA</a></li>
+          <li><a href="/compliance/ca-pipeda">PIPEDA</a></li>
+          <li><a href="/compliance/ca-privacy-act">Privacy Act (CA)</a></li>
+          <li><a href="/compliance/ca-qc-law-25">Quebec Law 25</a></li>
+          <li><a href="/compliance/ca-tbs-dsm">TBS DSM</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Australia</p>
+        <ul>
+          <li><a href="/compliance/au-asd-essentials">ASD Essentials</a></li>
+          <li><a href="/compliance/au-cdr-rules">CDR Rules</a></li>
+          <li><a href="/compliance/au-apra-cpg-234">CPG 234</a></li>
+          <li><a href="/compliance/au-apra-cps-230">CPS 230</a></li>
+          <li><a href="/compliance/au-apra-cps-234">CPS 234</a></li>
+          <li><a href="/compliance/au-cyber-security-act">Cyber Security Act</a></li>
+          <li><a href="/compliance/au-essential-eight">Essential Eight</a></li>
+          <li><a href="/compliance/au-irap">IRAP</a></li>
+          <li><a href="/compliance/au-qld-is18">IS18</a></li>
+          <li><a href="/compliance/au-ism">ISM</a></li>
+          <li><a href="/compliance/au-my-health-records">My Health Records</a></li>
+          <li><a href="/compliance/au-nsw-cyber-policy">NSW CSP</a></li>
+          <li><a href="/compliance/au-privacy-app">Privacy Act / APP 11</a></li>
+          <li><a href="/compliance/au-pspf">PSPF</a></li>
+          <li><a href="/compliance/au-smart-device-rules">Smart Device Rules</a></li>
+          <li><a href="/compliance/au-soci-act">SOCI Act</a></li>
+          <li><a href="/compliance/au-soci-rmp">SOCI RMP Rules</a></li>
+          <li><a href="/compliance/au-vic-vpdss">VPDSS</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</details></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="fixes" aria-labelledby="fix-title">
+  <div class="lookup__head">
+    <p class="eyebrow">Issue type · error</p>
+    <h1 id="fix-title"><code>deps.circular</code></h1>
+    <p><strong>What it means.</strong> Modules import one another in a cycle. Covered: Rust, JavaScript and TypeScript, Python, Java and Kotlin, C and C++, Go, C# and PHP. Each cycle is reported once, at one of its files.</p>
+    <p><strong>Why it matters.</strong> Modules in a cycle cannot be understood, tested or changed one at a time, and import order can break at runtime.</p>
+    <p><strong>What to do.</strong> Move what both sides need into a lower module that both can import, so dependencies point one way.</p>
+    <p><strong>Automatic fix.</strong> None yet.</p>
+  </div>
+
+  <h2>Real fixes, by language</h2>
+  <p>Each one is an edit sloptopop applied to a public repository, checked by the Guider, linked to the file at the commit it was made on. Committed secret values are shortened, never republished.</p>
+  <p class="lookup__empty">No real fix for this issue type has been applied to a public repository yet. sloptopop reports it, and plans a task for a person where it can.</p>
+  <p class="fixes__none"><strong>No real fix recorded yet in:</strong> TypeScript, JavaScript, Python, Go, Java, Kotlin, C#, C, C++, PHP, PowerShell, Rust, Shell, Swift. Examples appear here only once sloptopop has fixed one in a real repository.</p>
+  <h2>Real detections, by language</h2>
+  <p>Where sloptopop found this issue in a public repository: the line it points at, at the commit it was found on.</p>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/zllovesuki/git-on-cloudflare/blob/007a96eae94c8f562d223f81eb7548c8f7c38673/src/worker/cache/cache.ts#L13" rel="noopener noreferrer">zllovesuki/git-on-cloudflare · src/worker/cache/cache.ts:13</a> <span class="fix__meta">TypeScript · @ 007a96e · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/worker/cache/cache.ts, finding on line 13"><code><span class="ln" data-n="9"><span class="ln__code"></span></span>
+<span class="ln" data-n="10"><span class="ln__code">import { asBodyInit } from &#34;@/worker/common/webtypes&#34;;</span></span>
+<span class="ln" data-n="11"><span class="ln__code">import type { IdxView, PackCatalogRow, PackedObjectResult } from &#34;@/worker/git/object-store/types&#34;;</span></span>
+<span class="ln" data-n="12"><span class="ln__code">import type { PackRefView, PackRefViewLoadResult } from &#34;@/worker/git/pack/refIndex&#34;;</span></span>
+<span class="ln ln--finding" data-n="13" data-note="deps.circular"><span class="ln__code"><mark class="finding">import { isRequestPrivate } from &#34;./policy&#34;;</mark></span></span>
+<span class="ln" data-n="14"><span class="ln__code"></span></span>
+<span class="ln" data-n="15"><span class="ln__code">const CACHE_NAME_JSON = &#34;git-on-cf:json&#34;;</span></span>
+<span class="ln" data-n="16"><span class="ln__code">const CACHE_NAME_OBJECTS = &#34;git-on-cf:objects&#34;;</span></span>
+<span class="ln" data-n="17"><span class="ln__code"></span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/miguelgrinberg/microblog/blob/a975ef64864354867c88e0ed3a17ba7d17dca752/app/__init__.py#L46" rel="noopener noreferrer">miguelgrinberg/microblog · app/__init__.py:46</a> <span class="fix__meta">Python · @ a975ef6 · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="app/__init__.py, finding on line 46"><code><span class="ln" data-n="42"><span class="ln__code">        if app.config[&#39;ELASTICSEARCH_URL&#39;] else None</span></span>
+<span class="ln" data-n="43"><span class="ln__code">    app.redis = Redis.from_url(app.config[&#39;REDIS_URL&#39;])</span></span>
+<span class="ln" data-n="44"><span class="ln__code">    app.task_queue = rq.Queue(&#39;microblog-tasks&#39;, connection=app.redis)</span></span>
+<span class="ln" data-n="45"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="46" data-note="deps.circular"><span class="ln__code"><mark class="finding">    from app.errors import bp as errors_bp</mark></span></span>
+<span class="ln" data-n="47"><span class="ln__code">    app.register_blueprint(errors_bp)</span></span>
+<span class="ln" data-n="48"><span class="ln__code"></span></span>
+<span class="ln" data-n="49"><span class="ln__code">    from app.auth import bp as auth_bp</span></span>
+<span class="ln" data-n="50"><span class="ln__code">    app.register_blueprint(auth_bp, url_prefix=&#39;/auth&#39;)</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/erikdarlingdata/PerformanceMonitor/blob/10227c25d4c12af0f73eb8999f3d72552a02b1e1/Darling/PerformanceMonitor.Darling.Service/wwwroot/js/charts.js#L1298" rel="noopener noreferrer">erikdarlingdata/PerformanceMonitor · Darling/PerformanceMonitor.Darling.Service/wwwroot/js/charts.js:1298</a> <span class="fix__meta">JavaScript · @ 10227c2 · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="Darling/PerformanceMonitor.Darling.Service/wwwroot/js/charts.js, finding on line 1298"><code><span class="ln" data-n="1294"><span class="ln__code">    if (typeof say === &#34;function&#34;) say(msg);</span></span>
+<span class="ln" data-n="1295"><span class="ln__code">  };</span></span>
+<span class="ln" data-n="1296"><span class="ln__code">  try {</span></span>
+<span class="ln" data-n="1297"><span class="ln__code">    if (Number.isFinite(tMs)) {</span></span>
+<span class="ln ln--finding" data-n="1298" data-note="deps.circular"><span class="ln__code"><mark class="finding">      const mod = await import(&#34;./pages/server.js&#34;);</mark></span></span>
+<span class="ln" data-n="1299"><span class="ln__code">      let start = tMs - AT_TIME_HALF_WINDOW_MS;</span></span>
+<span class="ln" data-n="1300"><span class="ln__code">      let end = tMs + AT_TIME_HALF_WINDOW_MS;</span></span>
+<span class="ln" data-n="1301"><span class="ln__code">      const now = Date.now();</span></span>
+<span class="ln" data-n="1302"><span class="ln__code">      if (end &#62; now) {</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/erikdarlingdata/PerformanceMonitor/blob/10227c25d4c12af0f73eb8999f3d72552a02b1e1/Lite/App.xaml.cs#L23" rel="noopener noreferrer">erikdarlingdata/PerformanceMonitor · Lite/App.xaml.cs:23</a> <span class="fix__meta">C# · @ 10227c2 · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="Lite/App.xaml.cs, finding on line 23"><code><span class="ln" data-n="19"><span class="ln__code">using System.Windows.Interop;</span></span>
+<span class="ln" data-n="20"><span class="ln__code">using PerformanceMonitor.Alerting;</span></span>
+<span class="ln" data-n="21"><span class="ln__code">using PerformanceMonitor.Notifications;</span></span>
+<span class="ln" data-n="22"><span class="ln__code">using System.Windows.Threading;</span></span>
+<span class="ln ln--finding" data-n="23" data-note="deps.circular"><span class="ln__code"><mark class="finding">using PerformanceMonitorLite.Services;</mark></span></span>
+<span class="ln" data-n="24"><span class="ln__code">using PerformanceMonitor.Common;</span></span>
+<span class="ln" data-n="25"><span class="ln__code">using PerformanceMonitor.Ui;</span></span>
+<span class="ln" data-n="26"><span class="ln__code"></span></span>
+<span class="ln" data-n="27"><span class="ln__code">namespace PerformanceMonitorLite;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/rtk-ai/rtk/blob/16a20a2ea25ddb9996393e4285abc3b3d0f7e5b4/proxy/src/ccr_forward.rs#L13" rel="noopener noreferrer">rtk-ai/rtk · proxy/src/ccr_forward.rs:13</a> <span class="fix__meta">Rust · @ 16a20a2 · Apache-2.0 licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="proxy/src/ccr_forward.rs, finding on line 13"><code><span class="ln" data-n="9"><span class="ln__code">//! [`crate::forward::relay`] unchanged.</span></span>
+<span class="ln" data-n="10"><span class="ln__code"></span></span>
+<span class="ln" data-n="11"><span class="ln__code">use crate::AppState;</span></span>
+<span class="ln" data-n="12"><span class="ln__code">use crate::error::{AppError, AppResult};</span></span>
+<span class="ln ln--finding" data-n="13" data-note="deps.circular"><span class="ln__code"><mark class="finding">use crate::forward::{Forwarded, forwardable_to_upstream};</mark></span></span>
+<span class="ln" data-n="14"><span class="ln__code">use crate::memory::IcmMemory;</span></span>
+<span class="ln" data-n="15"><span class="ln__code">use crate::model::{InterceptedRequest, Provider, UsageOutcome};</span></span>
+<span class="ln" data-n="16"><span class="ln__code">use crate::pipeline::ccr;</span></span>
+<span class="ln" data-n="17"><span class="ln__code">use axum::body::Body;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/JiaboLi-GitHub/renderdoc-mcp/blob/176d12ba194eef5f6a4b7fc7d0ae90cda923afcd/third_party/stb_image.h#L13" rel="noopener noreferrer">JiaboLi-GitHub/renderdoc-mcp · third_party/stb_image.h:13</a> <span class="fix__meta">C · @ 176d12b · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="third_party/stb_image.h, finding on line 13"><code><span class="ln" data-n="9"><span class="ln__code">   #include ...</span></span>
+<span class="ln" data-n="10"><span class="ln__code">   #include ...</span></span>
+<span class="ln" data-n="11"><span class="ln__code">   #include ...</span></span>
+<span class="ln" data-n="12"><span class="ln__code">   #define STB_IMAGE_IMPLEMENTATION</span></span>
+<span class="ln ln--finding" data-n="13" data-note="deps.circular"><span class="ln__code"><mark class="finding">   #include &#34;stb_image.h&#34;</mark></span></span>
+<span class="ln" data-n="14"><span class="ln__code"></span></span>
+<span class="ln" data-n="15"><span class="ln__code">   You can #define STBI_ASSERT(x) before the #include to avoid using assert.h.</span></span>
+<span class="ln" data-n="16"><span class="ln__code">   And #define STBI_MALLOC, STBI_REALLOC, and STBI_FREE to avoid using malloc,realloc,free</span></span>
+<span class="ln" data-n="17"><span class="ln__code"></span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/Dwinovo/minecraft-numen/blob/2a4d27a859cc9c43de257e18d50176dbbd487a19/agent/src/main/java/com/dwinovo/numen/api/agent/script/ScriptEngine.java#L3" rel="noopener noreferrer">Dwinovo/minecraft-numen · agent/src/main/java/com/dwinovo/numen/api/agent/script/ScriptEngine.java:3</a> <span class="fix__meta">Java · @ 2a4d27a · LGPL-3.0 licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="agent/src/main/java/com/dwinovo/numen/api/agent/script/ScriptEngine.java, finding on line 3"><code><span class="ln" data-n="1"><span class="ln__code">package com.dwinovo.numen.api.agent.script;</span></span>
+<span class="ln" data-n="2"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="3" data-note="deps.circular"><span class="ln__code"><mark class="finding">import com.dwinovo.numen.api.agent.script.lua.LuaEngine;</mark></span></span>
+<span class="ln" data-n="4"><span class="ln__code"></span></span>
+<span class="ln" data-n="5"><span class="ln__code">import java.util.List;</span></span>
+<span class="ln" data-n="6"><span class="ln__code">import java.util.function.Consumer;</span></span>
+<span class="ln" data-n="7"><span class="ln__code"></span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/cognesy/instructor-php/blob/70e72d1063ef15183918c33d04330bd0f3f31df1/packages/agent-ctrl/src/ClaudeCode/Application/Builder/ClaudeRequestBuilder.php#L5" rel="noopener noreferrer">cognesy/instructor-php · packages/agent-ctrl/src/ClaudeCode/Application/Builder/ClaudeRequestBuilder.php:5</a> <span class="fix__meta">PHP · @ 70e72d1 · MIT licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="packages/agent-ctrl/src/ClaudeCode/Application/Builder/ClaudeRequestBuilder.php, finding on line 5"><code><span class="ln" data-n="1"><span class="ln__code">&#60;?php declare(strict_types=1);</span></span>
+<span class="ln" data-n="2"><span class="ln__code"></span></span>
+<span class="ln" data-n="3"><span class="ln__code">namespace Cognesy\AgentCtrl\ClaudeCode\Application\Builder;</span></span>
+<span class="ln" data-n="4"><span class="ln__code"></span></span>
+<span class="ln ln--finding" data-n="5" data-note="deps.circular"><span class="ln__code"><mark class="finding">use Cognesy\AgentCtrl\ClaudeCode\Application\Dto\ClaudeRequest;</mark></span></span>
+<span class="ln" data-n="6"><span class="ln__code">use Cognesy\AgentCtrl\ClaudeCode\Domain\Enum\InputFormat;</span></span>
+<span class="ln" data-n="7"><span class="ln__code">use Cognesy\AgentCtrl\ClaudeCode\Domain\Enum\OutputFormat;</span></span>
+<span class="ln" data-n="8"><span class="ln__code">use Cognesy\AgentCtrl\ClaudeCode\Domain\Enum\PermissionMode;</span></span>
+<span class="ln" data-n="9"><span class="ln__code">use Cognesy\AgentCtrl\Common\Value\PathList;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/risa-labs-inc/BossConsole/blob/824884f1cf976bb91a14c95f0312162f097b5001/composeApp/src/commonMain/kotlin/ai/rever/boss/components/plugin/DefaultPlugin.kt#L104" rel="noopener noreferrer">risa-labs-inc/BossConsole · composeApp/src/commonMain/kotlin/ai/rever/boss/components/plugin/DefaultPlugin.kt:104</a> <span class="fix__meta">Kotlin · @ 824884f · Apache-2.0 licence · error</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="composeApp/src/commonMain/kotlin/ai/rever/boss/components/plugin/DefaultPlugin.kt, finding on line 104"><code><span class="ln" data-n="100"><span class="ln__code">import ai.rever.boss.plugin.sandbox.notification.PluginToastState</span></span>
+<span class="ln" data-n="101"><span class="ln__code">import ai.rever.boss.plugin.ui.BossThemes</span></span>
+<span class="ln" data-n="102"><span class="ln__code">import ai.rever.boss.plugin.ui.ContextMenuItemData</span></span>
+<span class="ln" data-n="103"><span class="ln__code">import ai.rever.boss.plugin.workspace.uniqueId</span></span>
+<span class="ln ln--finding" data-n="104" data-note="deps.circular"><span class="ln__code"><mark class="finding">import ai.rever.boss.search.ContentSearchService</mark></span></span>
+<span class="ln" data-n="105"><span class="ln__code">import ai.rever.boss.search.SearchRegistryImpl</span></span>
+<span class="ln" data-n="106"><span class="ln__code">import ai.rever.boss.services.auth.AuthDataProviderImpl</span></span>
+<span class="ln" data-n="107"><span class="ln__code">import ai.rever.boss.services.auth.AuthStateManager</span></span>
+<span class="ln" data-n="108"><span class="ln__code">import ai.rever.boss.services.auth.PluginStoreApiKeyProviderImpl</span></span>
+</code></pre>
+  </article>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/coverage">Framework coverage</a> and <a href="/compliance">compliance per framework</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>
