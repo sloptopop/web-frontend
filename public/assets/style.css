@@ -3214,10 +3214,83 @@ main:not(:has(.lang__radio:checked)) .install__next {
   text-align: center;
 }
 
-.site-nav .site-nav__lead {
-  border: 3px solid var(--ink);
+/* ---------- Compliance menu (header): a native <details>, no script ---------- */
+
+.standards-menu > summary {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border: 3px solid transparent;
   border-radius: 999px;
+  font-weight: 800;
+  list-style: none;
+  cursor: pointer;
+}
+
+.standards-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.standards-menu > summary::after {
+  content: " ▾" / "";
+}
+
+.standards-menu > summary:hover,
+.standards-menu[open] > summary {
+  border-color: var(--ink);
   background: var(--yellow);
+}
+
+/* Hangs from the sticky header (its containing block), full width. */
+.standards-menu__panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: clamp(0.5rem, 2vw, 2rem);
+  left: clamp(0.5rem, 2vw, 2rem);
+  z-index: 60;
+  max-height: calc(100dvh - var(--header-h) - 2rem);
+  overflow-y: auto;
+  padding: 1rem 1.25rem 1.25rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.site-nav .standards-menu__panel ul {
+  display: block;
+}
+
+.standards-menu__all {
+  margin: 0 0 0.75rem;
+}
+
+.standards-menu__groups {
+  columns: 13rem;
+  column-gap: 1.5rem;
+}
+
+.standards-menu__group {
+  margin-bottom: 0.9rem;
+}
+
+.standards-menu__region {
+  margin: 0 0 0.3rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid var(--ink);
+  font: 900 0.8rem/1.4 var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  break-after: avoid;
+}
+
+.site-nav .standards-menu__panel a {
+  display: block;
+  padding: 0.12rem 0.5rem;
+  border-width: 2px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  break-inside: avoid;
 }
 
 /* ---------- One rule: real fixes by language ---------- */
