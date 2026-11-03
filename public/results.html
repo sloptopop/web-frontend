@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#ffd400">
 <meta name="referrer" content="no-referrer">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=8439148150244668530">
+<link rel="stylesheet" href="/assets/style.css?v=2445886986132288070">
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"></div>
@@ -208,7 +208,7 @@
   </div>
   <nav class="toc" aria-label="On this page">
     <ol>
-      <li><a href="#public">Public corpus</a> <span class="toc__note">21 run</span></li>
+      <li><a href="#public">Public corpus</a> <span class="toc__note">22 run</span></li>
       <li><a href="#testing">Vibe-coded testing corpus</a> <span class="toc__note">0 run</span></li>
       <li><a href="#precision">How precise the findings are</a></li>
     </ol>
@@ -216,11 +216,11 @@
   <section class="corpus" id="public" aria-labelledby="public-title">
     <h2 id="public-title">Public corpus</h2>
     <p>Popular open-source starters and apps (Next.js with Supabase, Express, FastAPI, Flask, Go) and a few projects that say they were vibe-coded, each pinned to one commit.</p>
-    <p class="corpus__run">Run of 2026-10-16</p>
+    <p class="corpus__run">Run of 2026-10-16, with MSI runs up to 2026-11-03</p>
     <dl class="stats">
-      <div class="stat"><dt>Repositories</dt><dd>21</dd></div>
-      <div class="stat"><dt>Lines of code</dt><dd>230664</dd></div>
-      <div class="stat"><dt>Findings</dt><dd>531</dd></div>
+      <div class="stat"><dt>Repositories</dt><dd>22</dd></div>
+      <div class="stat"><dt>Lines of code</dt><dd>231713</dd></div>
+      <div class="stat"><dt>Findings</dt><dd>539</dd></div>
       <div class="stat"><dt>Findings in a plan</dt><dd>146</dd></div>
       <div class="stat"><dt>Edit steps applied</dt><dd>13</dd></div>
       <div class="stat stat--pop"><dt>Findings gone after an edit</dt><dd>20</dd></div>
@@ -248,6 +248,7 @@
           <tr><th scope="row"><a href="#public-chatbot-ui">chatbot-ui</a></th><td>TypeScript</td><td>33331</td><td>28996</td><td>55</td><td>12</td><td>2</td><td>4</td><td>8</td></tr>
           <tr><th scope="row"><a href="#public-aicommits">aicommits</a></th><td>TypeScript</td><td>9112</td><td>8024</td><td>30</td><td>10</td><td>0</td><td>0</td><td>10</td></tr>
           <tr><th scope="row"><a href="#public-nextjs-subscription-payments">nextjs-subscription-payments</a></th><td>TypeScript</td><td>7713</td><td>4008</td><td>15</td><td>5</td><td>0</td><td>0</td><td>5</td></tr>
+          <tr><th scope="row"><a href="#public-santiq-bulletproof-nodejs">santiq-bulletproof-nodejs</a></th><td>TypeScript</td><td>5773</td><td>1049</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
           <tr><th scope="row"><a href="#public-headshots-starter">headshots-starter</a></th><td>TypeScript</td><td>4461</td><td>7309</td><td>21</td><td>10</td><td>3</td><td>5</td><td>5</td></tr>
           <tr><th scope="row"><a href="#public-nextbase-nextjs-supabase-starter">nextbase-nextjs-supabase-starter</a></th><td>TypeScript</td><td>827</td><td>13378</td><td>17</td><td>5</td><td>0</td><td>0</td><td>5</td></tr>
           <tr><th scope="row"><a href="#public-next-supabase-stripe-starter">next-supabase-stripe-starter</a></th><td>TypeScript</td><td>818</td><td>2955</td><td>13</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
@@ -273,7 +274,7 @@
           <tr><th scope="row">Go</th><td>2</td><td>6270</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
           <tr><th scope="row">JavaScript</th><td>3</td><td>22477</td><td>65</td><td>25</td><td>0</td><td>0</td><td>25</td></tr>
           <tr><th scope="row">Python</th><td>3</td><td>20140</td><td>53</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
-          <tr><th scope="row">TypeScript</th><td>13</td><td>181777</td><td>397</td><td>118</td><td>13</td><td>20</td><td>98</td></tr>
+          <tr><th scope="row">TypeScript</th><td>14</td><td>182826</td><td>405</td><td>118</td><td>13</td><td>20</td><td>98</td></tr>
         </tbody>
       </table>
     </div>
@@ -292,13 +293,13 @@
           <tr><th scope="row"><code>arch.module-internals-access</code></th><td>3</td><td>44</td><td>0</td><td>0</td><td>0</td><td>0.00 (0.00–0.13)</td></tr>
           <tr><th scope="row"><code>db.result-unchecked</code></th><td>5</td><td>33</td><td>33</td><td>20</td><td>20</td><td>0.76 (0.57–0.89)</td></tr>
           <tr><th scope="row"><code>arch.unstable-dependency</code></th><td>8</td><td>23</td><td>0</td><td>0</td><td>0</td><td>0.15 (0.05–0.36)</td></tr>
+          <tr><th scope="row"><code>hook.missing</code></th><td>22</td><td>22</td><td>0</td><td>0</td><td>0</td><td>0.81 (0.60–0.92)</td></tr>
           <tr><th scope="row"><code>analyzer.reports-unignored</code></th><td>21</td><td>21</td><td>0</td><td>0</td><td>0</td><td>0.00 (0.00–0.15)</td></tr>
           <tr><th scope="row"><code>ci.missing</code></th><td>21</td><td>21</td><td>0</td><td>0</td><td>0</td><td>0.45 (0.26–0.66)</td></tr>
-          <tr><th scope="row"><code>hook.missing</code></th><td>21</td><td>21</td><td>0</td><td>0</td><td>0</td><td>0.81 (0.60–0.92)</td></tr>
           <tr><th scope="row"><code>arch.package-cycle</code></th><td>11</td><td>19</td><td>0</td><td>0</td><td>0</td><td>0.16 (0.06–0.38)</td></tr>
           <tr><th scope="row"><code>tests.no-coverage-floor</code></th><td>19</td><td>19</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.83–1.00)</td></tr>
+          <tr><th scope="row"><code>toolchain.unpinned</code></th><td>18</td><td>19</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.82–1.00)</td></tr>
           <tr><th scope="row"><code>arch.db-access-outside-persistence</code></th><td>5</td><td>18</td><td>0</td><td>0</td><td>0</td><td>0.33 (0.16–0.56)</td></tr>
-          <tr><th scope="row"><code>toolchain.unpinned</code></th><td>17</td><td>18</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.82–1.00)</td></tr>
           <tr><th scope="row"><code>arch.threat-model-missing</code></th><td>16</td><td>16</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.81–1.00)</td></tr>
           <tr><th scope="row"><code>config.hardcoded-host</code></th><td>10</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0.11 (0.03–0.31)</td></tr>
           <tr><th scope="row"><code>arch.hub-dependency</code></th><td>7</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0.33 (0.14–0.61)</td></tr>
@@ -309,10 +310,13 @@
           <tr><th scope="row"><code>db.multi-write-no-tx</code></th><td>3</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.67 (0.30–0.90)</td></tr>
           <tr><th scope="row"><code>deps.circular</code></th><td>3</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0.33 (0.10–0.70)</td></tr>
           <tr><th scope="row"><code>db.duplicate-table</code></th><td>1</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0.40 (0.12–0.77)</td></tr>
+          <tr><th scope="row"><code>types.disabled</code></th><td>5</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0.50 (0.15–0.85)</td></tr>
           <tr><th scope="row"><code>arch.healthcheck-missing</code></th><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0.75 (0.30–0.95)</td></tr>
-          <tr><th scope="row"><code>types.disabled</code></th><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0.50 (0.15–0.85)</td></tr>
+          <tr><th scope="row"><code>agent.as04.placeholder</code></th><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td>not studied</td></tr>
+          <tr><th scope="row"><code>agent.as07.any-type</code></th><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td>not studied</td></tr>
           <tr><th scope="row"><code>db.cascade-reach</code></th><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.34–1.00)</td></tr>
           <tr><th scope="row"><code>arch.duplicate-across-units</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0.00 (0.00–0.79)</td></tr>
+          <tr><th scope="row"><code>ci.gate-incomplete</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>not studied</td></tr>
           <tr><th scope="row"><code>db.transition-unguarded</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.21–1.00)</td></tr>
           <tr><th scope="row"><code>deps.unpinned</code></th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1.00 (0.21–1.00)</td></tr>
         </tbody>
@@ -1050,6 +1054,36 @@
           </li>
         </ul>
       </details>
+    </article>
+    <article class="repo" id="public-santiq-bulletproof-nodejs" aria-labelledby="public-santiq-bulletproof-nodejs-title">
+      <h3 id="public-santiq-bulletproof-nodejs-title">santiq-bulletproof-nodejs</h3>
+      <p class="repo__meta"><a href="https://github.com/santiq/bulletproof-nodejs/tree/7ce1b4690c4e96659cb1ed0d367b08b3ab35a24b" rel="noopener noreferrer">santiq/bulletproof-nodejs at 7ce1b46</a> · TypeScript · <a href="https://github.com/santiq/bulletproof-nodejs/blob/7ce1b4690c4e96659cb1ed0d367b08b3ab35a24b/LICENSE" rel="noopener noreferrer">MIT licence</a> · 5773 stars on 2026-11-03 · 1049 lines of code</p>
+      <p>8 findings before, 8 after. The plan had 0 steps: 0 edit steps applied, 0 tasks for a person, 0 refused.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Table (scrolls sideways on small screens)">
+        <table class="results-table results-table--compact">
+          <caption>Findings per rule in santiq-bulletproof-nodejs</caption>
+          <thead>
+            <tr><th scope="col">Rule</th><th scope="col">Detected</th><th scope="col">In a plan</th><th scope="col">Applied</th><th scope="col">Verified</th><th scope="col">Still reported after</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><code>agent.as04.placeholder</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>agent.as07.any-type</code></th><td>2</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+            <tr><th scope="row"><code>ci.gate-incomplete</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>hook.missing</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>toolchain.unpinned</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row"><code>types.disabled</code></th><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Checks on the result</h4>
+      <ul class="check-list">
+        <li><span class="check-result check-result--skip">not run</span> tsc --noEmit on the whole project: not run: nothing changed</li>
+        <li><span class="check-result check-result--skip">not run</span> node --check on changed JavaScript: not run: no JavaScript file changed</li>
+        <li><span class="check-result check-result--pass">passed</span> Re-detection by sloptopop on the result: 8 findings before, 8 after</li>
+        <li><span class="check-result check-result--pass">passed</span> gitleaks (secrets, values redacted): 0 before, 0 after</li>
+        <li><span class="check-result check-result--pass">passed</span> semgrep with sloptopop&#39;s rule pack: 0 before, 0 after</li>
+      </ul>
+      <p class="fineprint">No edit from this repository is shown here: an excerpt appears only once it has passed review.</p>
     </article>
     <article class="repo" id="public-headshots-starter" aria-labelledby="public-headshots-starter-title">
       <h3 id="public-headshots-starter-title">headshots-starter</h3>
@@ -1884,7 +1918,7 @@
     <h2 id="testing-title">Vibe-coded testing corpus</h2>
     <p>Projects whose own history shows they were written mostly by AI, chosen by stars per language. Transformations exist for TypeScript and JavaScript so far; the other languages measure detection.</p>
     <p class="corpus__run">not run yet</p>
-    <p class="fineprint">Not run yet: 120 repositories are queued. Their results appear here after the first run.</p>
+    <p class="fineprint">Not run yet: 130 repositories are queued. Their results appear here after the first run.</p>
   </section>
 
   <section class="precision" id="precision" aria-labelledby="precision-title">
