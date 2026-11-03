@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop to pop: design patterns · sloptopop</title>
+<meta name="description" content="sloptopop turns AI-generated slop into code you would sign: Detector finds it, Architect plans the fix, Implementor makes it pop, and Guider checks every AI step against strict policy-as-code.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd400">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css?v=8439148150244668530">
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img class="brand__logo" src="/assets/logo.svg" alt="" width="40" height="40">
+    <span class="brand__name">sloptopop</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li class="site-nav__menu"><details class="standards-menu">
+  <summary>Compliance</summary>
+  <div class="standards-menu__panel">
+    <p class="standards-menu__all"><a href="/compliance">All frameworks: overview</a></p>
+    <ul class="standards-menu__groups">
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">International</p>
+        <ul>
+          <li><a href="/compliance/intl-owasp-asvs">ASVS</a></li>
+          <li><a href="/compliance/intl-mitre-attack">ATT&#38;CK</a></li>
+          <li><a href="/compliance/intl-cis-controls">CIS Controls</a></li>
+          <li><a href="/compliance/intl-csa-ccm">CSA CCM</a></li>
+          <li><a href="/compliance/intl-cwe">CWE</a></li>
+          <li><a href="/compliance/intl-etsi-en-303-645">EN 303 645</a></li>
+          <li><a href="/compliance/intl-owasp-top10">OWASP Top 10</a></li>
+          <li><a href="/compliance/intl-pci-dss">PCI DSS</a></li>
+          <li><a href="/compliance/intl-pci-sslc">PCI Secure SLC</a></li>
+          <li><a href="/compliance/intl-pci-sss">PCI SSS</a></li>
+          <li><a href="/compliance/intl-owasp-samm">SAMM</a></li>
+          <li><a href="/compliance/intl-scf">SCF</a></li>
+          <li><a href="/compliance/intl-soc2">SOC 2</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">European Union</p>
+        <ul>
+          <li><a href="/compliance/eu-ai-act">AI Act</a></li>
+          <li><a href="/compliance/eu-nl-bio2">BIO2</a></li>
+          <li><a href="/compliance/eu-de-bsig">BSIG 2025</a></li>
+          <li><a href="/compliance/eu-de-bsi-c5">C5</a></li>
+          <li><a href="/compliance/eu-nl-cbw">Cbw</a></li>
+          <li><a href="/compliance/eu-cer">CER</a></li>
+          <li><a href="/compliance/eu-cra">CRA</a></li>
+          <li><a href="/compliance/eu-cybersecurity-act">CSA</a></li>
+          <li><a href="/compliance/eu-data-act">Data Act</a></li>
+          <li><a href="/compliance/eu-dora">DORA</a></li>
+          <li><a href="/compliance/eu-dora-rts-2024-1774">DORA RTS 2024/1774</a></li>
+          <li><a href="/compliance/eu-eaa">EAA</a></li>
+          <li><a href="/compliance/eu-eba-gl-2019-04">EBA/GL/2019/04</a></li>
+          <li><a href="/compliance/eu-ehds">EHDS</a></li>
+          <li><a href="/compliance/eu-eidas">eIDAS 2</a></li>
+          <li><a href="/compliance/eu-es-ens">ENS</a></li>
+          <li><a href="/compliance/eu-eprivacy">ePrivacy</a></li>
+          <li><a href="/compliance/eu-eucc">EUCC</a></li>
+          <li><a href="/compliance/eu-eucs">EUCS</a></li>
+          <li><a href="/compliance/eu-fr-nis2-bill">FR NIS2 bill</a></li>
+          <li><a href="/compliance/eu-gdpr">GDPR</a></li>
+          <li><a href="/compliance/eu-it-nis">IT NIS</a></li>
+          <li><a href="/compliance/eu-ivdr">IVDR</a></li>
+          <li><a href="/compliance/eu-mdr">MDR</a></li>
+          <li><a href="/compliance/eu-mica">MiCA</a></li>
+          <li><a href="/compliance/eu-nis2">NIS2</a></li>
+          <li><a href="/compliance/eu-nis2-ir-2024-2690">NIS2 IR 2024/2690</a></li>
+          <li><a href="/compliance/eu-pld">PLD</a></li>
+          <li><a href="/compliance/eu-psd2">PSD2</a></li>
+          <li><a href="/compliance/eu-psd2-rts-sca">PSD2 RTS SCA</a></li>
+          <li><a href="/compliance/eu-red-da-2022-30">RED DA 2022/30</a></li>
+          <li><a href="/compliance/eu-fr-rgs">RGS</a></li>
+          <li><a href="/compliance/eu-fr-secnumcloud">SecNumCloud</a></li>
+          <li><a href="/compliance/eu-de-bsi-tr-02102">TR-02102</a></li>
+          <li><a href="/compliance/eu-cz-264-2025">ZKB 264/2025</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">United States</p>
+        <ul>
+          <li><a href="/compliance/us-ma-201-cmr-17">201 CMR 17</a></li>
+          <li><a href="/compliance/us-ny-23-nycrr-500">23 NYCRR 500</a></li>
+          <li><a href="/compliance/us-disa-asd-stig">ASD STIG</a></li>
+          <li><a href="/compliance/us-ca-ccpa">CCPA/CPRA</a></li>
+          <li><a href="/compliance/us-cjis">CJIS</a></li>
+          <li><a href="/compliance/us-cmmc">CMMC</a></li>
+          <li><a href="/compliance/us-coppa">COPPA Rule</a></li>
+          <li><a href="/compliance/us-co-cpa">CPA</a></li>
+          <li><a href="/compliance/us-nist-csf">CSF 2.0</a></li>
+          <li><a href="/compliance/us-ct-ctdpa">CTDPA</a></li>
+          <li><a href="/compliance/us-dfars-252-204-7012">DFARS 7012</a></li>
+          <li><a href="/compliance/us-dod-cc-srg">DoD CC SRG</a></li>
+          <li><a href="/compliance/us-de-dpdpa">DPDPA</a></li>
+          <li><a href="/compliance/us-eo-14028">EO 14028</a></li>
+          <li><a href="/compliance/us-fda-524b">FDA 524B</a></li>
+          <li><a href="/compliance/us-fedramp">FedRAMP</a></li>
+          <li><a href="/compliance/us-ferpa">FERPA</a></li>
+          <li><a href="/compliance/us-ffiec-it-handbook">FFIEC IT HB</a></li>
+          <li><a href="/compliance/us-fips-140-3">FIPS 140-3</a></li>
+          <li><a href="/compliance/us-fisma">FISMA</a></li>
+          <li><a href="/compliance/us-glba-safeguards">GLBA Safeguards</a></li>
+          <li><a href="/compliance/us-govramp">GovRAMP</a></li>
+          <li><a href="/compliance/us-ftc-hbnr">HBNR</a></li>
+          <li><a href="/compliance/us-hipaa-security">HIPAA Security</a></li>
+          <li><a href="/compliance/us-ia-icdpa">ICDPA</a></li>
+          <li><a href="/compliance/us-in-icdpa">ICDPA (IN)</a></li>
+          <li><a href="/compliance/us-irs-pub-1075">IRS Pub 1075</a></li>
+          <li><a href="/compliance/us-omb-m-22-18">M-22-18</a></li>
+          <li><a href="/compliance/us-mt-mcdpa">MCDPA</a></li>
+          <li><a href="/compliance/us-mn-mcdpa">MCDPA (MN)</a></li>
+          <li><a href="/compliance/us-wa-mhmda">MHMDA</a></li>
+          <li><a href="/compliance/us-md-modpa">MODPA</a></li>
+          <li><a href="/compliance/us-naic-668">NAIC 668</a></li>
+          <li><a href="/compliance/us-nerc-cip">NERC CIP</a></li>
+          <li><a href="/compliance/us-nj-njdpa">NJDPA</a></li>
+          <li><a href="/compliance/us-ny-shield">NY SHIELD</a></li>
+          <li><a href="/compliance/us-sec-reg-s-p">Reg S-P</a></li>
+          <li><a href="/compliance/us-sec-reg-sci">Reg SCI</a></li>
+          <li><a href="/compliance/us-sec-cyber-disclosure">SEC cyber disclosure</a></li>
+          <li><a href="/compliance/us-section-508">Section 508</a></li>
+          <li><a href="/compliance/us-sox-itgc">SOX ITGC</a></li>
+          <li><a href="/compliance/us-nist-800-171">SP 800-171r3</a></li>
+          <li><a href="/compliance/us-nist-800-172">SP 800-172</a></li>
+          <li><a href="/compliance/us-nist-800-218a">SP 800-218A</a></li>
+          <li><a href="/compliance/us-nist-800-52">SP 800-52r2</a></li>
+          <li><a href="/compliance/us-nist-800-53">SP 800-53r5</a></li>
+          <li><a href="/compliance/us-nist-800-63b">SP 800-63B-4</a></li>
+          <li><a href="/compliance/us-nist-ssdf">SSDF</a></li>
+          <li><a href="/compliance/us-tx-tdpsa">TDPSA</a></li>
+          <li><a href="/compliance/us-tx-521">Tex. BCC 521</a></li>
+          <li><a href="/compliance/us-tx-ramp">TX-RAMP</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Canada</p>
+        <ul>
+          <li><a href="/compliance/ca-ab-hia">AB HIA</a></li>
+          <li><a href="/compliance/ca-ab-pipa">AB PIPA</a></li>
+          <li><a href="/compliance/ca-bc-pipa">BC PIPA</a></li>
+          <li><a href="/compliance/ca-cccs-baseline">CCCS Baseline</a></li>
+          <li><a href="/compliance/ca-ccspa">CCSPA</a></li>
+          <li><a href="/compliance/ca-cpcsc">CPCSC</a></li>
+          <li><a href="/compliance/ca-itsg-33">ITSG-33</a></li>
+          <li><a href="/compliance/ca-itsp-10-171">ITSP.10.171</a></li>
+          <li><a href="/compliance/ca-itsp-40-062">ITSP.40.062</a></li>
+          <li><a href="/compliance/ca-itsp-40-111">ITSP.40.111</a></li>
+          <li><a href="/compliance/ca-osfi-b10">OSFI B-10</a></li>
+          <li><a href="/compliance/ca-osfi-b13">OSFI B-13</a></li>
+          <li><a href="/compliance/ca-on-phipa">PHIPA</a></li>
+          <li><a href="/compliance/ca-pipeda">PIPEDA</a></li>
+          <li><a href="/compliance/ca-privacy-act">Privacy Act (CA)</a></li>
+          <li><a href="/compliance/ca-qc-law-25">Quebec Law 25</a></li>
+          <li><a href="/compliance/ca-tbs-dsm">TBS DSM</a></li>
+        </ul>
+      </li>
+      <li class="standards-menu__group">
+        <p class="standards-menu__region">Australia</p>
+        <ul>
+          <li><a href="/compliance/au-asd-essentials">ASD Essentials</a></li>
+          <li><a href="/compliance/au-cdr-rules">CDR Rules</a></li>
+          <li><a href="/compliance/au-apra-cpg-234">CPG 234</a></li>
+          <li><a href="/compliance/au-apra-cps-230">CPS 230</a></li>
+          <li><a href="/compliance/au-apra-cps-234">CPS 234</a></li>
+          <li><a href="/compliance/au-cyber-security-act">Cyber Security Act</a></li>
+          <li><a href="/compliance/au-essential-eight">Essential Eight</a></li>
+          <li><a href="/compliance/au-irap">IRAP</a></li>
+          <li><a href="/compliance/au-qld-is18">IS18</a></li>
+          <li><a href="/compliance/au-ism">ISM</a></li>
+          <li><a href="/compliance/au-my-health-records">My Health Records</a></li>
+          <li><a href="/compliance/au-nsw-cyber-policy">NSW CSP</a></li>
+          <li><a href="/compliance/au-privacy-app">Privacy Act / APP 11</a></li>
+          <li><a href="/compliance/au-pspf">PSPF</a></li>
+          <li><a href="/compliance/au-smart-device-rules">Smart Device Rules</a></li>
+          <li><a href="/compliance/au-soci-act">SOCI Act</a></li>
+          <li><a href="/compliance/au-soci-rmp">SOCI RMP Rules</a></li>
+          <li><a href="/compliance/au-vic-vpdss">VPDSS</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</details></li>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/results">Results</a></li>
+      <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
+      <li><a href="/#install">Install</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="transformations" aria-labelledby="patterns-title">
+  <div class="section-head">
+    <p class="eyebrow">Slop to pop</p>
+    <h1 id="patterns-title">Anti-patterns, turned into design patterns</h1>
+    <p>sloptopop finds code written in a known anti-pattern and rewrites it into the design pattern that fixes it, the same way every time, with no AI model choosing the change. These conversions work today in sloptopop's development build and are not in a release yet. Each example below is real output: the rule found the anti-pattern in a test program written for that pattern, sloptopop rewrote it, and both versions were run and compared.</p>
+    <p>On real open-source code sloptopop still declines most sites it finds. It converts only when it can prove every fact the conversion depends on; when it can't, it reports which fact is missing instead of guessing.</p>
+  </div>
+  <nav class="toc" aria-label="Patterns">
+    <ol>
+      <li><a href="#singleton">Singleton</a>, from a new client on every call</li>
+      <li><a href="#dependency-injection">Dependency injection</a>, from reaching for a global</li>
+      <li><a href="#builder">Builder</a>, from a long positional constructor</li>
+      <li><a href="#factory">Factory</a>, from the same creation choice, copied</li>
+      <li><a href="#strategy">Strategy</a>, from the same switch, repeated</li>
+      <li><a href="#facade">Facade</a>, from reaching into a module&#39;s internals</li>
+    </ol>
+  </nav>
+  <section class="walkthrough" id="singleton" aria-labelledby="singleton-title">
+    <h2 id="singleton-title">Singleton</h2>
+    <p class="status status--live">Works in the development build · Go</p>
+    <p><strong>Slop:</strong> A new client on every call (rule <code>design.client-per-call</code>). <strong>Pop:</strong> Singleton.</p>
+    <p>handle() built a new http.Client on every call, so no connection was ever reused. sloptopop moves it into one shared client, created once on first use with sync.OnceValue. It does this only for client types its library registry lists as safe to share across calls; where it can&#39;t show that, for example when a shared client would also share cookies, it leaves the code alone and says which fact is missing.</p>
+    <pre class="step__code diff" tabindex="0"><code><span class="diff__line">  api.go</span><span class="diff__line">  package main</span><span class="diff__line">  </span><span class="diff__line">  import &#34;net/http&#34;</span><span class="diff__line diff__line--add">+ import &#34;sync&#34;</span><span class="diff__line">  </span><span class="diff__line">  var transport = &#38;http.Transport{}</span><span class="diff__line">  </span><span class="diff__line diff__line--add">+ var sharedC = sync.OnceValue(func() *http.Client {</span><span class="diff__line diff__line--add">+ 	return &#38;http.Client{Transport: transport}</span><span class="diff__line diff__line--add">+ })</span><span class="diff__line diff__line--add">+ </span><span class="diff__line">  func handle() string {</span><span class="diff__line diff__line--del">- 	c := &#38;http.Client{Transport: transport}</span><span class="diff__line diff__line--add">+ 	c := sharedC()</span><span class="diff__line">  	answer, err := c.Get(&#34;http://127.0.0.1:9/&#34;)</span><span class="diff__line">  	if err != nil {</span><span class="diff__line">  		return &#34;refused&#34;</span></code></pre>
+    <p>Evidence: on each of its 2 test inputs the program gave the same output, exit code, exceptions and files before and after; a fresh scan no longer finds the anti-pattern; the comparison caught each of the four changes planted to test it; and two runs gave identical results.</p>
+    <p>Converts the same way in: C#, C++, Go, Java, JavaScript, Kotlin, Python, Rust, Swift, TypeScript.</p>
+  </section>
+  <section class="walkthrough" id="dependency-injection" aria-labelledby="dependency-injection-title">
+    <h2 id="dependency-injection-title">Dependency injection</h2>
+    <p class="status status--live">Works in the development build · Java</p>
+    <p><strong>Slop:</strong> Reaching for a global (rule <code>design.global-accessor</code>). <strong>Pop:</strong> Dependency injection.</p>
+    <p>countOrders fetched its database from a global registry, so a caller or a test could not hand it a different one. sloptopop adds an overload that takes the database as a parameter, and the original signature calls it with the global, so every existing caller keeps working unchanged.</p>
+    <pre class="step__code diff" tabindex="0"><code><span class="diff__line">  Orders.java</span><span class="diff__line">  final class Orders {</span><span class="diff__line">      static String countOrders(int user) {</span><span class="diff__line diff__line--del">-         Db db = Registry.currentDb();</span><span class="diff__line diff__line--add">+         return countOrders(user, Registry.currentDb());</span><span class="diff__line diff__line--add">+     }</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+     static String countOrders(int user, Db db) {</span><span class="diff__line">          return db.describe(user);</span><span class="diff__line">      }</span><span class="diff__line">  }</span></code></pre>
+    <p>Evidence: on each of its 5 test inputs the program gave the same output, exit code, exceptions and files before and after; a fresh scan no longer finds the anti-pattern; the comparison caught each of the four changes planted to test it; and two runs gave identical results.</p>
+    <p>Converts the same way in: C#, C++, Go, Java, JavaScript, Kotlin, PHP, Python, Rust, Swift, TypeScript.</p>
+  </section>
+  <section class="walkthrough" id="builder" aria-labelledby="builder-title">
+    <h2 id="builder-title">Builder</h2>
+    <p class="status status--live">Works in the development build · Kotlin</p>
+    <p><strong>Slop:</strong> A long positional constructor (rule <code>design.long-constructor</code>). <strong>Pop:</strong> Builder.</p>
+    <p>Order takes six or seven arguments in a row, four of them numbers, so swapping two compiles and runs silently wrong. Kotlin&#39;s own answer to a builder is named arguments, so sloptopop names every argument at every call. The values and their order stay exactly as they were.</p>
+    <pre class="step__code diff" tabindex="0"><code><span class="diff__line">  Main.kt</span><span class="diff__line">      val sku = &#34;sku-&#34; + i</span><span class="diff__line diff__line--del">-     return Order(i, sku, i * 2, 10 * i, 1, 0)</span><span class="diff__line diff__line--add">+     return Order(id = i, sku = sku, qty = i * 2, price = 10 * i, tax = 1, ship = 0)</span><span class="diff__line">  }</span><span class="diff__line">  …</span><span class="diff__line">      }</span><span class="diff__line diff__line--del">-     println(Order(n, &#34;x&#34;, 1, 2, 3, 4, &#34;last&#34;))</span><span class="diff__line diff__line--add">+     println(Order(id = n, sku = &#34;x&#34;, qty = 1, price = 2, tax = 3, ship = 4, note = &#34;last&#34;))</span><span class="diff__line">      println(legacy())</span></code></pre>
+    <p>Evidence: on each of its 3 test inputs the program gave the same output, exit code, exceptions and files before and after; a fresh scan no longer finds the anti-pattern; the comparison caught each of the four changes planted to test it; and two runs gave identical results.</p>
+    <p>Converts the same way in: C#, Kotlin, PHP, Python.</p>
+  </section>
+  <section class="walkthrough" id="factory" aria-labelledby="factory-title">
+    <h2 id="factory-title">Factory</h2>
+    <p class="status status--live">Works in the development build · Rust</p>
+    <p><strong>Slop:</strong> The same creation choice, copied (rule <code>design.repeated-creation</code>). <strong>Pop:</strong> Factory.</p>
+    <p>ship and reship made the same choice between FastSink and SlowSink, written out twice. sloptopop moves the choice into one creation function, create_sink, and calls it from both places, so the next kind of sink is added once.</p>
+    <pre class="step__code diff" tabindex="0"><code><span class="diff__line">  main.rs</span><span class="diff__line">  </span><span class="diff__line diff__line--add">+ fn create_sink(express: bool, order: i64) -&#62; Box&#60;dyn Sink&#62; {</span><span class="diff__line diff__line--add">+     if express { Box::new(FastSink::new(order)) } else { Box::new(SlowSink::new(order)) }</span><span class="diff__line diff__line--add">+ }</span><span class="diff__line diff__line--add">+ </span><span class="diff__line">  fn ship(express: bool, order: i64) -&#62; String {</span><span class="diff__line diff__line--del">-     let sink: Box&#60;dyn Sink&#62; = if express { Box::new(FastSink::new(order)) } else { Box::new(SlowSink::new(order)) };</span><span class="diff__line diff__line--add">+     let sink: Box&#60;dyn Sink&#62; = create_sink(express, order);</span><span class="diff__line">      sink.label()</span><span class="diff__line">  …</span><span class="diff__line">  fn reship(urgent: bool, invoice: i64) -&#62; String {</span><span class="diff__line diff__line--del">-     let sink: Box&#60;dyn Sink&#62; = if urgent { Box::new(FastSink::new(invoice)) } else { Box::new(SlowSink::new(invoice)) };</span><span class="diff__line diff__line--add">+     let sink: Box&#60;dyn Sink&#62; = create_sink(urgent, invoice);</span><span class="diff__line">      sink.label()</span></code></pre>
+    <p>Evidence: on each of its 4 test inputs the program gave the same output, exit code, exceptions and files before and after; a fresh scan no longer finds the anti-pattern; the comparison caught each of the four changes planted to test it; and two runs gave identical results.</p>
+    <p>Converts the same way in: C#, C++, Go, Java, JavaScript, Kotlin, PHP, Python, Rust, Swift, TypeScript.</p>
+  </section>
+  <section class="walkthrough" id="strategy" aria-labelledby="strategy-title">
+    <h2 id="strategy-title">Strategy</h2>
+    <p class="status status--live">Works in the development build · Python</p>
+    <p><strong>Slop:</strong> The same switch, repeated (rule <code>design.repeated-switch</code>). <strong>Pop:</strong> Strategy.</p>
+    <p>price and label each matched on the same kinds of delivery, case by case. sloptopop gives every kind one strategy record holding its behaviours, chosen in a single place, so a new kind of delivery is one new case instead of an edit in every function.</p>
+    <pre class="step__code diff" tabindex="0"><code><span class="diff__line">  main.py</span><span class="diff__line diff__line--del">- import sys</span><span class="diff__line diff__line--del">- </span><span class="diff__line diff__line--del">- </span><span class="diff__line diff__line--del">- def price(kind, qty):</span><span class="diff__line diff__line--del">-     match kind:</span><span class="diff__line diff__line--del">-         case &#34;standard&#34;:</span><span class="diff__line diff__line--del">-             return 5 * qty</span><span class="diff__line diff__line--del">-         case &#34;express&#34;:</span><span class="diff__line diff__line--del">-             return 9 * qty</span><span class="diff__line diff__line--del">-         case &#34;pickup&#34;:</span><span class="diff__line diff__line--del">-             return 0</span><span class="diff__line diff__line--del">-         case _:</span><span class="diff__line diff__line--del">-             raise ValueError(&#34;unknown &#34; + str(kind))</span><span class="diff__line diff__line--del">- </span><span class="diff__line diff__line--del">- </span><span class="diff__line diff__line--del">- def label(kind):</span><span class="diff__line diff__line--del">-     match kind:</span><span class="diff__line diff__line--del">-         case &#34;standard&#34;:</span><span class="diff__line diff__line--del">-             return &#34;S&#34;</span><span class="diff__line diff__line--del">-         case &#34;express&#34;:</span><span class="diff__line diff__line--del">-             return &#34;E&#34;</span><span class="diff__line diff__line--del">-         case &#34;pickup&#34;:</span><span class="diff__line diff__line--del">-             return &#34;P&#34;</span><span class="diff__line diff__line--del">-         case _:</span><span class="diff__line diff__line--del">-             return &#34;?&#34;</span><span class="diff__line diff__line--add">+ import collections</span><span class="diff__line diff__line--add">+ import sys</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ KindStrategy = collections.namedtuple(&#34;KindStrategy&#34;, &#34;price label&#34;)</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def price_standard(kind, qty):</span><span class="diff__line diff__line--add">+     return 5 * qty</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def price_express(kind, qty):</span><span class="diff__line diff__line--add">+     return 9 * qty</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def price_pickup(kind, qty):</span><span class="diff__line diff__line--add">+     return 0</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def price_other(kind, qty):</span><span class="diff__line diff__line--add">+     raise ValueError(&#34;unknown &#34; + str(kind))</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def label_standard():</span><span class="diff__line diff__line--add">+     return &#34;S&#34;</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def label_express():</span><span class="diff__line diff__line--add">+     return &#34;E&#34;</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def label_pickup():</span><span class="diff__line diff__line--add">+     return &#34;P&#34;</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def label_other():</span><span class="diff__line diff__line--add">+     return &#34;?&#34;</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def select_kind_strategy(kind):</span><span class="diff__line diff__line--add">+     match kind:</span><span class="diff__line diff__line--add">+         case &#34;standard&#34;:</span><span class="diff__line diff__line--add">+             return KindStrategy(price_standard, label_standard)</span><span class="diff__line diff__line--add">+         case &#34;express&#34;:</span><span class="diff__line diff__line--add">+             return KindStrategy(price_express, label_express)</span><span class="diff__line diff__line--add">+         case &#34;pickup&#34;:</span><span class="diff__line diff__line--add">+             return KindStrategy(price_pickup, label_pickup)</span><span class="diff__line diff__line--add">+         case _:</span><span class="diff__line diff__line--add">+             return KindStrategy(price_other, label_other)</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def price(kind, qty):</span><span class="diff__line diff__line--add">+     return select_kind_strategy(kind).price(kind, qty)</span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ </span><span class="diff__line diff__line--add">+ def label(kind):</span><span class="diff__line diff__line--add">+     return select_kind_strategy(kind).label()</span><span class="diff__line">  …</span></code></pre>
+    <p>Evidence: on each of its 4 test inputs the program gave the same output, exit code, exceptions and files before and after; a fresh scan no longer finds the anti-pattern; the comparison caught each of the four changes planted to test it; and two runs gave identical results.</p>
+    <p>Converts the same way in: JavaScript, Python, TypeScript.</p>
+  </section>
+  <section class="walkthrough" id="facade" aria-labelledby="facade-title">
+    <h2 id="facade-title">Facade</h2>
+    <p class="status status--live">Works in the development build · TypeScript</p>
+    <p><strong>Slop:</strong> Reaching into a module&#39;s internals (rule <code>arch.module-internals-access</code>). <strong>Pop:</strong> Facade.</p>
+    <p>The reports module imported price straight from a file inside the orders module. The orders module already exports price from its public entry point, so sloptopop points the import there, and orders can reorganise its internals without breaking reports.</p>
+    <pre class="step__code diff" tabindex="0"><code><span class="diff__line">  reports/job.ts</span><span class="diff__line diff__line--del">- import { price } from &#34;../orders/internal/price&#34;;</span><span class="diff__line diff__line--add">+ import { price } from &#34;../orders/index&#34;;</span><span class="diff__line">  </span><span class="diff__line">  orders/index.ts (unchanged)</span><span class="diff__line">  // Synthetic program (APC-6), generic names.</span><span class="diff__line">  export { price } from &#34;./internal/price&#34;;</span></code></pre>
+    <p>Evidence: on each of its 4 test inputs the program gave the same output, exit code, exceptions and files before and after; a fresh scan no longer finds the anti-pattern; the comparison caught each of the four changes planted to test it; and two runs gave identical results.</p>
+    <p>Converts the same way in: JavaScript, Python, Rust, TypeScript.</p>
+  </section>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
+  <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
+  <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
+  <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
+  <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
+  <p class="site-footer__small"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/imprint">Imprint</a> (drafts)</p>
+</footer>
+</body>
+</html>

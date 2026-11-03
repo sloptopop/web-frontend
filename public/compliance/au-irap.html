@@ -191,6 +191,7 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/results">Results</a></li>
       <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
       <li><a href="/#install">Install</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
@@ -209,10 +210,10 @@
   <ul class="tally" aria-label="Coverage of IRAP">
     <li class="tally__item"><strong>1143</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>14</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>1129</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>13</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>1130</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 14 we detect, 1129 coming soon, of 1143 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="12" height="14"></rect><rect class="bar__soon" x="12" width="988" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 13 we detect, 1130 coming soon, of 1143 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="11" height="14"></rect><rect class="bar__soon" x="11" width="989" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1382,8 +1383,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 1143</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 14</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1129</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 13</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1130</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of IRAP (scrolls sideways on small screens)">
@@ -8868,12 +8869,11 @@
         </tr>
       </tbody>
       <tbody class="points__group">
-        <tr id="ISM-1276" class="point point--detect point--l1">
+        <tr id="ISM-1276" class="point point--soon point--l1">
           <th scope="row" class="point__id"><a href="https://www.cyber.gov.au/ism/2026-09/guidelines-for-software-development" rel="noopener noreferrer">ISM-1276</a></th>
           <td class="point__title"><span class="point__heading">Software interaction with databases</span><span class="point__summary">Software uses parameterised queries or stored procedures rather than dynamically built queries.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-built query finding directly shows database access built dynamically, not parameterised; weak-hash and CORS findings from this rule would not count.</span></p>
           </td>
         </tr>
       </tbody>
@@ -11706,6 +11706,7 @@
 <footer class="site-footer">
   <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
   <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
   <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
   <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
   <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>

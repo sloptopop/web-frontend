@@ -191,6 +191,7 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/results">Results</a></li>
       <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
       <li><a href="/#install">Install</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
@@ -209,10 +210,10 @@
   <ul class="tally" aria-label="Coverage of ASVS">
     <li class="tally__item"><strong>345</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>1</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>15</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>329</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>11</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>333</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="1 we fix, 15 we detect, 329 coming soon, of 345 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="43" height="14"></rect><rect class="bar__soon" x="51" width="949" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="1 we fix, 11 we detect, 333 coming soon, of 345 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="32" height="14"></rect><rect class="bar__soon" x="40" width="960" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -681,8 +682,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 345</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 1</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 15</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 329</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 11</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 333</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of ASVS (scrolls sideways on small screens)">
@@ -747,20 +748,18 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="V1.2.4" class="point point--detect point--l3">
+        <tr id="V1.2.4" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x10-V1-Encoding-and-Sanitization.md#v12-injection-prevention" rel="noopener noreferrer">V1.2.4</a></th>
           <td class="point__title"><span class="point__summary">Database queries must use parameterization, ORMs or equivalent protection against injection.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-built database query shows the query is not parameterized or protected, directly violating this injection requirement.</span></p>
           </td>
         </tr>
-        <tr id="V1.2.5" class="point point--detect point--l3">
+        <tr id="V1.2.5" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x10-V1-Encoding-and-Sanitization.md#v12-injection-prevention" rel="noopener noreferrer">V1.2.5</a></th>
           <td class="point__title"><span class="point__summary">Protect against OS command injection using parameterized calls or contextual encoding.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A command assembled from strings shows OS calls lack parameterization or encoding, which is direct evidence of command injection exposure.</span></p>
           </td>
         </tr>
         <tr id="V1.2.6" class="point point--soon point--l3">
@@ -1181,12 +1180,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="V3.4.2" class="point point--detect point--l3">
+        <tr id="V3.4.2" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x12-V3-Web-Frontend-Security.md#v34-browser-security-mechanism-headers" rel="noopener noreferrer">V3.4.2</a></th>
           <td class="point__title"><span class="point__summary">CORS allowed origin must be fixed or validated against an allowlist.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">Open CORS shows origins are neither fixed nor allowlisted; only a wildcard on demonstrably non-sensitive responses would be excused.</span></p>
           </td>
         </tr>
         <tr id="V3.4.3" class="point point--soon point--l3">
@@ -2852,12 +2850,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="V11.4.1" class="point point--detect point--l3">
+        <tr id="V11.4.1" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x20-V11-Cryptography.md#v114-hashing-and-hash-based-functions" rel="noopener noreferrer">V11.4.1</a></th>
           <td class="point__title"><span class="point__summary">Only approved hash functions for cryptographic uses; MD5 and similar are disallowed.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">Finding a weak hash such as MD5 in cryptographic code directly shows a disallowed function is in use.</span></p>
           </td>
         </tr>
         <tr id="V11.4.2" class="point point--soon point--l3">
@@ -3848,6 +3845,7 @@
 <footer class="site-footer">
   <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
   <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
   <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
   <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
   <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>

@@ -191,6 +191,7 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/results">Results</a></li>
       <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
       <li><a href="/#install">Install</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
@@ -2735,7 +2736,6 @@
           <td class="point__title"><span class="point__heading">Duty of care.</span><span class="point__summary">Controller must reasonably secure personal data in storage and use, scaled to risk.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">Injectable queries, weak hashing or open CORS are concrete software weaknesses enabling data theft, showing securing measures are lacking.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role key shipped to browser code lets any visitor bypass access controls on personal data, which reasonable technical security must prevent.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.rls-missing">db.rls-missing</a><span class="evidence-check__note">A table left without the row-level security its sibling tables have exposes every row of personal data to any caller with table access.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.sensitive-column-plaintext">db.sensitive-column-plaintext</a><span class="evidence-check__note">Card, ID or health values stored with no encryption, hashing or tokenisation leave personal data readable from any dump or backup.</span></p>
@@ -8029,6 +8029,7 @@
 <footer class="site-footer">
   <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
   <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
   <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
   <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
   <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>

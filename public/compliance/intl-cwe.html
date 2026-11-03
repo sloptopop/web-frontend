@@ -191,6 +191,7 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/results">Results</a></li>
       <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
       <li><a href="/#install">Install</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
@@ -208,11 +209,11 @@
   </div>
   <ul class="tally" aria-label="Coverage of CWE">
     <li class="tally__item"><strong>740</strong> points</li>
-    <li class="tally__item tally__item--fix"><strong>6</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>36</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>698</strong> coming soon</li>
+    <li class="tally__item tally__item--fix"><strong>4</strong> we fix</li>
+    <li class="tally__item tally__item--detect"><strong>28</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>708</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="6 we fix, 36 we detect, 698 coming soon, of 740 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="49" height="14"></rect><rect class="bar__soon" x="57" width="943" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="4 we fix, 28 we detect, 708 coming soon, of 740 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="38" height="14"></rect><rect class="bar__soon" x="46" width="954" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1194,9 +1195,9 @@
   <div class="filter">
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 740</label>
-    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 6</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 36</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 698</label>
+    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 4</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 28</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 708</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of CWE (scrolls sideways on small screens)">
@@ -2362,12 +2363,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-942" class="point point--detect point--l4">
+        <tr id="CWE-942" class="point point--soon point--l4">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/942.html" rel="noopener noreferrer">CWE-942</a></th>
           <td class="point__title"><span class="point__heading">Permissive Cross-domain Security Policy with Untrusted Domains</span><span class="point__summary">Cross-domain policies such as CSP permit untrusted domains.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">An open CORS setting shows any origin is trusted by the browser policy, directly matching this overly permissive configuration.</span></p>
           </td>
         </tr>
       </tbody>
@@ -4415,12 +4415,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-772" class="point point--fix point--l3">
+        <tr id="CWE-772" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/772.html" rel="noopener noreferrer">CWE-772</a></th>
           <td class="point__title"><span class="point__heading">Missing Release of Resource after Effective Lifetime</span><span class="point__summary">Resources are not released once they&#39;re no longer needed.</span></td>
-          <td class="point__status"><span class="pill pill--fix">We fix</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as10.unmanaged-resource">agent.as10.unmanaged-resource</a> <span class="evidence-check__fix">auto-fix: Python open() of a text file without an explicit encoding</span><span class="evidence-check__note">A file opened with no scoped close shows a resource lacking guaranteed release, a concrete instance of this broader weakness.</span></p>
           </td>
         </tr>
         <tr id="CWE-773" class="point point--soon point--l4">
@@ -4437,12 +4436,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-775" class="point point--fix point--l4">
+        <tr id="CWE-775" class="point point--soon point--l4">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/775.html" rel="noopener noreferrer">CWE-775</a></th>
           <td class="point__title"><span class="point__heading">Missing Release of File Descriptor or Handle after Effective Lifetime</span><span class="point__summary">File descriptors or handles are not released after they&#39;re no longer needed.</span></td>
-          <td class="point__status"><span class="pill pill--fix">We fix</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as10.unmanaged-resource">agent.as10.unmanaged-resource</a> <span class="evidence-check__fix">auto-fix: Python open() of a text file without an explicit encoding</span><span class="evidence-check__note">Opening a file with no scoped close shows the handle has no guaranteed release once use ends.</span></p>
           </td>
         </tr>
         <tr id="CWE-778" class="point point--detect point--l3">
@@ -5296,20 +5294,18 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-327" class="point point--detect point--l2">
+        <tr id="CWE-327" class="point point--soon point--l2">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/327.html" rel="noopener noreferrer">CWE-327</a></th>
           <td class="point__title"><span class="point__heading">Use of a Broken or Risky Cryptographic Algorithm</span><span class="point__summary">Avoid broken or risky cryptographic algorithms and protocols.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A weak-hash finding shows the code relies on a cryptographically unsafe algorithm, which directly violates this point.</span></p>
           </td>
         </tr>
-        <tr id="CWE-328" class="point point--detect point--l3">
+        <tr id="CWE-328" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/328.html" rel="noopener noreferrer">CWE-328</a></th>
           <td class="point__title"><span class="point__heading">Use of Weak Hash</span><span class="point__summary">Use hash functions that resist preimage, second-preimage and collision attacks.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A weak-hash finding is direct evidence that the chosen digest lacks adequate collision or preimage resistance.</span></p>
           </td>
         </tr>
         <tr id="CWE-329" class="point point--soon point--l4">
@@ -6537,12 +6533,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-74" class="point point--detect point--l2">
+        <tr id="CWE-74" class="point point--soon point--l2">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/74.html" rel="noopener noreferrer">CWE-74</a></th>
           <td class="point__title"><span class="point__heading">Improper Neutralization of Special Elements in Output Used by a Downstream Component</span><span class="point__summary">Commands or data structures built from external input without neutralizing special elements for downstream components.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-assembled query or command shows interpreter-bound output built without safe parameterisation, a direct instance of this injection parent.</span></p>
           </td>
         </tr>
         <tr id="CWE-75" class="point point--group point--l2">
@@ -6559,20 +6554,18 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-77" class="point point--detect point--l2">
+        <tr id="CWE-77" class="point point--soon point--l2">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/77.html" rel="noopener noreferrer">CWE-77</a></th>
           <td class="point__title"><span class="point__heading">Improper Neutralization of Special Elements used in a Command</span><span class="point__summary">Externally influenced input builds a command without neutralizing characters that alter it.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A command assembled through string building shows no safe argument separation, which is concrete evidence of command injection exposure.</span></p>
           </td>
         </tr>
-        <tr id="CWE-78" class="point point--detect point--l3">
+        <tr id="CWE-78" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/78.html" rel="noopener noreferrer">CWE-78</a></th>
           <td class="point__title"><span class="point__heading">Improper Neutralization of Special Elements used in an OS Command</span><span class="point__summary">OS commands built from external input without neutralizing special elements.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-built command shows shell-bound text assembled without parameterisation, which is direct evidence of OS command injection risk.</span></p>
           </td>
         </tr>
         <tr id="CWE-781" class="point point--soon point--l4">
@@ -6715,12 +6708,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-89" class="point point--detect point--l3">
+        <tr id="CWE-89" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/89.html" rel="noopener noreferrer">CWE-89</a></th>
           <td class="point__title"><span class="point__heading">Improper Neutralization of Special Elements used in an SQL Command</span><span class="point__summary">SQL commands built from external input without neutralizing SQL syntax.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A query assembled by string building shows SQL lacking bound parameters, the standard direct evidence of injection weakness.</span></p>
           </td>
         </tr>
         <tr id="CWE-90" class="point point--soon point--l3">
@@ -6765,12 +6757,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-943" class="point point--detect point--l2">
+        <tr id="CWE-943" class="point point--soon point--l2">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/943.html" rel="noopener noreferrer">CWE-943</a></th>
           <td class="point__title"><span class="point__heading">Improper Neutralization of Special Elements in Data Query Logic</span><span class="point__summary">Data store queries built without neutralizing elements that change query logic.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-assembled query shows data-store logic built without parameterisation, so injected syntax could alter it.</span></p>
           </td>
         </tr>
         <tr id="CWE-95" class="point point--soon point--l4">
@@ -7977,6 +7968,7 @@
 <footer class="site-footer">
   <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
   <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
   <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
   <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
   <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>

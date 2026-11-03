@@ -191,6 +191,7 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/results">Results</a></li>
       <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
       <li><a href="/#install">Install</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
@@ -209,10 +210,10 @@
   <ul class="tally" aria-label="Coverage of CCCS Baseline">
     <li class="tally__item"><strong>50</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>3</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>47</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>2</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>48</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 3 we detect, 47 coming soon, of 50 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="60" height="14"></rect><rect class="bar__soon" x="60" width="940" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 2 we detect, 48 coming soon, of 50 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="40" height="14"></rect><rect class="bar__soon" x="40" width="960" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -307,8 +308,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 50</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 3</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 47</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 2</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 48</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of CCCS Baseline (scrolls sideways on small screens)">
@@ -754,12 +755,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="BC.11.1" class="point point--detect point--l2">
+        <tr id="BC.11.1" class="point point--soon point--l2">
           <th scope="row" class="point__id"><a href="https://www.cyber.gc.ca/en/guidance/baseline-cyber-security-controls-small-and-medium-organizations#a311" rel="noopener noreferrer">BC.11.1</a></th>
           <td class="point__title"><span class="point__summary">Ensure websites address the OWASP top 10 vulnerabilities.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">Injection-prone string-built queries, weak hashing and open CORS are concrete instances of listed OWASP weakness categories in web-facing code.</span></p>
           </td>
         </tr>
         <tr id="BC.11.2" class="point point--soon point--l2">
@@ -840,6 +840,7 @@
 <footer class="site-footer">
   <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
   <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
   <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
   <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
   <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>

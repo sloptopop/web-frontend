@@ -191,6 +191,7 @@
       <li><a href="/#how">How it works</a></li>
       <li><a href="/results">Results</a></li>
       <li><a href="/transformations">A to Z</a></li>
+      <li><a href="/patterns">Patterns</a></li>
       <li><a href="/#install">Install</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="https://github.com/sloptopop" rel="noopener noreferrer">GitHub</a></li>
@@ -209,10 +210,10 @@
   <ul class="tally" aria-label="Coverage of ASD STIG">
     <li class="tally__item"><strong>286</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>1</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>15</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>270</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>12</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>273</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="1 we fix, 15 we detect, 270 coming soon, of 286 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="52" height="14"></rect><rect class="bar__soon" x="60" width="940" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="1 we fix, 12 we detect, 273 coming soon, of 286 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="42" height="14"></rect><rect class="bar__soon" x="50" width="950" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -525,8 +526,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 286</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 1</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 15</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 270</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 12</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 273</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of ASD STIG (scrolls sideways on small screens)">
@@ -2181,12 +2182,11 @@
         </tr>
       </tbody>
       <tbody class="points__group">
-        <tr id="APSC-DV-002030-(V-222571)" class="point point--detect point--l1">
+        <tr id="APSC-DV-002030-(V-222571)" class="point point--soon point--l1">
           <th scope="row" class="point__id"><a href="https://www.cyber.mil/stigs/downloads/" rel="noopener noreferrer">APSC-DV-002030 (V-222571)</a></th>
           <td class="point__title"><span class="point__heading">The application must utilize FIPS-validated cryptographic modules when generating cryptographic hashes.</span><span class="point__summary">Cryptographic hash generation must use FIPS-validated modules.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A weak hash finding shows the code generates digests with an algorithm unacceptable under validated, approved cryptography; applies to that finding type.</span></p>
           </td>
         </tr>
       </tbody>
@@ -2483,12 +2483,11 @@
         </tr>
       </tbody>
       <tbody class="points__group">
-        <tr id="APSC-DV-002510-(V-222604)" class="point point--detect point--l1">
+        <tr id="APSC-DV-002510-(V-222604)" class="point point--soon point--l1">
           <th scope="row" class="point__id"><a href="https://www.cyber.mil/stigs/downloads/" rel="noopener noreferrer">APSC-DV-002510 (V-222604)</a></th>
           <td class="point__title"><span class="point__heading">The application must protect from command injection.</span><span class="point__summary">Application must resist command injection from unvalidated input reaching an operating system shell.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-built command finding directly shows the unsafe construction that enables shell injection; applies to that finding type.</span></p>
           </td>
         </tr>
       </tbody>
@@ -2511,12 +2510,11 @@
         </tr>
       </tbody>
       <tbody class="points__group">
-        <tr id="APSC-DV-002540-(V-222607)" class="point point--detect point--l1">
+        <tr id="APSC-DV-002540-(V-222607)" class="point point--soon point--l1">
           <th scope="row" class="point__id"><a href="https://www.cyber.mil/stigs/downloads/" rel="noopener noreferrer">APSC-DV-002540 (V-222607)</a></th>
           <td class="point__title"><span class="point__heading">The application must not be vulnerable to SQL Injection.</span><span class="point__summary">Application must not be vulnerable to SQL injection; use parameterized queries, not concatenation.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as09.insecure-default">agent.as09.insecure-default</a><span class="evidence-check__note">A string-built query finding shows the concatenated SQL construction the point warns against; applies to that finding type.</span></p>
           </td>
         </tr>
       </tbody>
@@ -3140,6 +3138,7 @@
 <footer class="site-footer">
   <p>The <strong>sloptopop</strong> CLI and every language library are open source under MIT OR Apache-2.0, at <a href="https://github.com/sloptopop" rel="noopener noreferrer">github.com/sloptopop</a>.</p>
   <p class="site-footer__small"><a href="/transformations">Transformations, A to Z</a>: every step from the repository you start with to the branch you get back.</p>
+  <p class="site-footer__small"><a href="/patterns">Slop to pop: design patterns</a>: anti-patterns sloptopop converts into design patterns today, with the run that proves each one.</p>
   <p class="site-footer__small"><a href="/results">Results</a>: what sloptopop did to every repository it was tested on.</p>
   <p class="site-footer__small"><a href="/compliance">Compliance, point by point</a> and <a href="/coverage">what each check evidences</a>: what sloptopop checks and which controls each check evidences.</p>
   <p class="site-footer__small">This site runs no JavaScript except htmx on the pricing page, to send the waitlist form; every animation is CSS. No cookies, no analytics, no third-party scripts.</p>
