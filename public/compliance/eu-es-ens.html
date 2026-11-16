@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of ENS">
     <li class="tally__item"><strong>660</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>9</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>651</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>10</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>650</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 9 we detect, 651 coming soon, of 660 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="14" height="14"></rect><rect class="bar__soon" x="14" width="986" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 10 we detect, 650 coming soon, of 660 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="15" height="14"></rect><rect class="bar__soon" x="15" width="985" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1061,8 +1061,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 660</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 9</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 651</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 10</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 650</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of ENS (scrolls sideways on small screens)">
@@ -6103,11 +6103,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="mp.sw.1.r1.1" class="point point--soon point--l5">
+        <tr id="mp.sw.1.r1.1" class="point point--detect point--l5">
           <th scope="row" class="point__id"><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-7191#ai-2" rel="noopener noreferrer">mp.sw.1.r1.1</a></th>
           <td class="point__title"><span class="point__summary">Applications follow least privilege, using only essential resources and privileges.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">Client code holding a service-role key runs with rights that bypass row security, far beyond what the browser part needs.</span></p>
           </td>
         </tr>
         <tr id="mp.sw.1.r2.1" class="point point--group point--l5">

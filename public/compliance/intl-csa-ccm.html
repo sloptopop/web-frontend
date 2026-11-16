@@ -1597,10 +1597,11 @@
           </td>
         </tr>
         <tr id="LOG-02" class="point point--detect point--l2">
-          <th scope="row" class="point__id"><a href="https://cloudsecurityalliance.org/research/cloud-controls-matrix" rel="noopener noreferrer">LOG-02</a></th>
+          <th scope="row" class="point__id"><a href="https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4-1" rel="noopener noreferrer">LOG-02</a></th>
           <td class="point__title"><span class="point__summary">Ensure audit logs are kept securely and retained.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.audit-table-mutable">db.audit-table-mutable</a><span class="evidence-check__note">An audit table that application roles or code can update or delete is not kept secure; cascade deletes are already mapped here on the same logic.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.cascade-deletes-history">db.cascade-deletes-history</a><span class="evidence-check__note">Audit records disappear instead of being retained.</span></p>
           </td>
         </tr>

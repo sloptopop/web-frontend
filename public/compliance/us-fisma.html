@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of FISMA">
     <li class="tally__item"><strong>1164</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>20</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>1144</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>22</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>1142</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 20 we detect, 1144 coming soon, of 1164 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="17" height="14"></rect><rect class="bar__soon" x="17" width="983" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 22 we detect, 1142 coming soon, of 1164 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="19" height="14"></rect><rect class="bar__soon" x="19" width="981" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1781,8 +1781,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 1164</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 20</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1144</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 22</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1142</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of FISMA (scrolls sideways on small screens)">
@@ -3989,11 +3989,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="AC-6(10)" class="point point--soon point--l2">
+        <tr id="AC-6(10)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=AC-06(10)" rel="noopener noreferrer">AC-6(10)</a></th>
           <td class="point__title"><span class="point__heading">Prohibit Non-privileged Users from Executing Privileged Functions</span><span class="point__summary">Stop non-privileged users from running privileged functions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">Any end user can lift the service-role key from client code and run privileged operations that bypass row-level security.</span></p>
           </td>
         </tr>
         <tr id="AC-7" class="point point--group point--l1">
@@ -6982,6 +6983,7 @@
           <td class="point__title"><span class="point__summary">Protect authenticator content from unauthorised disclosure and modification.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">The service-role or secret key is inlined into the client bundle, so its value is disclosed to every user who loads the app.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">Everyone with read access to the repository, its clones and forks can read the credential, so its content is disclosed. (SP 800-53B L,M,H)</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.in-history">secrets.in-history</a><span class="evidence-check__note">Anyone who clones the repository can recover the credential from history, so its content is not protected from disclosure. (SP 800-53B L,M,H)</span></p>
           </td>
@@ -7113,11 +7115,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="IA-5(6)" class="point point--soon point--l2">
+        <tr id="IA-5(6)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=IA-05(06)" rel="noopener noreferrer">IA-5(6)</a></th>
           <td class="point__title"><span class="point__heading">Protection of Authenticators</span><span class="point__summary">Protect authenticators in line with the sensitivity of what they unlock.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">A credential readable by everyone with repository access is protected only by repo access, not in line with the systems it unlocks.</span></p>
           </td>
         </tr>
         <tr id="IA-6" class="point point--soon point--l1">

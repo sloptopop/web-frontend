@@ -201,11 +201,11 @@
   </div>
   <ul class="tally" aria-label="Coverage of ASVS">
     <li class="tally__item"><strong>345</strong> points</li>
-    <li class="tally__item tally__item--fix"><strong>1</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>11</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>333</strong> coming soon</li>
+    <li class="tally__item tally__item--fix"><strong>2</strong> we fix</li>
+    <li class="tally__item tally__item--detect"><strong>12</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>331</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="1 we fix, 11 we detect, 333 coming soon, of 345 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="32" height="14"></rect><rect class="bar__soon" x="40" width="960" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="2 we fix, 12 we detect, 331 coming soon, of 345 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="35" height="14"></rect><rect class="bar__soon" x="43" width="957" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -673,9 +673,9 @@
   <div class="filter">
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 345</label>
-    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 1</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 11</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 333</label>
+    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 2</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 12</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 331</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of ASVS (scrolls sideways on small screens)">
@@ -3160,11 +3160,13 @@
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.insecure-default">secrets.insecure-default</a><span class="evidence-check__note">A backend signing secret whose value is a sample in a template was not created by a secrets-management solution.</span></p>
           </td>
         </tr>
-        <tr id="V13.3.2" class="point point--soon point--l3">
+        <tr id="V13.3.2" class="point point--detect point--l3">
           <th scope="row" class="point__id"><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x22-V13-Configuration.md#v133-secret-management" rel="noopener noreferrer">V13.3.2</a></th>
           <td class="point__title"><span class="point__summary">Restrict access to secrets by least privilege.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role or secret key reaches browser code, so every user of the client holds it.</span></p>
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">Everyone with read access to the repository, a fork or a clone holds the committed secret.</span></p>
           </td>
         </tr>
         <tr id="V13.3.3" class="point point--soon point--l3">
@@ -3690,11 +3692,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="V16.5.2" class="point point--soon point--l3">
+        <tr id="V16.5.2" class="point point--fix point--l3">
           <th scope="row" class="point__id"><a href="https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x25-V16-Security-Logging-and-Error-Handling.md#v165-error-handling" rel="noopener noreferrer">V16.5.2</a></th>
           <td class="point__title"><span class="point__summary">Keep operating securely when external resources fail, e.g. circuit breakers.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--fix">We fix</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as10.missing-timeout">agent.as10.missing-timeout</a> <span class="evidence-check__fix">auto-fix: outbound HTTP calls without a timeout: Python requests calls and TypeScript fetch</span><span class="evidence-check__note">A network call with no timeout hangs when the remote side stalls instead of failing and degrading gracefully.</span></p>
           </td>
         </tr>
         <tr id="V16.5.3" class="point point--fix point--l3">

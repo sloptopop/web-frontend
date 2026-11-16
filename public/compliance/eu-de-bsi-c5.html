@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of C5">
     <li class="tally__item"><strong>623</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>15</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>608</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>17</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>606</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 15 we detect, 608 coming soon, of 623 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="24" height="14"></rect><rect class="bar__soon" x="24" width="976" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 17 we detect, 606 coming soon, of 623 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="27" height="14"></rect><rect class="bar__soon" x="27" width="973" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1023,8 +1023,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 623</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 15</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 608</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 17</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 606</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of C5 (scrolls sideways on small screens)">
@@ -3626,10 +3626,11 @@
           </td>
         </tr>
         <tr id="IAM-09.02B" class="point point--detect point--l2">
-          <th scope="row" class="point__id"><a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2026/C5_2026.pdf?__blob=publicationFile#page=141" rel="noopener noreferrer">IAM-09.02B</a></th>
+          <th scope="row" class="point__id"><a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2026/C5_2026.pdf?__blob=publicationFile#page=140" rel="noopener noreferrer">IAM-09.02B</a></th>
           <td class="point__title"><span class="point__summary">Credentials are protected at a level matching the classification of what they guard.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role key compiled into client bundles is handled at public level although it unlocks every row.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">A credential readable by everyone with repository access is not managed at the protection level of the system it opens.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.in-history">secrets.in-history</a><span class="evidence-check__note">A credential left in history is exposed to every clone, below the protection level its system needs.</span></p>
           </td>
@@ -4540,11 +4541,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="OPS-12.01B" class="point point--soon point--l2">
+        <tr id="OPS-12.01B" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2026/C5_2026.pdf?__blob=publicationFile#page=104" rel="noopener noreferrer">OPS-12.01B</a></th>
           <td class="point__title"><span class="point__summary">Technically enforce log access limits, retention periods and deletion once no longer needed.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.cascade-deletes-history">db.cascade-deletes-history</a><span class="evidence-check__note">A cascade deletes the history rows with the record they describe, whatever retention period applies.</span></p>
           </td>
         </tr>
       </tbody>
@@ -4660,11 +4662,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="OPS-15.02AC" class="point point--soon point--l2">
+        <tr id="OPS-15.02AC" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2026/C5_2026.pdf?__blob=publicationFile#page=106" rel="noopener noreferrer">OPS-15.02AC</a></th>
           <td class="point__title"><span class="point__summary">Logs are kept with integrity controls: complete, untampered, synchronised clocks, verifiable evidence copies.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.audit-table-mutable">db.audit-table-mutable</a><span class="evidence-check__note">Audit rows that application roles or code can update or delete cannot be shown to be untampered.</span></p>
           </td>
         </tr>
       </tbody>

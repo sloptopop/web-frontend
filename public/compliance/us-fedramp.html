@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of FedRAMP">
     <li class="tally__item"><strong>1280</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>25</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>1255</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>29</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>1251</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 25 we detect, 1255 coming soon, of 1280 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="20" height="14"></rect><rect class="bar__soon" x="20" width="980" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 29 we detect, 1251 coming soon, of 1280 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="23" height="14"></rect><rect class="bar__soon" x="23" width="977" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1879,8 +1879,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 1280</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 25</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1255</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 29</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1251</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of FedRAMP (scrolls sideways on small screens)">
@@ -2396,11 +2396,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="AC-6(10)" class="point point--soon point--l2">
+        <tr id="AC-6(10)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=AC-06(10)" rel="noopener noreferrer">AC-6(10)</a></th>
           <td class="point__title"><span class="point__heading">Prohibit Non-privileged Users from Executing Privileged Functions</span><span class="point__summary">Block non-privileged users from running privileged functions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">Any end user can lift the service-role key from client code and run privileged operations that bypass row-level security.</span></p>
           </td>
         </tr>
         <tr id="AC-7" class="point point--group point--l1">
@@ -3375,11 +3376,13 @@
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.cascade-deletes-history">db.cascade-deletes-history</a><span class="evidence-check__note">Deleting the described row silently deletes its history or audit records through ON DELETE CASCADE. (FedRAMP L,M,H)</span></p>
           </td>
         </tr>
-        <tr id="AU-9a" class="point point--soon point--l3">
+        <tr id="AU-9a" class="point point--detect point--l3">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=AU-09" rel="noopener noreferrer">AU-9a</a></th>
           <td class="point__title"><span class="point__summary">Protect audit information and logging tools from unauthorised access, change and deletion.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.audit-table-mutable">db.audit-table-mutable</a><span class="evidence-check__note">Grants or application code able to update, delete or truncate audit tables show audit records are not shielded from tampering.</span></p>
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.cascade-deletes-history">db.cascade-deletes-history</a><span class="evidence-check__note">ON DELETE CASCADE lets deleting an ordinary business row erase its audit or history records, with no audit-specific deletion authority involved.</span></p>
           </td>
         </tr>
         <tr id="AU-9b" class="point point--soon point--l3">
@@ -5450,6 +5453,7 @@
           <td class="point__title"><span class="point__summary">Protect authenticator content from unauthorised disclosure and modification.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">The service-role or secret key is inlined into the client bundle, so its value is disclosed to every user who loads the app.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">Everyone with read access to the repository, its clones and forks can read the credential, so its content is disclosed. (FedRAMP L,M,H)</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.in-history">secrets.in-history</a><span class="evidence-check__note">Anyone who clones the repository can recover the credential from history, so its content is not protected from disclosure. (FedRAMP L,M,H)</span></p>
           </td>
@@ -5581,11 +5585,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="IA-5(6)" class="point point--soon point--l2">
+        <tr id="IA-5(6)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=IA-05(06)" rel="noopener noreferrer">IA-5(6)</a></th>
           <td class="point__title"><span class="point__heading">Protection of Authenticators</span><span class="point__summary">Protect authenticators in line with the sensitivity of what they unlock.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">A credential readable by everyone with repository access is protected only by repo access, not in line with the systems it unlocks.</span></p>
           </td>
         </tr>
         <tr id="IA-5(7)" class="point point--detect point--l2">
@@ -12705,11 +12710,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="KSI-IAM-ELP" class="point point--soon point--l1">
+        <tr id="KSI-IAM-ELP" class="point point--detect point--l1">
           <th scope="row" class="point__id"><a href="https://www.fedramp.gov/2026/reference/key-security-indicators/" rel="noopener noreferrer">KSI-IAM-ELP</a></th>
           <td class="point__title"><span class="point__heading">Ensuring Least Privilege</span><span class="point__summary">Access controls are used and reviewed so users and devices reach only needed resources.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">Every user who loads the client holds a service-role key that reaches all data, far beyond their own needs (as AC-6).</span></p>
           </td>
         </tr>
         <tr id="KSI-IAM-JIT" class="point point--soon point--l1">
@@ -12724,6 +12730,7 @@
           <td class="point__title"><span class="point__heading">Securing Non-User Authentication</span><span class="point__summary">Non-user accounts and services use appropriately secure authentication, continually reviewed.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">The service account&#39;s key is used from browser code, so the non-user credential is exposed to every client instead of kept server-side.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">Service tokens and private keys in tracked files show machine credentials are handled through an insecure authentication practice.</span></p>
           </td>
         </tr>

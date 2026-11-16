@@ -201,11 +201,11 @@
   </div>
   <ul class="tally" aria-label="Coverage of SCF">
     <li class="tally__item"><strong>1301</strong> points</li>
-    <li class="tally__item tally__item--fix"><strong>2</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>26</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>1273</strong> coming soon</li>
+    <li class="tally__item tally__item--fix"><strong>3</strong> we fix</li>
+    <li class="tally__item tally__item--detect"><strong>28</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>1270</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="2 we fix, 26 we detect, 1273 coming soon, of 1301 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="20" height="14"></rect><rect class="bar__soon" x="28" width="972" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="3 we fix, 28 we detect, 1270 coming soon, of 1301 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="22" height="14"></rect><rect class="bar__soon" x="30" width="970" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1856,9 +1856,9 @@
   <div class="filter">
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 1301</label>
-    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 2</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 26</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1273</label>
+    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 3</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 28</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1270</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of SCF (scrolls sideways on small screens)">
@@ -7806,6 +7806,7 @@
           <td class="point__title"><span class="point__summary">Protect authenticators in proportion to the sensitivity of what they unlock.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role key reachable from browser code is shipped to every user, so the most powerful authenticator has no protection at all.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">Credentials in version control are exposed to everyone with repository access.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.in-history">secrets.in-history</a><span class="evidence-check__note">Every clone keeps the commit, so the credential stays exposed to everyone with repository access.</span></p>
           </td>
@@ -7870,11 +7871,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="IAC-18" class="point point--soon point--l2">
+        <tr id="IAC-18" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://securecontrolsframework.com/free-content/scf-download" rel="noopener noreferrer">IAC-18</a></th>
           <td class="point__title"><span class="point__summary">Validate certificates via a certification path to a trust anchor, checking status.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/tls.verification-disabled">tls.verification-disabled</a><span class="evidence-check__note">Turning verification off accepts any certificate, so no certification path to a trust anchor is built or checked.</span></p>
           </td>
         </tr>
         <tr id="IAC-19" class="point point--soon point--l2">
@@ -9528,11 +9530,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="NET-29" class="point point--soon point--l2">
+        <tr id="NET-29" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://securecontrolsframework.com/free-content/scf-download" rel="noopener noreferrer">NET-29</a></th>
           <td class="point__title"><span class="point__summary">Protect authenticity and integrity of communications sessions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/tls.verification-disabled">tls.verification-disabled</a><span class="evidence-check__note">Without certificate checks the client cannot tell the real server from an interposer, so session authenticity is not protected.</span></p>
           </td>
         </tr>
         <tr id="NET-30" class="point point--soon point--l2">
@@ -11522,11 +11525,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="SEA-02.1" class="point point--soon point--l3">
+        <tr id="SEA-02.1" class="point point--fix point--l3">
           <th scope="row" class="point__id"><a href="https://securecontrolsframework.com/free-content/scf-download" rel="noopener noreferrer">SEA-02.1</a></th>
           <td class="point__title"><span class="point__summary">Design systems so required capabilities keep working acceptably in normal and degraded conditions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--fix">We fix</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as10.missing-timeout">agent.as10.missing-timeout</a> <span class="evidence-check__fix">auto-fix: outbound HTTP calls without a timeout: Python requests calls and TypeScript fetch</span><span class="evidence-check__note">A network call with no timeout hangs for as long as the remote end does, so the function stalls instead of degrading in a controlled way.</span></p>
           </td>
         </tr>
         <tr id="SEA-02.2" class="point point--soon point--l3">

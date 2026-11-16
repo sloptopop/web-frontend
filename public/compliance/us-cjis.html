@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of CJIS">
     <li class="tally__item"><strong>1146</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>20</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>1126</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>22</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>1124</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 20 we detect, 1126 coming soon, of 1146 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="17" height="14"></rect><rect class="bar__soon" x="17" width="983" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 22 we detect, 1124 coming soon, of 1146 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="19" height="14"></rect><rect class="bar__soon" x="19" width="981" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1696,8 +1696,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 1146</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 20</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1126</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 22</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1124</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of CJIS (scrolls sideways on small screens)">
@@ -2454,11 +2454,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="AC-6(10)" class="point point--soon point--l2">
+        <tr id="AC-6(10)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://le.fbi.gov/file-repository/cjis_security_policy_v6-1_20260625.pdf#page=47" rel="noopener noreferrer">AC-6(10)</a></th>
           <td class="point__title"><span class="point__heading">LEAST PRIVILEGE | PROHIBIT NON-PRIVILEGED USERS FROM EXECUTING PRIVILEGED FUNCTIONS</span><span class="point__summary">Block non-privileged users from running privileged functions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role key shipped to browser code lets any visitor run backend operations reserved for privileged roles, bypassing row-level security.</span></p>
           </td>
         </tr>
         <tr id="AC-7" class="point point--group point--l1">
@@ -7337,11 +7338,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="IA-5(6)" class="point point--soon point--l2">
+        <tr id="IA-5(6)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://le.fbi.gov/file-repository/cjis_security_policy_v6-1_20260625.pdf#page=159" rel="noopener noreferrer">IA-5(6)</a></th>
           <td class="point__title"><span class="point__heading">AUTHENTICATOR MANAGEMENT | PROTECTION OF AUTHENTICATORS</span><span class="point__summary">Protect authenticators in proportion to the sensitivity of the information they unlock.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">A credential readable by anyone with repository access has no protection matching the data it unlocks.</span></p>
           </td>
         </tr>
         <tr id="IA-6" class="point point--soon point--l1">

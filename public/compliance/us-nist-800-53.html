@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of SP 800-53r5">
     <li class="tally__item"><strong>1872</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>28</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>1844</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>30</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>1842</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 28 we detect, 1844 coming soon, of 1872 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="15" height="14"></rect><rect class="bar__soon" x="15" width="985" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 30 we detect, 1842 coming soon, of 1872 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="16" height="14"></rect><rect class="bar__soon" x="16" width="984" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -2570,8 +2570,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 1872</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 28</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1844</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 30</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 1842</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of SP 800-53r5 (scrolls sideways on small screens)">
@@ -3633,11 +3633,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="AC-6(10)" class="point point--soon point--l2">
+        <tr id="AC-6(10)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=AC-06(10)" rel="noopener noreferrer">AC-6(10)</a></th>
           <td class="point__title"><span class="point__heading">Prohibit Non-privileged Users from Executing Privileged Functions</span><span class="point__summary">Block non-privileged users from running privileged functions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">Any end user can lift the service-role key from client code and run privileged operations that bypass row-level security.</span></p>
           </td>
         </tr>
         <tr id="AC-7" class="point point--group point--l1">
@@ -5262,6 +5263,7 @@
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.audit-table-mutable">db.audit-table-mutable</a><span class="evidence-check__note">Grants or application code able to alter or erase audit tables directly show audit records lack protection against tampering.</span></p>
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/db.cascade-deletes-history">db.cascade-deletes-history</a><span class="evidence-check__note">ON DELETE CASCADE lets deleting an ordinary business row erase its audit or history records, with no audit-specific deletion authority involved.</span></p>
           </td>
         </tr>
         <tr id="AU-9b" class="point point--soon point--l3">
@@ -8320,6 +8322,7 @@
           <td class="point__title"><span class="point__summary">Protect authenticator content from unauthorized disclosure and modification.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">The service-role or secret key is inlined into the client bundle, so its value is disclosed to every user who loads the app.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.committed">secrets.committed</a><span class="evidence-check__note">Everyone with read access to the repository, its clones and forks can read the credential, so its content is disclosed.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/secrets.in-history">secrets.in-history</a><span class="evidence-check__note">Anyone who clones the repository can recover the credential from history, so its content is not protected from disclosure.</span></p>
           </td>
@@ -16738,11 +16741,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="SC-23(5)" class="point point--soon point--l2">
+        <tr id="SC-23(5)" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_2_0/home?element=SC-23(05)" rel="noopener noreferrer">SC-23(5)</a></th>
           <td class="point__title"><span class="point__heading">Allowed Certificate Authorities</span><span class="point__summary">Restrict protected session establishment to verification by organization-specified certificate authorities.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/tls.verification-disabled">tls.verification-disabled</a><span class="evidence-check__note">With certificate verification off the client accepts a certificate from any issuer, even self-signed, so no CA restriction is applied.</span></p>
           </td>
         </tr>
         <tr id="SC-24" class="point point--soon point--l1">

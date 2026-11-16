@@ -201,11 +201,11 @@
   </div>
   <ul class="tally" aria-label="Coverage of CPG 234">
     <li class="tally__item"><strong>253</strong> points</li>
-    <li class="tally__item tally__item--fix"><strong>1</strong> we fix</li>
+    <li class="tally__item tally__item--fix"><strong>2</strong> we fix</li>
     <li class="tally__item tally__item--detect"><strong>7</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>245</strong> coming soon</li>
+    <li class="tally__item tally__item--soon"><strong>244</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="1 we fix, 7 we detect, 245 coming soon, of 253 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="28" height="14"></rect><rect class="bar__soon" x="36" width="964" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="2 we fix, 7 we detect, 244 coming soon, of 253 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="28" height="14"></rect><rect class="bar__soon" x="36" width="964" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -517,9 +517,9 @@
   <div class="filter">
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 253</label>
-    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 1</label>
+    <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 2</label>
     <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 7</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 245</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 244</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of CPG 234 (scrolls sideways on small screens)">
@@ -1440,11 +1440,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="para.-49(a)" class="point point--soon point--l2">
+        <tr id="para.-49(a)" class="point point--fix point--l2">
           <th scope="row" class="point__id"><a href="https://www.apra.gov.au/practice-guides/cpg-234#Item-49-a" rel="noopener noreferrer">para. 49(a)</a></th>
           <td class="point__title"><span class="point__summary">Software keeps functioning as intended despite unforeseen circumstances, including erroneous input.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--fix">We fix</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/agent.as10.missing-timeout">agent.as10.missing-timeout</a> <span class="evidence-check__fix">auto-fix: outbound HTTP calls without a timeout: Python requests calls and TypeScript fetch</span><span class="evidence-check__note">A network call with no timeout hangs when the remote side stalls, so the software stops working instead of degrading; same reading as the accepted ASVS V16.5.2 pair.</span></p>
           </td>
         </tr>
         <tr id="para.-49(b)" class="point point--soon point--l2">

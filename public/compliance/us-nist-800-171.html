@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of SP 800-171r3">
     <li class="tally__item"><strong>406</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>0</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>20</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>386</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>22</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>384</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 20 we detect, 386 coming soon, of 406 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="49" height="14"></rect><rect class="bar__soon" x="49" width="951" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="0 we fix, 22 we detect, 384 coming soon, of 406 points"><rect class="bar__fix" width="0" height="14"></rect><rect class="bar__detect" x="0" width="54" height="14"></rect><rect class="bar__soon" x="54" width="946" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -755,8 +755,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 406</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 0</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 20</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 386</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 22</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 384</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of SP 800-171r3 (scrolls sideways on small screens)">
@@ -1026,11 +1026,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="03.01.07.a" class="point point--soon point--l2">
+        <tr id="03.01.07.a" class="point point--detect point--l2">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_171_3_0_0/home?element=03.01.07" rel="noopener noreferrer">03.01.07.a</a></th>
           <td class="point__title"><span class="point__heading">a</span><span class="point__summary">Block non-privileged users from running privileged functions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role key shipped to browser code lets any visitor run backend operations reserved for privileged roles, bypassing row-level security.</span></p>
           </td>
         </tr>
         <tr id="03.01.07.b" class="point point--soon point--l2">
@@ -3658,11 +3659,12 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="r2-3.1.7" class="point point--soon point--l1">
+        <tr id="r2-3.1.7" class="point point--detect point--l1">
           <th scope="row" class="point__id"><a href="https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_171_2_0_0/home?element=3.1.7" rel="noopener noreferrer">r2 3.1.7</a></th>
           <td class="point__title"><span class="point__summary">Block non-privileged users from privileged functions and log such executions.</span></td>
-          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
+          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
+            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.privileged-key-client-side">arch.privileged-key-client-side</a><span class="evidence-check__note">A service-role key shipped to browser code lets any visitor run backend operations reserved for privileged roles, bypassing row-level security.</span></p>
           </td>
         </tr>
         <tr id="r2-3.1.8" class="point point--soon point--l1">
