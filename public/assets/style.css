@@ -3462,3 +3462,122 @@ main:not(:has(.lang__radio:checked)) .install__next {
 .fix--found .code {
   border-top: 0;
 }
+
+/* ---------- Transforms (the release support table) ---------- */
+
+.support__release {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.2rem;
+  margin: 0 0 2rem;
+}
+
+.support__release dt {
+  font-weight: 800;
+}
+
+.support__release dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.support__projects,
+.support__evidence {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.support__evidence {
+  margin-top: 0.3rem;
+  font-size: 0.85em;
+}
+
+.support__cell {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.support__cell--fix {
+  background: var(--yellow);
+}
+
+.support__cell--none {
+  border-style: dashed;
+  font-weight: 400;
+}
+
+.support__note,
+.support__empty {
+  font-weight: 700;
+}
+
+.families {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.family {
+  padding: 1.1rem 1.25rem 1.25rem;
+  border: 3px solid var(--ink);
+  border-top-width: 12px;
+  border-top-color: var(--cyan);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.family h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+}
+
+.family__counts {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 0.2rem 1rem;
+  margin: 0;
+}
+
+.family__counts dd {
+  margin: 0;
+  font-weight: 800;
+  text-align: right;
+}
+
+.family__dev,
+.family .support__empty {
+  margin: 0.6rem 0 0;
+}
+
+.view-tabs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.view-tabs a {
+  display: inline-block;
+  padding: 0.35em 1em;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.view-tabs a[aria-current="page"] {
+  background: var(--yellow);
+  box-shadow: var(--shadow);
+}
