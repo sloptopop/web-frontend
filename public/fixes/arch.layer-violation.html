@@ -206,6 +206,15 @@
   <h2>Real detections, by language</h2>
   <p>Where sloptopop found this issue in a public repository: the line it points at, at the commit it was found on.</p>
   <article class="fix fix--found">
+    <p class="fix__source"><a href="https://github.com/user-hash/Lifeblood/blob/11ed17ec09f9e59ba658bc2c53b486eacdcee399/src/Lifeblood.Adapters.CSharp/Internal/ModuleCompilationBuilder.cs#L1" rel="noopener noreferrer">user-hash/Lifeblood · src/Lifeblood.Adapters.CSharp/Internal/ModuleCompilationBuilder.cs:1</a> <span class="fix__meta">C# · @ 11ed17e · AGPL-3.0 licence · warning</span></p>
+    <pre class="code code--slop" tabindex="0" aria-label="src/Lifeblood.Adapters.CSharp/Internal/ModuleCompilationBuilder.cs, finding on line 1"><code><span class="ln ln--finding" data-n="1" data-note="arch.layer-violation"><span class="ln__code"><mark class="finding">using Lifeblood.Application.Ports.Infrastructure;</mark></span></span>
+<span class="ln" data-n="2"><span class="ln__code">using Lifeblood.Application.Ports.Left;</span></span>
+<span class="ln" data-n="3"><span class="ln__code">using Lifeblood.Domain.PathClassification;</span></span>
+<span class="ln" data-n="4"><span class="ln__code">using Lifeblood.Domain.Results;</span></span>
+<span class="ln" data-n="5"><span class="ln__code">using Lifeblood.Domain.Workspaces;</span></span>
+</code></pre>
+  </article>
+  <article class="fix fix--found">
     <p class="fix__source"><a href="https://github.com/cognesy/instructor-php/blob/70e72d1063ef15183918c33d04330bd0f3f31df1/packages/auxiliary/src/Beads/Application/UseCase/CreateEpic/CreateEpicHandler.php#L11" rel="noopener noreferrer">cognesy/instructor-php · packages/auxiliary/src/Beads/Application/UseCase/CreateEpic/CreateEpicHandler.php:11</a> <span class="fix__meta">PHP · @ 70e72d1 · MIT licence · warning</span></p>
     <pre class="code code--slop" tabindex="0" aria-label="packages/auxiliary/src/Beads/Application/UseCase/CreateEpic/CreateEpicHandler.php, finding on line 11"><code><span class="ln" data-n="7"><span class="ln__code">use Cognesy\Auxiliary\Beads\Domain\Collection\TaskCollection;</span></span>
 <span class="ln" data-n="8"><span class="ln__code">use Cognesy\Auxiliary\Beads\Domain\Model\Task;</span></span>
@@ -216,17 +225,6 @@
 <span class="ln" data-n="13"><span class="ln__code">use Throwable;</span></span>
 <span class="ln" data-n="14"><span class="ln__code"></span></span>
 <span class="ln" data-n="15"><span class="ln__code">/**</span></span>
-</code></pre>
-  </article>
-  <article class="fix fix--found">
-    <p class="fix__source"><a href="https://github.com/ghostintheshell-192/sheet-atlas/blob/787986ff4477b210de97dd8affe328dbfde9579c/src/SheetAtlas.Core/Domain/Entities/ExcelTemplate.cs#L3" rel="noopener noreferrer">ghostintheshell-192/sheet-atlas · src/SheetAtlas.Core/Domain/Entities/ExcelTemplate.cs:3</a> <span class="fix__meta">C# · @ 787986f · MIT licence · warning</span></p>
-    <pre class="code code--slop" tabindex="0" aria-label="src/SheetAtlas.Core/Domain/Entities/ExcelTemplate.cs, finding on line 3"><code><span class="ln" data-n="1"><span class="ln__code">using System.Text.Json;</span></span>
-<span class="ln" data-n="2"><span class="ln__code">using System.Text.Json.Serialization;</span></span>
-<span class="ln ln--finding" data-n="3" data-note="arch.layer-violation"><span class="ln__code"><mark class="finding">using SheetAtlas.Core.Application.Json;</mark></span></span>
-<span class="ln" data-n="4"><span class="ln__code">using SheetAtlas.Core.Domain.ValueObjects;</span></span>
-<span class="ln" data-n="5"><span class="ln__code"></span></span>
-<span class="ln" data-n="6"><span class="ln__code">namespace SheetAtlas.Core.Domain.Entities</span></span>
-<span class="ln" data-n="7"><span class="ln__code">{</span></span>
 </code></pre>
   </article>
   <article class="fix fix--found">

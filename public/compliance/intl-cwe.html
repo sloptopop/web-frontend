@@ -202,10 +202,10 @@
   <ul class="tally" aria-label="Coverage of CWE">
     <li class="tally__item"><strong>740</strong> points</li>
     <li class="tally__item tally__item--fix"><strong>4</strong> we fix</li>
-    <li class="tally__item tally__item--detect"><strong>29</strong> we detect</li>
-    <li class="tally__item tally__item--soon"><strong>707</strong> coming soon</li>
+    <li class="tally__item tally__item--detect"><strong>28</strong> we detect</li>
+    <li class="tally__item tally__item--soon"><strong>708</strong> coming soon</li>
   </ul>
-  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="4 we fix, 29 we detect, 707 coming soon, of 740 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="39" height="14"></rect><rect class="bar__soon" x="47" width="953" height="14"></rect></svg>
+  <svg class="bar bar--page" viewBox="0 0 1000 14" preserveAspectRatio="none" role="img" aria-label="4 we fix, 28 we detect, 708 coming soon, of 740 points"><rect class="bar__fix" width="8" height="14"></rect><rect class="bar__detect" x="8" width="38" height="14"></rect><rect class="bar__soon" x="46" width="954" height="14"></rect></svg>
   <dl class="legend">
     <div><dt><span class="pill pill--fix">We fix</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and at least one of those checks has an automatic fix that has passed review on real code.</dd></div>
     <div><dt><span class="pill pill--detect">We detect</span></dt><dd>sloptopop finds evidence of a breach of this point in your code, and you fix it.</dd></div>
@@ -1188,8 +1188,8 @@
     <span class="filter__label">Show</span>
     <label class="filter__tab filter__tab--all" for="filter-all">All 740</label>
     <label class="filter__tab filter__tab--fix" for="filter-fix">We fix 4</label>
-    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 29</label>
-    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 707</label>
+    <label class="filter__tab filter__tab--detect" for="filter-detect">We detect 28</label>
+    <label class="filter__tab filter__tab--soon" for="filter-soon">Coming soon 708</label>
   </div>
 
   <div class="table-scroll" tabindex="0" role="region" aria-label="Every point of CWE (scrolls sideways on small screens)">
@@ -6849,7 +6849,6 @@
           <td class="point__title"><span class="point__heading">Modules with Circular Dependencies</span><span class="point__summary">Modules should not depend on each other in circular chains.</span></td>
           <td class="point__status"><span class="pill pill--detect">We detect</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.package-cycle">arch.package-cycle</a><span class="evidence-check__note">Components that depend on one another in a cycle are modules with circular dependencies.</span></p>
             <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/deps.circular">deps.circular</a><span class="evidence-check__note">Modules import one another in a cycle.</span></p>
           </td>
         </tr>
@@ -6888,12 +6887,11 @@
           <td class="point__checks">
           </td>
         </tr>
-        <tr id="CWE-1057" class="point point--detect point--l3">
+        <tr id="CWE-1057" class="point point--soon point--l3">
           <th scope="row" class="point__id"><a href="https://cwe.mitre.org/data/definitions/1057.html" rel="noopener noreferrer">CWE-1057</a></th>
           <td class="point__title"><span class="point__heading">Data Access Operations Outside of Expected Data Manager Component</span><span class="point__summary">All data access should go through the designated central data manager component.</span></td>
-          <td class="point__status"><span class="pill pill--detect">We detect</span></td>
+          <td class="point__status"><span class="pill pill--soon">Coming soon</span></td>
           <td class="point__checks">
-            <p class="evidence-check"><a class="evidence-check__rule" href="/fixes/arch.db-access-outside-persistence">arch.db-access-outside-persistence</a><span class="evidence-check__note">Code outside the persistence layer performs data access that bypasses the dedicated data manager component.</span></p>
           </td>
         </tr>
         <tr id="CWE-1059" class="point point--group point--l2">
